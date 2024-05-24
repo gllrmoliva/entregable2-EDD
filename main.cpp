@@ -5,11 +5,82 @@
 #include <numeric>
 #include <random>
 #include <unordered_map>
+#include <sstream>
+#include <vector>
+#include <string>
+#include <cstdint>
 
 using namespace std;
 
-// Constante que se utiliza en la función de hash h2
-const float A = (sqrt(5) - 1) / 2;
+/*
+Almacena los datos de un usuario de X, estos datos son:
+- university
+- userId
+- userName
+- numberTweets
+- friendsCount
+- followersCount
+- createdAt
+*/
+struct User
+{
+  std::string university;
+  uint64_t userId; // este tipo de dato es un entero positivo muy grande (64 bits)
+  std::string userName;
+  int numberTweets;
+  int friendsCount;
+  int followersCount;
+  std::string createdAt;
+
+  // Este es el constructor de User, simplemente asigna las valor a las variables
+  User(const std::string &uni, uint64_t id, const std::string &name, int tweets, int friends, int followers, const std::string &created)
+      : university(uni), userId(id), userName(name), numberTweets(tweets), friendsCount(friends), followersCount(followers), createdAt(created) {}
+};
+
+/*
+Carga los datos del CSV y los pasa a un vector de la STL
+información para crear el codigo:
+https://www.geeksforgeeks.org/how-to-read-data-from-csv-file-to-a-2d-array-in-cpp/
+*/
+vector<User> readCSV(const std::string &filename)
+{
+  vector<User> users;
+  ifstream file(filename);
+  string line;
+
+  // Salta la primera línea del csv ("titulos", nose como se llaman xd)
+  getline(file, line);
+
+  while (getline(file, line))
+  {
+    stringstream ss(line);
+    string item;
+    vector<string> tokens;
+
+    // separamos el string en partes con respecto a la ','
+    while (getline(ss, item, ','))
+    {
+      tokens.push_back(item);
+    }
+
+    // aseguramos que nos este dando los 7 datos, si es así entonces los agregamos al vector
+    if (tokens.size() == 7)
+    {
+      string university = tokens[0];
+      uint64_t userId = stoull(tokens[1]);
+      string userName = tokens[2];
+      int numberTweets = stoi(tokens[3]);
+      int friendsCount = stoi(tokens[4]);
+      int followersCount = stoi(tokens[5]);
+      string createdAt = tokens[6];
+
+      // emplace_back esta buena, no necesitas crear por fuera el objeto, lo crea solo, pero obviamente
+      // le tienes que dar los parametros
+      users.emplace_back(university, userId, userName, numberTweets, friendsCount, followersCount, createdAt);
+    }
+  }
+  return users;
+}
 
 /**********************/
 /*** Funciones hash ***/
@@ -25,7 +96,7 @@ int h1(int k, int n) { return k % n; }
 // n: tamaño de la tabla hash
 int h2(int k, int n)
 {
-  float a = (float)k * A;
+  float a = (float)k * ((sqrt(5) - 1) / 2);
   a -= (int)a; // Esta línea implementa la operación módulo 1 (%1)
 
   return n * a;
@@ -104,23 +175,6 @@ public:
     return table[hashing_method(key, size, i)] == key;
   }
 };
-
-// Creador de números aleatorios
-void generate_random_numbers(int n, int max, const char *filename)
-{
-  ofstream file(filename);
-
-  // Clase para numeros aleatorios
-  random_device rd;
-  mt19937 gen(rd());
-  uniform_int_distribution<> dis(1, max);
-
-  for (int i = 0; i < n; i++)
-  {
-    file << dis(gen) << endl;
-  }
-  file.close();
-}
 
 void test_insert(HashTable &ht, int n_inserts, int n_tests,
                  const char *numbers_file, const char *out_file,
@@ -220,47 +274,45 @@ void test_insert(unordered_map<int, int> &um, int n_inserts, int n_tests,
 
 int main(int argc, char const *argv[])
 {
-  const int N = 1000000;
-  HashTable ht_linear(N, linear_probing);
-  HashTable ht_quadratic(N, quadratic_probing);
-  HashTable ht_double(N, double_hashing);
-  unordered_map<int, int> um;
+  // ------ TODO ESTO ES DEL CODIGO VIEJO --------
+  // const int N = 1000000;
+  // HashTable ht_linear(N, linear_probing);
+  // HashTable ht_quadratic(N, quadratic_probing);
+  // HashTable ht_double(N, double_hashing);
+  // unordered_map<int, int> um;
 
-  // Generar números aleatorios
+  // cout << "Insertando números aleatorios" << endl;
+  // for (int i = 0; i < 9; i++)
+  // {
+  //   test_insert(ht_linear, pow(2, 10 + i), 1, "random_numbers.txt",
+  //               "linear_insert.csv", false);
+  //   test_insert(ht_quadratic, pow(2, 10 + i), 1, "random_numbers.txt",
+  //               "quadratic_insert.csv", false);
+  //   test_insert(ht_double, pow(2, 10 + i), 1, "random_numbers.txt",
+  //               "double_hash_insert.csv", false);
+  // }
 
-  // cout << "Generando números aleatorios" << endl;
-  // generate_random_numbers(N, N, "random_numbers.txt");
+  // cout << "Buscando números aleatorios" << endl;
+  // for (int i = 0; i < 9; i++)
+  // {
+  //   test_search(ht_linear, 1000, 1, "random_numbers.txt", "linear_search.csv",
+  //               false);
+  //   test_search(ht_linear, 1000, 1, "random_numbers.txt", "quadratic_search.csv",
+  //               false);
+  //   test_search(ht_linear, 1000, 1, "random_numbers.txt", "double_search.csv",
+  //               false);
+  // }
+  //---------- TERMINO CODIGO VIEJO ----------
 
-  cout << "Insertando números aleatorios" << endl;
-  for (int i = 0; i < 9; i++)
+  // pasamos todos los datos del CSV a un vector (así es mas sencillo de acceder desde el programa)
+  vector<User> users = readCSV("universities_followers.csv");
+
+  // Ahora podemos acceder a los usuarios en forma de struct :O
+  for (auto user : users)
   {
-    test_insert(ht_linear, pow(2, 10 + i), 1, "random_numbers.txt",
-                "linear_insert.csv", false);
-    test_insert(ht_quadratic, pow(2, 10 + i), 1, "random_numbers.txt",
-                "quadratic_insert.csv", false);
-    test_insert(ht_double, pow(2, 10 + i), 1, "random_numbers.txt",
-                "double_hash_insert.csv", false);
+    cout << user.userName << endl;
   }
-
-  cout << "Buscando números aleatorios" << endl;
-  for (int i = 0; i < 9; i++)
-  {
-    test_search(ht_linear, 1000, 1, "random_numbers.txt", "linear_search.csv",
-                false);
-    test_search(ht_linear, 1000, 1, "random_numbers.txt", "quadratic_search.csv",
-                false);
-    test_search(ht_linear, 1000, 1, "random_numbers.txt", "double_search.csv",
-                false);
-  }
-  // cout << "tests insert números aleatorios" << endl;
-  // test_insert(ht_linear, 1000000, 1, "random_numbers.txt",
-  // "linear_insert.csv", true);
-  // cout << "end test insert números aleatorios" << endl;
-
-  // cout << "buscando números aleatorios" << endl;
-  // test_search(ht_linear, 1000, 1, "random_numbers.txt", "linear_search.csv",
-  //             false);
-  // cout << "end test buscando números aleatorios" << endl;
+  cout << "cantidad de usuarios " << users.size();
 
   return 0;
 }
