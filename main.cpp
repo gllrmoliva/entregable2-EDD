@@ -80,54 +80,54 @@ vector<User> readCSV(const std::string &filename)
       users.emplace_back(university, userId, userName, numberTweets, friendsCount, followersCount, createdAt);
     }
   }
+
+  cout << "Leidos " << users.size() << " usuarios del archivo CSV." << endl;
+
   return users;
 }
 
 //--- Funciones hash ---
 
-/* Método de la división
-- k: clave a la cual aplicaremos la función hash
-- n: tamaño de la tabla hash
-*/
-int h1(int k, int n) { return k % n; }
+// Método de la división
+// k: clave a la cual aplicaremos la función hash
+// n: tamaño de la tabla hash
+int h1(uint64_t k, int n) { return k % n; }
 
-/* Método de la multiplicación
-- k: clave a la cual aplicaremos la función hash
-- n: tamaño de la tabla hash */
-int h2(int k, int n)
+// Método de la multiplicación
+// k: clave a la cual aplicaremos la función hash
+// n: tamaño de la tabla hash
+int h2(uint64_t k, int n)
 {
   return k * 53 + k * k * 13 + 18;
 }
 
 //--- Métodos de Open addressing o hashing cerrado ---
 
-/* Linear probing
-- k: clave a la cual aplicaremos la función hash
-- n: tamaño de la tabla hash
-- i: número del intento
-*/
-int linear_probing(int k, int n, int i)
+// Linear probing
+// k: clave a la cual aplicaremos la función hash
+// n: tamaño de la tabla hash
+// i: número del intento
+int linear_probing(uint64_t k, int n, int i)
 {
   // Utilizando el método de la division
   return (h1(k, n) + i) % n;
 }
 
-/* Quadratic probing
-- k: clave a la cual aplicaremos la función hash
-- n: tamaño de la tabla hash
-- i: número del intento
-*/
-int quadratic_probing(int k, int n, int i)
+// Quadratic probing
+// k: clave a la cual aplicaremos la función hash
+// n: tamaño de la tabla hash
+// i: número del intento
+int quadratic_probing(uint64_t k, int n, int i)
 {
   // Utilizando el método de la division
   return (h1(k, n) + i + 2 * i * i) % n;
 }
 
-/* Double hashing
-- k: clave a la cual aplicaremos la función hash
-- n: tamaño de la tabla hash
-- i: número del intento */
-int double_hashing(int k, int n, int i)
+// Double hashing
+// k: clave a la cual aplicaremos la función hash
+// n: tamaño de la tabla hash
+// i: número del intento
+int double_hashing(uint64_t k, int n, int i)
 {
   // Utilizando como primer método el método de la division y luego el
   // método de la multiplicacion
@@ -138,38 +138,50 @@ class HashTable
 {
 public:
   int size;
-  int *table;
-  int (*hashing_method)(int, int, int);
+  vector<User *> table;
+  int (*hashing_method)(uint64_t, int, int);
 
-  HashTable(int size, int (*hashing_method)(int, int, int))
-      : size(size), hashing_method(hashing_method)
-  {
-    table = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-      table[i] = -1;
-    }
-  }
+  HashTable(int size, int (*hashing_method)(uint64_t, int, int))
+      : size(size), hashing_method(hashing_method), table(size, nullptr) {}
 
-  void insert(int key)
+  void insert(User *user)
   {
     int i = 0;
-    while (table[hashing_method(key, size, i)] != -1)
+    int index;
+    do
     {
+      index = hashing_method(user->userId, size, i);
+      if (table[index] == nullptr)
+      {
+        table[index] = user;
+        return;
+      }
       i++;
-    }
-    table[hashing_method(key, size, i)] = key;
+    } while (i < size);
+    cout << "Error: Hash table overflow" << endl;
   }
 
-  bool search(int key)
+  User *search(uint64_t userId)
   {
     int i = 0;
-    while (table[hashing_method(key, size, i)] != key &&
-           table[hashing_method(key, size, i)] != -1)
+    int index;
+    do
     {
+      index = hashing_method(userId, size, i);
+      if (table[index] == nullptr)
+        return nullptr;
+      if (table[index]->userId == userId)
+        return table[index];
       i++;
+    } while (i < size);
+    return nullptr;
+  }
+  ~HashTable()
+  {
+    for (auto user : table)
+    {
+      delete user;
     }
-    return table[hashing_method(key, size, i)] == key;
   }
 };
 //-------------FUNCIONES DE HASHEO PARA KEY USERNAME----------------//
@@ -292,135 +304,112 @@ public:
 
 //---------------FUNCIONES TEST--------------------//
 
-void test_insert(HashTable &ht, int n_inserts, int n_tests,
-                 const char *numbers_file, const char *out_file,
-                 bool overwrite = false)
+// Tablaa hash con separate chaining (encadenamiento)
+class HashTableChaining
 {
-  ifstream file(numbers_file);
-  ofstream file_out(out_file, overwrite ? ios::trunc : ios::app);
+public:
+  int size;
+  vector<vector<User *>> table;
 
-  vector<double> times;
-  for (int i = 0; i < n_tests; i++)
+  HashTableChaining(int size) : size(size), table(size) {}
+
+  void insert(User *user)
   {
-    int key;
-    auto start = chrono::high_resolution_clock::now();
-    for (int j = 0; j < n_inserts; j++)
-    {
-      file >> key;
-      ht.insert(key);
-    }
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
-    times.push_back(duration.count());
+    int index = user->userId % size;
+    table[index].push_back(user);
   }
 
-  // Calcular promedio tiempo
-  file_out << n_inserts << ","
-           << accumulate(times.begin(), times.end(), 0.0) / times.size()
-           << endl;
-  file.close();
-  file_out.close();
+  User *search(uint64_t userId)
+  {
+    int index = userId % size;
+    for (User *user : table[index])
+    {
+      if (user->userId == userId)
+        return user;
+    }
+    return nullptr;
+  }
+
+  ~HashTableChaining()
+  {
+    for (auto &bucket : table)
+    {
+      for (auto user : bucket)
+      {
+        delete user;
+      }
+    }
+  }
+};
+
+void printUser(User *foundUser)
+{
+  if (foundUser)
+  {
+    cout << "Usuario encontrado: " << foundUser->userName << endl;
+    cout << "Universidad: " << foundUser->university << endl;
+    cout << "Numero de Tweets: " << foundUser->numberTweets << endl;
+    cout << "Numero de amigos: " << foundUser->friendsCount << endl;
+    cout << "Numero de seguidores: " << foundUser->followersCount << endl;
+    cout << "Fecha de creacion: " << foundUser->createdAt << endl;
+  }
+  else
+  {
+    cout << "Usuario no encontrado" << endl;
+  }
 }
 
-void test_search(HashTable &ht, int n_searches, int n_tests,
-                 const char *numbers_file, const char *out_file,
-                 bool overwrite = false)
+void test_windows()
 {
-  ifstream file(numbers_file);
-  ofstream file_out(out_file, overwrite ? ios::trunc : ios::app);
+  vector<User> users = readCSV("D:/Joako/Desktop/Archivos de la U/Estructura de datos/entregable2-EDD/universities_followers.csv");
 
-  vector<double> times;
-  // Llenar la tabla hash
-  for (int i = 0; i < n_searches; i++)
+  if (users.empty())
   {
-    int key;
-    file >> key;
-    ht.insert(key);
+    cout << "No se leyeron usuarios del archivo CSV." << endl;
   }
 
-  for (int i = 0; i < n_tests; i++)
+  HashTable ht_linear(30103, linear_probing);
+  HashTable ht_quadratic(30103, quadratic_probing);
+  HashTable ht_double(30103, double_hashing);
+  HashTableChaining ht_chaining(30103);
+  unordered_map<uint64_t, User *> ht_unordered_map;
+
+  for (const auto &user : users)
   {
-    int key;
-    auto start = chrono::high_resolution_clock::now();
-    for (int j = 0; j < n_searches; j++)
-    {
-      file >> key;
-      ht.search(key);
-    }
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
-    times.push_back(duration.count());
+    ht_linear.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_quadratic.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_double.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_chaining.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_unordered_map[user.userId] = new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt);
   }
-  file_out << n_searches << ","
-           << accumulate(times.begin(), times.end(), 0.0) / times.size()
-           << endl;
-  file.close();
-  file_out.close();
+
+  uint64_t userIdToSearch;
+  cout << "Ingrese un userId para buscar: ";
+  cin >> userIdToSearch;
+
+  auto foundUserLinear = ht_linear.search(userIdToSearch);
+  cout << "Busqueda con Linear Probing:" << endl;
+  printUser(foundUserLinear);
+
+  auto foundUserQuadratic = ht_quadratic.search(userIdToSearch);
+  cout << "Busqueda con Quadratic Probing:" << endl;
+  printUser(foundUserQuadratic);
+
+  auto foundUserDouble = ht_double.search(userIdToSearch);
+  cout << "Busqueda con Double Hashing:" << endl;
+  printUser(foundUserDouble);
+
+  auto foundUserChaining = ht_chaining.search(userIdToSearch);
+  cout << "Busqueda con Encadenamiento:" << endl;
+  printUser(foundUserChaining);
+
+  auto foundUserUnorderedMap = ht_unordered_map.find(userIdToSearch) != ht_unordered_map.end() ? ht_unordered_map[userIdToSearch] : nullptr;
+  cout << "Busqueda con unordered_map:" << endl;
+  printUser(foundUserUnorderedMap);
 }
 
-void test_insert(unordered_map<int, int> &um, int n_inserts, int n_tests,
-                 const char *numbers_file, const char *out_file,
-                 bool overwrite = false)
+void test_linux()
 {
-  ifstream file(numbers_file);
-  ofstream file_out(out_file, overwrite ? ios::trunc : ios::app);
-
-  vector<double> times;
-  for (int i = 0; i < n_tests; i++)
-  {
-    int key;
-    auto start = chrono::high_resolution_clock::now();
-    for (int j = 0; j < n_inserts; j++)
-    {
-      file >> key;
-      um[key] = 1;
-    }
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::microseconds>(end - start);
-    times.push_back(duration.count());
-  }
-
-  // Calcular promedio tiempo
-  file_out << n_inserts << ","
-           << accumulate(times.begin(), times.end(), 0.0) / times.size()
-           << endl;
-  file.close();
-  file_out.close();
-}
-
-int main(int argc, char const *argv[])
-{
-  // ------ TODO ESTO ES DEL CODIGO VIEJO --------
-  // const int N = 1000000;
-  // HashTable ht_linear(N, linear_probing);
-  // HashTable ht_quadratic(N, quadratic_probing);
-  // HashTable ht_double(N, double_hashing);
-  // unordered_map<int, int> um;
-
-  // cout << "Insertando números aleatorios" << endl;
-  // for (int i = 0; i < 9; i++)
-  // {
-  //   test_insert(ht_linear, pow(2, 10 + i), 1, "random_numbers.txt",
-  //               "linear_insert.csv", false);
-  //   test_insert(ht_quadratic, pow(2, 10 + i), 1, "random_numbers.txt",
-  //               "quadratic_insert.csv", false);
-  //   test_insert(ht_double, pow(2, 10 + i), 1, "random_numbers.txt",
-  //               "double_hash_insert.csv", false);
-  // }
-
-  // cout << "Buscando números aleatorios" << endl;
-  // for (int i = 0; i < 9; i++)
-  // {
-  //   test_search(ht_linear, 1000, 1, "random_numbers.txt", "linear_search.csv",
-  //               false);
-  //   test_search(ht_linear, 1000, 1, "random_numbers.txt", "quadratic_search.csv",
-  //               false);
-  //   test_search(ht_linear, 1000, 1, "random_numbers.txt", "double_search.csv",
-  //               false);
-  // }
-  //---------- TERMINO CODIGO VIEJO ----------
-
-  // pasamos todos los datos del CSV a un vector (así es mas sencillo de acceder desde el programa)
   vector<User> users = readCSV("test_data_copied.csv");
 
   const int N = 42157;
@@ -430,7 +419,6 @@ int main(int argc, char const *argv[])
   {
     ht_test.insert(user.userName, &user);
   }
-  cout << "hola" << endl;
 
   ht_test.search("SantillanaLAB");
   ht_test.remove("SantillanaLAB");
@@ -447,13 +435,10 @@ int main(int argc, char const *argv[])
 
   ht_test.insert(users[0].userName, &users[0]);
   ht_test.search("SantillanaLAB");
-
-  return 0;
 }
 
-/* TO-DO list
-- Hacer que al hacer remove queden "marcadas las casillas"
-- Hacer la hash table con STL
-- Hacer la hash table abierta (vectores¿?)
-- Separar en archivos: hash_tables, tests, hash_functions, main
-*/
+int main(int argc, char const *argv[])
+{
+  test_linux();
+  return 0;
+}
