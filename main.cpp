@@ -12,6 +12,7 @@
 
 using namespace std;
 
+const int MAX_ATTEMPTS = 100;
 /*
 Almacena los datos de un usuario de X, estos datos son:
 - university
@@ -24,16 +25,16 @@ Almacena los datos de un usuario de X, estos datos son:
 */
 struct User
 {
-  std::string university;
+  string university;
   uint64_t userId; // este tipo de dato es un entero positivo muy grande (64 bits)
-  std::string userName;
+  string userName;
   int numberTweets;
   int friendsCount;
   int followersCount;
-  std::string createdAt;
+  string createdAt;
 
   // Este es el constructor de User, simplemente asigna las valor a las variables
-  User(const std::string &uni, uint64_t id, const std::string &name, int tweets, int friends, int followers, const std::string &created)
+  User(const string &uni, uint64_t id, const string &name, int tweets, int friends, int followers, const string &created)
       : university(uni), userId(id), userName(name), numberTweets(tweets), friendsCount(friends), followersCount(followers), createdAt(created) {}
 };
 
@@ -82,54 +83,50 @@ vector<User> readCSV(const std::string &filename)
   return users;
 }
 
-/**********************/
-/*** Funciones hash ***/
-/**********************/
+//--- Funciones hash ---
 
-// Método de la división
-// k: clave a la cual aplicaremos la función hash
-// n: tamaño de la tabla hash
+/* Método de la división
+- k: clave a la cual aplicaremos la función hash
+- n: tamaño de la tabla hash
+*/
 int h1(int k, int n) { return k % n; }
 
-// Método de la multiplicación
-// k: clave a la cual aplicaremos la función hash
-// n: tamaño de la tabla hash
+/* Método de la multiplicación
+- k: clave a la cual aplicaremos la función hash
+- n: tamaño de la tabla hash */
 int h2(int k, int n)
 {
-  float a = (float)k * ((sqrt(5) - 1) / 2);
-  a -= (int)a; // Esta línea implementa la operación módulo 1 (%1)
-
-  return n * a;
+  return k * 53 + k * k * 13 + 18;
 }
 
-/****************************************************/
-/*** Métodos de Open addressing o hashing cerrado ***/
-/****************************************************/
+//--- Métodos de Open addressing o hashing cerrado ---
 
-// Linear probing
-// k: clave a la cual aplicaremos la función hash
-// n: tamaño de la tabla hash
-// i: número del intento
+/* Linear probing
+- k: clave a la cual aplicaremos la función hash
+- n: tamaño de la tabla hash
+- i: número del intento
+*/
 int linear_probing(int k, int n, int i)
 {
   // Utilizando el método de la division
   return (h1(k, n) + i) % n;
 }
 
-// Quadratic probing
-// k: clave a la cual aplicaremos la función hash
-// n: tamaño de la tabla hash
-// i: número del intento
+/* Quadratic probing
+- k: clave a la cual aplicaremos la función hash
+- n: tamaño de la tabla hash
+- i: número del intento
+*/
 int quadratic_probing(int k, int n, int i)
 {
   // Utilizando el método de la division
   return (h1(k, n) + i + 2 * i * i) % n;
 }
 
-// Double hashing
-// k: clave a la cual aplicaremos la función hash
-// n: tamaño de la tabla hash
-// i: número del intento
+/* Double hashing
+- k: clave a la cual aplicaremos la función hash
+- n: tamaño de la tabla hash
+- i: número del intento */
 int double_hashing(int k, int n, int i)
 {
   // Utilizando como primer método el método de la division y luego el
@@ -175,6 +172,125 @@ public:
     return table[hashing_method(key, size, i)] == key;
   }
 };
+//-------------FUNCIONES DE HASHEO PARA KEY USERNAME----------------//
+int hash_string(const string &str)
+{
+  // en esta es la funcion vista en clases, en este caso se utilizo el numero
+  //  31 porque es primo y lo recomendaban en diversas fuentes
+  int p = 31;
+  int hash_value = 0;
+  int p_pow = 1;
+  for (char c : str)
+  {
+    hash_value += (c - 'a' + 1) * p_pow;
+    p_pow *= p;
+  }
+  return abs(hash_value);
+}
+
+int linear_probing_usename(const string &userName, int n, int i)
+{
+  int k = hash_string(userName);
+
+  // Utilizando el método de la division
+  return (h1(k, n) + i) % n;
+}
+int quadratic_probing_username(const string &userName, int n, int i)
+{
+  int k = hash_string(userName);
+
+  // Utilizando el método de la division
+  return (h1(k, n) + i + 2 * i * i) % n;
+}
+
+int double_hashing_username(const string &userName, int n, int i)
+{
+  int k = hash_string(userName);
+  // Utilizando como primer método el método de la division y luego el
+  // método de la multiplicacion
+  return abs((h1(k, n) + i * (h2(k, n) + 1)) % n);
+}
+
+//------ HASH TABLE USER NAME--------//
+// TODO: discutir si reutilizar las funciones hash ya propuestas o si crear unas unicas
+// para el caso de
+class HashTableUserName
+{
+public:
+  int size;
+  User **table; // Notemos que esto es una tabla con punteros de struct User
+  int (*hashing_method)(const string &, int, int);
+
+  HashTableUserName(int size, int (*hashing_method)(const string &, int, int))
+      : size(size), hashing_method(hashing_method)
+  {
+    table = new User *[size];
+    for (int i = 0; i < size; i++)
+    {
+      table[i] = nullptr;
+    }
+  }
+
+  ~HashTableUserName()
+  {
+    delete[] table;
+  }
+
+  void insert(const string &key, User *user_data)
+  {
+    int i = 0;
+    unsigned int index = hashing_method(key, size, i);
+    while (table[index] != nullptr && (table[index]->userName != "DELETED_VAR") && i <= MAX_ATTEMPTS)
+    {
+      i++;
+      index = hashing_method(key, size, i);
+    }
+    if (i <= MAX_ATTEMPTS)
+      table[index] = user_data;
+  }
+
+  User *search(const string &key)
+  {
+    int i = 0;
+    unsigned int index = hashing_method(key, size, i);
+    while (table[index] != nullptr && table[index]->userName != key && i <= MAX_ATTEMPTS)
+    {
+      i++;
+      index = hashing_method(key, size, i);
+    }
+    if (table[index] != nullptr && table[index]->userName == key && i <= MAX_ATTEMPTS)
+    {
+      cout << "Encontrado: " << endl;
+      cout << table[index]->userName << endl;
+      cout << table[index]->userId << endl;
+      cout << table[index]->university << endl;
+      cout << "indice en tabla hash: " << index << endl;
+
+      return table[index];
+    }
+    cout << "No se encontro el usuario" << endl;
+    return nullptr; // No se encontró el usuario
+  }
+
+  void remove(const string &key)
+  {
+    int i = 0;
+    unsigned int index = hashing_method(key, size, i);
+    while (table[index] != nullptr && table[index]->userName != key)
+    {
+      i++;
+      index = hashing_method(key, size, i);
+    }
+    if (table[index] != nullptr && table[index]->userName == key)
+    {
+      // Se usa un usuario con el nombre DELETED_VAR
+      User *DELETED_VAR = new User("", 0, "DELETED_VAR", 0, 0, 0, "");
+      table[index] = DELETED_VAR;
+    }
+  }
+};
+
+//---------------FUNCIONES TEST--------------------//
 
 void test_insert(HashTable &ht, int n_inserts, int n_tests,
                  const char *numbers_file, const char *out_file,
@@ -305,14 +421,39 @@ int main(int argc, char const *argv[])
   //---------- TERMINO CODIGO VIEJO ----------
 
   // pasamos todos los datos del CSV a un vector (así es mas sencillo de acceder desde el programa)
-  vector<User> users = readCSV("universities_followers.csv");
+  vector<User> users = readCSV("test_data_copied.csv");
 
-  // Ahora podemos acceder a los usuarios en forma de struct :O
-  for (auto user : users)
+  const int N = 42157;
+  HashTableUserName ht_test(N, double_hashing_username);
+
+  for (auto &user : users)
   {
-    cout << user.userName << endl;
+    ht_test.insert(user.userName, &user);
   }
-  cout << "cantidad de usuarios " << users.size();
+  cout << "hola" << endl;
+
+  ht_test.search("SantillanaLAB");
+  ht_test.remove("SantillanaLAB");
+  ht_test.search("SantillanaLAB");
+
+  ht_test.remove("SantillanaLAB");
+  ht_test.search("SantillanaLAB");
+
+  ht_test.remove("SantillanaLAB");
+  ht_test.search("SantillanaLAB");
+
+  ht_test.remove("SantillanaLAB");
+  ht_test.search("SantillanaLAB");
+
+  ht_test.insert(users[0].userName, &users[0]);
+  ht_test.search("SantillanaLAB");
 
   return 0;
 }
+
+/* TO-DO list
+- Hacer que al hacer remove queden "marcadas las casillas"
+- Hacer la hash table con STL
+- Hacer la hash table abierta (vectores¿?)
+- Separar en archivos: hash_tables, tests, hash_functions, main
+*/
