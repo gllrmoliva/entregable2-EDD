@@ -67,7 +67,7 @@ vector<User> readCSV(const std::string &filename)
     if (tokens.size() == 7)
     {
       string university = tokens[0];
-      uint64_t userId = stoull(tokens[1]);
+      uint64_t userId = std::stoull(tokens[1]);
       string userName = tokens[2];
       int numberTweets = stoi(tokens[3]);
       int friendsCount = stoi(tokens[4]);
@@ -150,12 +150,12 @@ public:
   HashTable(int size, int (*hashing_method)(uint64_t, int, int))
       : size(size), hashing_method(hashing_method), table(size, nullptr){}
   
-  void insert(User* user)
+  void insert(User* user, uint64_t userId)
   {
     int i = 0;
     int index;
     do {
-            index = hashing_method(user->userId, size, i);
+            index = hashing_method(userId, size, i);
             if (table[index] == nullptr) {
                 table[index] = user;
                 return;
@@ -183,7 +183,7 @@ public:
     }
 };
 
-// Tablaa hash con separate chaining (encadenamiento)
+// Tabla hash con separate chaining (encadenamiento)
 class HashTableChaining {
   public:
   int size;
@@ -191,8 +191,8 @@ class HashTableChaining {
 
   HashTableChaining(int size) : size(size), table(size) {}
 
-  void insert(User* user){
-    int index = user->userId % size;
+  void insert(User* user, uint64_t userId){
+    int index = userId % size;
     table[index].push_back(user);
   }
 
@@ -228,12 +228,20 @@ void printUser(User* foundUser) {
     }
 }
 
+bool esNotacionCientifica(double numero){
+    
+    std::string numeroStr = std::to_string(numero);
+    
+    size_t posE = numeroStr.find('e');
+    size_t posE_MAYUSCULA = numeroStr.find('E');
+
+    return (posE != std::string::npos || posE_MAYUSCULA != std::string::npos);
+    };
+
 int main(int argc, char const *argv[]) {
     auto start = chrono::high_resolution_clock::now();
 
     vector<User> users = readCSV("D:/Joako/Desktop/Archivos de la U/Estructura de datos/entregable2-EDD/universities_followers.csv");
-
-
 
     if (users.empty()) {
         cout << "No se leyeron usuarios del archivo CSV." << endl;
@@ -247,18 +255,22 @@ int main(int argc, char const *argv[]) {
     unordered_map<uint64_t, User*> ht_unordered_map;
 
     for (const auto& user : users) {
-        ht_linear.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-        ht_quadratic.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-        ht_double.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-        ht_chaining.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+        ht_linear.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt), user.userId);
+        ht_quadratic.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt), user.userId);
+        ht_double.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt), user.userId);
+        ht_chaining.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt), user.userId);
         ht_unordered_map[user.userId] = new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt);
     }
-    
+
     uint64_t userIdToSearch;
     cout << "Ingrese un userId para buscar: ";
     cin >> userIdToSearch;
 
-   auto foundUserLinear = ht_linear.search(userIdToSearch);
+    //if (esNotacionCientifica(userIdToSearch)){
+
+    //}
+
+    auto foundUserLinear = ht_linear.search(userIdToSearch);
     cout << "Busqueda con Linear Probing:" << endl;
     printUser(foundUserLinear);
 
