@@ -1,2 +1,2 @@
-# TO-DO list
-- Hacer la hash table con STL
+# Readme
+esto es un readme :O

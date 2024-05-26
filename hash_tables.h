@@ -10,7 +10,7 @@
 
 using namespace std;
 
-const int MAX_ATTEMPTS = 100;
+const int MAX_ATTEMPTS = 1024;
 
 class HashTable
 {
@@ -63,14 +63,14 @@ public:
     }
 };
 //-------------TABLAS DE HASHEO PARA KEY USERNAME----------------//
-class HashTableUserName
+class CloseHashTableUserName
 {
 public:
     int size;
     User **table; // Notemos que esto es una tabla con punteros de struct User
     int (*hashing_method)(const string &, int, int);
 
-    HashTableUserName(int size, int (*hashing_method)(const string &, int, int))
+    CloseHashTableUserName(int size, int (*hashing_method)(const string &, int, int))
         : size(size), hashing_method(hashing_method)
     {
         table = new User *[size];
@@ -80,7 +80,7 @@ public:
         }
     }
 
-    ~HashTableUserName()
+    ~CloseHashTableUserName()
     {
         delete[] table;
     }
@@ -137,13 +137,13 @@ public:
     }
 };
 
-class HashTableChainingUserName
+class OpenHashTableUserName
 {
 public:
     int size;
     vector<vector<User>> table; // Tabla de vectores de User
 
-    HashTableChainingUserName(int size) : size(size), table(size)
+    OpenHashTableUserName(int size) : size(size), table(size)
     {
     }
 
