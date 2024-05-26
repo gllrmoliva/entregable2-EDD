@@ -7,10 +7,12 @@
 #include <iostream>
 
 #include "functions.h"
+#include "hash_functions.h"
 
 using namespace std;
 
-const int MAX_ATTEMPTS = 1024;
+// Máximo de intentos de una operación en una hash table.
+const int MAX_ATTEMPTS = 50000;
 
 class HashTable
 {
@@ -119,11 +121,11 @@ public:
         return nullptr; // No se encontró el usuario
     }
 
-    void remove(const string &key)
+    void remove(string &key)
     {
         int i = 0;
         unsigned int index = hashing_method(key, size, i);
-        while (table[index] != nullptr && table[index]->userName != key)
+        while (table[index] != nullptr && table[index]->userName != key && i <= MAX_ATTEMPTS)
         {
             i++;
             index = hashing_method(key, size, i);
@@ -134,6 +136,20 @@ public:
             User *DELETED_VAR = new User("", 0, "DELETED_VAR", 0, 0, 0, "");
             table[index] = DELETED_VAR;
         }
+    }
+
+    void tellmethesize()
+    {
+        int n = 0;
+        for (int i = 0; i < size; i++)
+        {
+            if (table[i] != nullptr && table[i]->userName != "DELETED_VAR")
+            {
+                n += 1;
+            }
+        }
+
+        cout << "La cantidad de elementos es: " << n << endl;
     }
 };
 
