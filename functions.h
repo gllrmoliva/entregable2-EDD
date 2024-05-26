@@ -30,8 +30,11 @@ struct User
     int followersCount;
     string createdAt;
 
+    // constructor por defecto
+    User() : university(""), userId(0), userName(""), numberTweets(0), friendsCount(0), followersCount(0), createdAt("") {}
+
     // Este es el constructor de User, simplemente asigna las valor a las variables
-    User(const string &uni, uint64_t id, const string &name, int tweets, int friends, int followers, const string &created)
+    User(string uni, uint64_t id, string name, int tweets, int friends, int followers, string created)
         : university(uni), userId(id), userName(name), numberTweets(tweets), friendsCount(friends), followersCount(followers), createdAt(created) {}
 };
 
