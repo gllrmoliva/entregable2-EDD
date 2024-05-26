@@ -71,12 +71,24 @@ void test_windows()
 
 void test_linux()
 {
+  vector<User> users = readCSV("universities_followers.csv");
+  const int N = 42157;
+
+  CloseHashTableUserName hola(N, linear_probing_usename);
+  // insertar
+  for (User user : users)
+  {
+    hola.insert(user.userName, &user);
+  }
+  // buscar
+  for (User user : users)
+  {
+    hola.search(user.userName);
+  }
 }
 
 int main(int argc, char const *argv[])
 {
-  vector<User> users = readCSV("universities_followers.csv");
-  const int N = 42157;
-
+  test_linux();
   return 0;
 }
