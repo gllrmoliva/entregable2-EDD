@@ -31,12 +31,13 @@ struct User
     int followersCount;
     string createdAt;
 
+    // constructor por defecto
+    User() : university(""), userId(0), userName(""), numberTweets(0), friendsCount(0), followersCount(0), createdAt("") {}
+
     // Este es el constructor de User, simplemente asigna las valor a las variables
-    User(const string &uni, uint64_t id, const string &name, int tweets, int friends, int followers, const string &created)
+    User(string uni, uint64_t id, string name, int tweets, int friends, int followers, string created)
         : university(uni), userId(id), userName(name), numberTweets(tweets), friendsCount(friends), followersCount(followers), createdAt(created) {}
 };
-
-uint64_t scientificToNormal(const std::string &scientific);
 
 /*
 Carga los datos del CSV y los pasa a un vector de la STL
@@ -75,17 +76,15 @@ vector<User> readCSV(const std::string &filename)
             int followersCount = stoi(tokens[5]);
             string createdAt = tokens[6];
 
-            cout << "Usuario leído: " << userName << ", userId: " << userId << endl;
+            std::cout << "Usuario leído: " << userName << ", userId: " << userId << endl;
 
             // emplace_back esta buena, no necesitas crear por fuera el objeto, lo crea solo, pero obviamente
             // le tienes que dar los parametros
             users.emplace_back(university, userId, userName, numberTweets, friendsCount, followersCount, createdAt);
-
-            
         }
     }
 
-    cout << "Leidos " << users.size() << " usuarios del archivo CSV." << endl;
+    std::cout << "Leidos " << users.size() << " usuarios del archivo CSV." << endl;
 
     return users;
 }
@@ -94,24 +93,25 @@ void printUser(User *foundUser)
 {
     if (foundUser)
     {
-        cout << "Usuario encontrado: " << foundUser->userName << endl;
-        cout << "Universidad: " << foundUser->university << endl;
-        cout << "Numero de Tweets: " << foundUser->numberTweets << endl;
-        cout << "Numero de amigos: " << foundUser->friendsCount << endl;
-        cout << "Numero de seguidores: " << foundUser->followersCount << endl;
-        cout << "Fecha de creacion: " << foundUser->createdAt << endl;
+        std::cout << "Usuario encontrado: " << foundUser->userName << endl;
+        std::cout << "Universidad: " << foundUser->university << endl;
+        std::cout << "Numero de Tweets: " << foundUser->numberTweets << endl;
+        std::cout << "Numero de amigos: " << foundUser->friendsCount << endl;
+        std::cout << "Numero de seguidores: " << foundUser->followersCount << endl;
+        std::cout << "Fecha de creacion: " << foundUser->createdAt << endl;
     }
     else
     {
-        cout << "Usuario no encontrado" << endl;
+        std::cout << "Usuario no encontrado" << endl;
     }
 }
 
-uint64_t scientificToNormal(const std::string &scientific) {
+uint64_t scientificToNormal(const std::string &scientific)
+{
     std::istringstream iss(scientific);
     double number;
 
-    iss >> number;  // Convertir la cadena a un numero en punto flotante
+    iss >> number; // Convertir la cadena a un numero en punto flotante
     uint64_t normal = static_cast<uint64_t>(number);
     return normal;
 }

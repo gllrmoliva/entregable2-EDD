@@ -4,6 +4,12 @@
 #include <vector>
 #include <string>
 #include <cstdint>
+#include <chrono>
+
+#include "hash_functions.h"
+#include "hash_tables.h"
+#include "functions.h"
+#include "time_tests.h"
 
 #include "hash_functions.h"
 #include "hash_tables.h"
@@ -17,7 +23,7 @@ void test_windows()
 
   if (users.empty())
   {
-    cout << "No se leyeron usuarios del archivo CSV." << endl;
+    std::cout << "No se leyeron usuarios del archivo CSV." << endl;
   }
 
   HashTable ht_linear(30103, linear_probing);
@@ -28,25 +34,24 @@ void test_windows()
 
   for (const auto &user : users)
   {
-    ht_linear.insert(user.userId ,new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-    ht_quadratic.insert(user.userId ,new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-    ht_double.insert(user.userId ,new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-    ht_chaining.insert(user.userId ,new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_linear.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_quadratic.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_double.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_chaining.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
     ht_unordered_map[user.userId] = new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt);
   }
 
-std::string userIdInput;
-cout << "Ingrese un userId para buscar: ";
-cin >> userIdInput;
+  std::string userIdInput;
+  cout << "Ingrese un userId para buscar: ";
+  cin >> userIdInput;
 
-uint64_t userIdToSearch = scientificToNormal(userIdInput);
+  uint64_t userIdToSearch = scientificToNormal(userIdInput);
 
-cout << "Buscando usuario con userId: " << userIdToSearch << endl;
+  cout << "Buscando usuario con userId: " << userIdToSearch << endl;
 
   auto foundUserLinear = ht_linear.search(userIdToSearch);
   cout << "Busqueda con Linear Probing:" << endl;
   printUser(foundUserLinear);
-
   auto foundUserQuadratic = ht_quadratic.search(userIdToSearch);
   cout << "Busqueda con Quadratic Probing:" << endl;
   printUser(foundUserQuadratic);
@@ -66,35 +71,12 @@ cout << "Buscando usuario con userId: " << userIdToSearch << endl;
 
 void test_linux()
 {
-  vector<User> users = readCSV("test_data_copied.csv");
-
-  const int N = 42157;
-  HashTableUserName ht_test(N, double_hashing_username);
-
-  for (auto &user : users)
-  {
-    ht_test.insert(user.userName, &user);
-  }
-
-  ht_test.search("SantillanaLAB");
-  ht_test.remove("SantillanaLAB");
-  ht_test.search("SantillanaLAB");
-
-  ht_test.remove("SantillanaLAB");
-  ht_test.search("SantillanaLAB");
-
-  ht_test.remove("SantillanaLAB");
-  ht_test.search("SantillanaLAB");
-
-  ht_test.remove("SantillanaLAB");
-  ht_test.search("SantillanaLAB");
-
-  ht_test.insert(users[0].userName, &users[0]);
-  ht_test.search("SantillanaLAB");
 }
 
 int main(int argc, char const *argv[])
 {
-  test_windows();
+  vector<User> users = readCSV("universities_followers.csv");
+  const int N = 42157;
+
   return 0;
 }

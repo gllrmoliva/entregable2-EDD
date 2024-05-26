@@ -1,1 +1,2 @@
-# entregable2-EDD
+# Readme
+esto es un readme :O

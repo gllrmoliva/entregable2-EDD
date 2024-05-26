@@ -1,0 +1,12 @@
+# Ignorar la carpeta .vscode
+.vscode/
+
+# ignorar la carpeta output
+output/
+
+# Ignorar archivos ejecutables generados por g++
+*.out
+*.exe
+*.o
+*.a
+*.so

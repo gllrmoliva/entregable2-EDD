@@ -10,7 +10,7 @@
 
 using namespace std;
 
-const int MAX_ATTEMPTS = 100;
+const int MAX_ATTEMPTS = 1024;
 
 class HashTable
 {
@@ -22,7 +22,7 @@ public:
     HashTable(int size, int (*hashing_method)(uint64_t, int, int))
         : size(size), hashing_method(hashing_method), table(size, nullptr) {}
 
-    void insert(uint64_t userId ,User *user)
+    void insert(uint64_t userId, User *user)
     {
         int i = 0;
         int index;
@@ -36,7 +36,7 @@ public:
             }
             i++;
         } while (i < size);
-        cout << "Error: Hash table overflow" << endl;
+        std::cout << "Error: Hash table overflow" << endl;
     }
 
     User *search(uint64_t userId)
@@ -62,19 +62,15 @@ public:
         }
     }
 };
-//-------------FUNCIONES DE HASHEO PARA KEY USERNAME----------------//
-
-//------ HASH TABLE USER NAME--------//
-// TODO: discutir si reutilizar las funciones hash ya propuestas o si crear unas unicas
-// para el caso de
-class HashTableUserName
+//-------------TABLAS DE HASHEO PARA KEY USERNAME----------------//
+class CloseHashTableUserName
 {
 public:
     int size;
     User **table; // Notemos que esto es una tabla con punteros de struct User
     int (*hashing_method)(const string &, int, int);
 
-    HashTableUserName(int size, int (*hashing_method)(const string &, int, int))
+    CloseHashTableUserName(int size, int (*hashing_method)(const string &, int, int))
         : size(size), hashing_method(hashing_method)
     {
         table = new User *[size];
@@ -84,7 +80,7 @@ public:
         }
     }
 
-    ~HashTableUserName()
+    ~CloseHashTableUserName()
     {
         delete[] table;
     }
@@ -113,15 +109,13 @@ public:
         }
         if (table[index] != nullptr && table[index]->userName == key && i <= MAX_ATTEMPTS)
         {
-            cout << "Encontrado: " << endl;
-            cout << table[index]->userName << endl;
-            cout << table[index]->userId << endl;
-            cout << table[index]->university << endl;
-            cout << "indice en tabla hash: " << index << endl;
+            std::cout << "Indice en tabla hash: " << index << endl;
+            printUser(table[index]);
+            std::cout << endl;
 
             return table[index];
         }
-        cout << "No se encontro el usuario" << endl;
+        std::cout << "No se encontro el usuario" << endl;
         return nullptr; // No se encontró el usuario
     }
 
@@ -143,6 +137,61 @@ public:
     }
 };
 
+class OpenHashTableUserName
+{
+public:
+    int size;
+    vector<vector<User>> table; // Tabla de vectores de User
+
+    OpenHashTableUserName(int size) : size(size), table(size)
+    {
+    }
+
+    void insert(const string &key, const User &user_data)
+    {
+        unsigned int index = hashing_method(key);
+        table[index].push_back(user_data);
+    }
+
+    User *search(const string &key)
+    {
+        unsigned int index = hashing_method(key);
+        for (User &user : table[index])
+        {
+            if (user.userName == key)
+            {
+                std::cout << "INDICE: " << index << endl;
+                printUser(&user);
+                std::cout << endl;
+                return &user;
+            }
+        }
+        return nullptr;
+    }
+
+    void remove(const string &key)
+    {
+        unsigned int index = hashing_method(key);
+        auto &bucket = table[index];
+        int bucket_size = bucket.size();
+
+        for (int i = 0; i < bucket_size; i++)
+        {
+            if (bucket.at(i).userName == key)
+            {
+                // Esto es iniciar el iterador y moverlo hasta el indice correspondiente
+                bucket.erase(bucket.begin() + i);
+                return;
+            }
+        }
+    }
+
+private:
+    unsigned int hashing_method(const string &key)
+    {
+        return linear_probing_usename(key, size, 0);
+    }
+};
 //---------------FUNCIONES TEST--------------------//
 
 // Tablaa hash con separate chaining (encadenamiento)
@@ -154,7 +203,7 @@ public:
 
     HashTableChaining(int size) : size(size), table(size) {}
 
-    void insert(uint64_t userId,User *user)
+    void insert(uint64_t userId, User *user)
     {
         int index = userId % size;
         table[index].push_back(user);
