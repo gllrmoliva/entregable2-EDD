@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <cstdint>
+#include <chrono>
 
 #include "hash_functions.h"
 #include "hash_tables.h"
@@ -62,31 +63,30 @@ void test_windows()
 
 void test_linux()
 {
-  vector<User> users = readCSV("test_data_copied.csv");
+  unordered_map<string, User> unordered_hashmap;
+
+  vector<User> users = readCSV("universities_followers.csv");
 
   const int N = 42157;
-  HashTableUserName ht_test(N, double_hashing_username);
+  HashTableChainingUserName ht_test(N);
+
+  auto start = chrono::high_resolution_clock::now();
 
   for (auto &user : users)
   {
-    ht_test.insert(user.userName, &user);
+    unordered_hashmap[user.userName] = user;
   }
 
-  ht_test.search("SantillanaLAB");
-  ht_test.remove("SantillanaLAB");
-  ht_test.search("SantillanaLAB");
+  for (auto it = unordered_hashmap.begin(); it != unordered_hashmap.end(); /* no incrementamos aquí */)
+  {
 
-  ht_test.remove("SantillanaLAB");
-  ht_test.search("SantillanaLAB");
-
-  ht_test.remove("SantillanaLAB");
-  ht_test.search("SantillanaLAB");
-
-  ht_test.remove("SantillanaLAB");
-  ht_test.search("SantillanaLAB");
-
-  ht_test.insert(users[0].userName, &users[0]);
-  ht_test.search("SantillanaLAB");
+    cout << "Eliminando usuario: " << it->second.userName << endl;
+    it = unordered_hashmap.erase(it); // erase devuelve el siguiente iterador válido
+  }
+  auto end = chrono::high_resolution_clock::now();
+  chrono::duration<double> duration = end - start;
+  cout << "Tiempo: " << duration.count() << " segundos" << endl;
+  return;
 }
 
 int main(int argc, char const *argv[])

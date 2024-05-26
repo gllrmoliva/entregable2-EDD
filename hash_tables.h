@@ -62,11 +62,7 @@ public:
         }
     }
 };
-//-------------FUNCIONES DE HASHEO PARA KEY USERNAME----------------//
-
-//------ HASH TABLE USER NAME--------//
-// TODO: discutir si reutilizar las funciones hash ya propuestas o si crear unas unicas
-// para el caso de
+//-------------TABLAS DE HASHEO PARA KEY USERNAME----------------//
 class HashTableUserName
 {
 public:
@@ -113,11 +109,9 @@ public:
         }
         if (table[index] != nullptr && table[index]->userName == key && i <= MAX_ATTEMPTS)
         {
-            cout << "Encontrado: " << endl;
-            cout << table[index]->userName << endl;
-            cout << table[index]->userId << endl;
-            cout << table[index]->university << endl;
-            cout << "indice en tabla hash: " << index << endl;
+            cout << "Indice en tabla hash: " << index << endl;
+            printUser(table[index]);
+            cout << endl;
 
             return table[index];
         }
@@ -140,6 +134,62 @@ public:
             User *DELETED_VAR = new User("", 0, "DELETED_VAR", 0, 0, 0, "");
             table[index] = DELETED_VAR;
         }
+    }
+};
+
+class HashTableChainingUserName
+{
+public:
+    int size;
+    vector<vector<User>> table; // Tabla de vectores de User
+
+    HashTableChainingUserName(int size) : size(size), table(size)
+    {
+    }
+
+    void insert(const string &key, const User &user_data)
+    {
+        unsigned int index = hashing_method(key);
+        table[index].push_back(user_data);
+    }
+
+    User *search(const string &key)
+    {
+        unsigned int index = hashing_method(key);
+        for (User &user : table[index])
+        {
+            if (user.userName == key)
+            {
+                cout << "INDICE: " << index << endl;
+                printUser(&user);
+                cout << endl;
+                return &user;
+            }
+        }
+        return nullptr;
+    }
+
+    void remove(const string &key)
+    {
+        unsigned int index = hashing_method(key);
+        auto &bucket = table[index];
+        int bucket_size = bucket.size();
+
+        for (int i = 0; i < bucket_size; i++)
+        {
+            if (bucket.at(i).userName == key)
+            {
+                // Esto es iniciar el iterador y moverlo hasta el indice correspondiente
+                bucket.erase(bucket.begin() + i);
+                return;
+            }
+        }
+    }
+
+private:
+    unsigned int hashing_method(const string &key)
+    {
+        return linear_probing_usename(key, size, 0);
     }
 };
 
