@@ -21,6 +21,16 @@ Almacena los datos de un usuario de X, estos datos son:
 - followersCount
 - createdAt
 */
+uint64_t scientificToNormal(const std::string &scientific)
+{
+    std::istringstream iss(scientific);
+    double number;
+
+    iss >> number; // Convertir la cadena a un numero en punto flotante
+    uint64_t normal = static_cast<uint64_t>(number);
+    return normal;
+}
+
 struct User
 {
     string university;
@@ -32,7 +42,9 @@ struct User
     string createdAt;
 
     // constructor por defecto
-    User() : university(""), userId(0), userName(""), numberTweets(0), friendsCount(0), followersCount(0), createdAt("") {}
+    User() : university(""), userId(0), userName(""), numberTweets(0), friendsCount(0), followersCount(0), createdAt("")
+    {
+    }
 
     // Este es el constructor de User, simplemente asigna las valor a las variables
     User(string uni, uint64_t id, string name, int tweets, int friends, int followers, string created)
@@ -93,7 +105,8 @@ void printUser(User *foundUser)
 {
     if (foundUser)
     {
-        std::cout << "Usuario encontrado: " << foundUser->userName << endl;
+        std::cout << "Nombre Usuario: " << foundUser->userName << endl;
+        std::cout << "ID: " << foundUser->userId << endl;
         std::cout << "Universidad: " << foundUser->university << endl;
         std::cout << "Numero de Tweets: " << foundUser->numberTweets << endl;
         std::cout << "Numero de amigos: " << foundUser->friendsCount << endl;
@@ -104,16 +117,6 @@ void printUser(User *foundUser)
     {
         std::cout << "Usuario no encontrado" << endl;
     }
-}
-
-uint64_t scientificToNormal(const std::string &scientific)
-{
-    std::istringstream iss(scientific);
-    double number;
-
-    iss >> number; // Convertir la cadena a un numero en punto flotante
-    uint64_t normal = static_cast<uint64_t>(number);
-    return normal;
 }
 
 #endif
