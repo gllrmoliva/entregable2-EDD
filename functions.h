@@ -1,6 +1,7 @@
 #ifndef FUNCTIONS
 #define FUNCTIONS
 
+#include <cmath>
 #include <string>
 #include <iostream>
 #include <cstdint>
@@ -68,12 +69,14 @@ vector<User> readCSV(const std::string &filename)
         if (tokens.size() == 7)
         {
             string university = tokens[0];
-            uint64_t userId = stoull(tokens[1]);
+            uint64_t userId = scientificToNormal(tokens[1]); // Convertir a numero normal
             string userName = tokens[2];
             int numberTweets = stoi(tokens[3]);
             int friendsCount = stoi(tokens[4]);
             int followersCount = stoi(tokens[5]);
             string createdAt = tokens[6];
+
+            std::cout << "Usuario leído: " << userName << ", userId: " << userId << endl;
 
             // emplace_back esta buena, no necesitas crear por fuera el objeto, lo crea solo, pero obviamente
             // le tienes que dar los parametros
@@ -81,7 +84,7 @@ vector<User> readCSV(const std::string &filename)
         }
     }
 
-    cout << "Leidos " << users.size() << " usuarios del archivo CSV." << endl;
+    std::cout << "Leidos " << users.size() << " usuarios del archivo CSV." << endl;
 
     return users;
 }
@@ -90,17 +93,27 @@ void printUser(User *foundUser)
 {
     if (foundUser)
     {
-        cout << "Usuario encontrado: " << foundUser->userName << endl;
-        cout << "Universidad: " << foundUser->university << endl;
-        cout << "Numero de Tweets: " << foundUser->numberTweets << endl;
-        cout << "Numero de amigos: " << foundUser->friendsCount << endl;
-        cout << "Numero de seguidores: " << foundUser->followersCount << endl;
-        cout << "Fecha de creacion: " << foundUser->createdAt << endl;
+        std::cout << "Usuario encontrado: " << foundUser->userName << endl;
+        std::cout << "Universidad: " << foundUser->university << endl;
+        std::cout << "Numero de Tweets: " << foundUser->numberTweets << endl;
+        std::cout << "Numero de amigos: " << foundUser->friendsCount << endl;
+        std::cout << "Numero de seguidores: " << foundUser->followersCount << endl;
+        std::cout << "Fecha de creacion: " << foundUser->createdAt << endl;
     }
     else
     {
-        cout << "Usuario no encontrado" << endl;
+        std::cout << "Usuario no encontrado" << endl;
     }
+}
+
+uint64_t scientificToNormal(const std::string &scientific)
+{
+    std::istringstream iss(scientific);
+    double number;
+
+    iss >> number; // Convertir la cadena a un numero en punto flotante
+    uint64_t normal = static_cast<uint64_t>(number);
+    return normal;
 }
 
 #endif

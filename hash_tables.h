@@ -22,13 +22,13 @@ public:
     HashTable(int size, int (*hashing_method)(uint64_t, int, int))
         : size(size), hashing_method(hashing_method), table(size, nullptr) {}
 
-    void insert(User *user)
+    void insert(uint64_t userId, User *user)
     {
         int i = 0;
         int index;
         do
         {
-            index = hashing_method(user->userId, size, i);
+            index = hashing_method(userId, size, i);
             if (table[index] == nullptr)
             {
                 table[index] = user;
@@ -36,7 +36,7 @@ public:
             }
             i++;
         } while (i < size);
-        cout << "Error: Hash table overflow" << endl;
+        std::cout << "Error: Hash table overflow" << endl;
     }
 
     User *search(uint64_t userId)
@@ -109,13 +109,13 @@ public:
         }
         if (table[index] != nullptr && table[index]->userName == key && i <= MAX_ATTEMPTS)
         {
-            cout << "Indice en tabla hash: " << index << endl;
+            std::cout << "Indice en tabla hash: " << index << endl;
             printUser(table[index]);
-            cout << endl;
+            std::cout << endl;
 
             return table[index];
         }
-        cout << "No se encontro el usuario" << endl;
+        std::cout << "No se encontro el usuario" << endl;
         return nullptr; // No se encontró el usuario
     }
 
@@ -160,9 +160,9 @@ public:
         {
             if (user.userName == key)
             {
-                cout << "INDICE: " << index << endl;
+                std::cout << "INDICE: " << index << endl;
                 printUser(&user);
-                cout << endl;
+                std::cout << endl;
                 return &user;
             }
         }
@@ -192,7 +192,6 @@ private:
         return linear_probing_usename(key, size, 0);
     }
 };
-
 //---------------FUNCIONES TEST--------------------//
 
 // Tablaa hash con separate chaining (encadenamiento)
@@ -204,9 +203,9 @@ public:
 
     HashTableChaining(int size) : size(size), table(size) {}
 
-    void insert(User *user)
+    void insert(uint64_t userId, User *user)
     {
-        int index = user->userId % size;
+        int index = userId % size;
         table[index].push_back(user);
     }
 

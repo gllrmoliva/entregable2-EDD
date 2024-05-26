@@ -11,6 +11,10 @@
 #include "functions.h"
 #include "time_tests.h"
 
+#include "hash_functions.h"
+#include "hash_tables.h"
+#include "functions.h"
+
 using namespace std;
 
 void test_windows()
@@ -19,7 +23,7 @@ void test_windows()
 
   if (users.empty())
   {
-    cout << "No se leyeron usuarios del archivo CSV." << endl;
+    std::cout << "No se leyeron usuarios del archivo CSV." << endl;
   }
 
   HashTable ht_linear(30103, linear_probing);
@@ -30,21 +34,24 @@ void test_windows()
 
   for (const auto &user : users)
   {
-    ht_linear.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-    ht_quadratic.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-    ht_double.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-    ht_chaining.insert(new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_linear.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_quadratic.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_double.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_chaining.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
     ht_unordered_map[user.userId] = new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt);
   }
 
-  uint64_t userIdToSearch;
+  std::string userIdInput;
   cout << "Ingrese un userId para buscar: ";
-  cin >> userIdToSearch;
+  cin >> userIdInput;
+
+  uint64_t userIdToSearch = scientificToNormal(userIdInput);
+
+  cout << "Buscando usuario con userId: " << userIdToSearch << endl;
 
   auto foundUserLinear = ht_linear.search(userIdToSearch);
   cout << "Busqueda con Linear Probing:" << endl;
   printUser(foundUserLinear);
-
   auto foundUserQuadratic = ht_quadratic.search(userIdToSearch);
   cout << "Busqueda con Quadratic Probing:" << endl;
   printUser(foundUserQuadratic);
@@ -64,37 +71,12 @@ void test_windows()
 
 void test_linux()
 {
-  // unordered_map<string, User> unordered_hashmap;
-
-  vector<User> users = readCSV("universities_followers.csv");
-
-  const int N = 42157;
-  // OpenHashTableUserName ht_test(N);
-
-  // auto start = chrono::high_resolution_clock::now();
-
-  // for (auto &user : users)
-  // {
-  //   unordered_hashmap[user.userName] = user;
-  // }
-
-  // for (auto it = unordered_hashmap.begin(); it != unordered_hashmap.end(); /* no incrementamos aquí */)
-  // {
-
-  //   cout << "Eliminando usuario: " << it->second.userName << endl;
-  //   it = unordered_hashmap.erase(it); // erase devuelve el siguiente iterador válido
-  // }
-  // auto end = chrono::high_resolution_clock::now();
-  // chrono::duration<double> duration = end - start;
-  // cout << "Tiempo: " << duration.count() << " segundos" << endl;
-
-  CloseHashTableUserName hola(N, linear_probing_usename);
-
-  return;
 }
 
 int main(int argc, char const *argv[])
 {
-  test_linux();
+  vector<User> users = readCSV("universities_followers.csv");
+  const int N = 42157;
+
   return 0;
 }
