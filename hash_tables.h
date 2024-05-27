@@ -14,6 +14,15 @@ using namespace std;
 // Máximo de intentos de una operación en una hash table.
 const int MAX_ATTEMPTS = 50000;
 
+class UserNameHashTable
+{
+public:
+    virtual void insert(const string &key, User &user_data);
+    virtual void remove(const string &key);
+    virtual User *search(const string &key);
+    virtual ~UserNameHashTable() = default;
+};
+
 class HashTable
 {
 public:
@@ -69,29 +78,23 @@ class CloseHashTableUserName
 {
 public:
     int size;
-    User **table; // Notemos que esto es una tabla con punteros de struct User
+    vector<User> table; // Notemos que esto es una tabla con punteros de struct User
     int (*hashing_method)(const string &, int, int);
 
     CloseHashTableUserName(int size, int (*hashing_method)(const string &, int, int))
-        : size(size), hashing_method(hashing_method)
+        : size(size), hashing_method(hashing_method), table(size)
     {
-        table = new User *[size];
-        for (int i = 0; i < size; i++)
-        {
-            table[i] = nullptr;
-        }
     }
 
     ~CloseHashTableUserName()
     {
-        delete[] table;
     }
 
-    void insert(const string &key, User *user_data)
+    void insert(const string &key, User &user_data)
     {
         int i = 0;
         unsigned int index = hashing_method(key, size, i);
-        while (table[index] != nullptr && (table[index]->userName != "DELETED_VAR") && i <= MAX_ATTEMPTS)
+        while (table[index].userId != 0 && (table[index].userName != "DELETED_VAR") && i <= MAX_ATTEMPTS)
         {
             i++;
             index = hashing_method(key, size, i);
@@ -104,36 +107,36 @@ public:
     {
         int i = 0;
         unsigned int index = hashing_method(key, size, i);
-        while (table[index] != nullptr && table[index]->userName != key && i <= MAX_ATTEMPTS)
+        while (table[index].userId != 0 && table[index].userName != key && i <= MAX_ATTEMPTS)
         {
             i++;
             index = hashing_method(key, size, i);
         }
-        if (table[index] != nullptr && table[index]->userName == key && i <= MAX_ATTEMPTS)
+        if (table[index].userId != 0 && table[index].userName == key && i <= MAX_ATTEMPTS)
         {
             std::cout << "Indice en tabla hash: " << index << endl;
-            printUser(table[index]);
+            printUser(&table[index]);
             std::cout << endl;
 
-            return table[index];
+            return &table[index];
         }
         std::cout << "No se encontro el usuario" << endl;
         return nullptr; // No se encontró el usuario
     }
 
-    void remove(string &key)
+    void remove(const string &key)
     {
         int i = 0;
         unsigned int index = hashing_method(key, size, i);
-        while (table[index] != nullptr && table[index]->userName != key && i <= MAX_ATTEMPTS)
+        while (table[index].userId != 0 && table[index].userName != key && i <= MAX_ATTEMPTS)
         {
             i++;
             index = hashing_method(key, size, i);
         }
-        if (table[index] != nullptr && table[index]->userName == key)
+        if (table[index].userId != 0 && table[index].userName == key)
         {
             // Se usa un usuario con el nombre DELETED_VAR
-            User *DELETED_VAR = new User("", 0, "DELETED_VAR", 0, 0, 0, "");
+            User DELETED_VAR = User("", 0, "DELETED_VAR", 0, 0, 0, "");
             table[index] = DELETED_VAR;
         }
     }
@@ -143,7 +146,7 @@ public:
         int n = 0;
         for (int i = 0; i < size; i++)
         {
-            if (table[i] != nullptr && table[i]->userName != "DELETED_VAR")
+            if (table[i].userId != 0 && table[i].userName != "DELETED_VAR")
             {
                 n += 1;
             }
@@ -163,7 +166,7 @@ public:
     {
     }
 
-    void insert(const string &key, const User &user_data)
+    void insert(const string &key, User &user_data)
     {
         unsigned int index = hashing_method(key);
         table[index].push_back(user_data);
@@ -205,7 +208,7 @@ public:
 private:
     unsigned int hashing_method(const string &key)
     {
-        return linear_probing_usename(key, size, 0);
+        return linear_probing(key, size, 0);
     }
 };
 //---------------FUNCIONES TEST--------------------//

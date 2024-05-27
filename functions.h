@@ -51,7 +51,7 @@ struct User
     @param followers: número de seguidores.
     @param created: fecha de creación de la cuenta.
     */
-    User(string uni, uint64_t id, string name, int tweets, int friends, int followers, string created)
+    User(const string &uni, uint64_t id, const string &name, int tweets, int friends, int followers, const string &created)
         : university(uni), userId(id), userName(name), numberTweets(tweets), friendsCount(friends), followersCount(followers), createdAt(created) {}
 };
 

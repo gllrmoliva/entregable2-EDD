@@ -8,7 +8,7 @@
 #include "functions.h"
 #include <numeric>
 
-void test_insert_Username_Open(vector<User> &users, OpenHashTableUserName &HashTable, int N)
+void test_insert_by_username(vector<User> &users, CloseHashTableUserName &HashTable, int N)
 {
     auto start = std::chrono::high_resolution_clock::now();
     for (User user : users)
@@ -22,12 +22,12 @@ void test_insert_Username_Open(vector<User> &users, OpenHashTableUserName &HashT
     std::cout << "Tiempo de ejecución: " << duration.count() << " segundos." << std::endl;
 }
 
-void test_insert_Username_Close(vector<User> &users, CloseHashTableUserName &HashTable, int N)
+void test_insert_by_username(vector<User> &users, OpenHashTableUserName &HashTable, int N)
 {
     auto start = std::chrono::high_resolution_clock::now();
     for (User user : users)
     {
-        HashTable.insert(user.userName, &user);
+        HashTable.insert(user.userName, user);
     }
     auto end = std::chrono::high_resolution_clock::now();
 

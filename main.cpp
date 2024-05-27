@@ -72,19 +72,21 @@ void test_windows()
 void test_linux()
 {
   vector<User> users = readCSV("universities_followers.csv");
-  const int N = 42157;
+  const int table_size = 42157;
 
-  CloseHashTableUserName hola(N, linear_probing_usename);
-  // insertar
-  for (User user : users)
-  {
-    hola.insert(user.userName, &user);
-  }
-  // buscar
-  for (User user : users)
-  {
-    hola.search(user.userName);
-  }
+  CloseHashTableUserName linear_table(table_size, linear_probing);
+  CloseHashTableUserName double_table(table_size, double_hashing);
+  CloseHashTableUserName quadratic_table(table_size, quadratic_probing);
+  OpenHashTableUserName open_table(table_size);
+
+  cout << "LINEAR" << endl;
+  test_insert_by_username(users, linear_table, table_size);
+  cout << "DOUBLE" << endl;
+  test_insert_by_username(users, double_table, table_size);
+  cout << "QUADRATIC" << endl;
+  test_insert_by_username(users, quadratic_table, table_size);
+  cout << "OPEN" << endl;
+  test_insert_by_username(users, open_table, table_size);
 }
 
 int main(int argc, char const *argv[])

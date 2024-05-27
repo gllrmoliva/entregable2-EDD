@@ -17,7 +17,7 @@ int h1(uint64_t k, int n) { return k % n; }
  */
 int h2(uint64_t k, int n)
 {
-    return k * 53 + k * k * 13 + 18;
+    return (k * 2) % n;
 }
 
 /* Aplica la función de hasheo de strings vista en clase (polynomial rolling hash function)
@@ -77,14 +77,14 @@ int double_hashing(uint64_t k, int n, int i)
 }
 
 // TODO: quizas cambiar las funciones _username por un overloading de las funciones anteriores
-int linear_probing_usename(const string &userName, int n, int i)
+int linear_probing(const string &userName, int n, int i)
 {
     int k = hash_string(userName);
 
     // Utilizando el método de la division
     return (h1(k, n) + i) % n;
 }
-int quadratic_probing_username(const string &userName, int n, int i)
+int quadratic_probing(const string &userName, int n, int i)
 {
     int k = hash_string(userName);
 
@@ -92,7 +92,7 @@ int quadratic_probing_username(const string &userName, int n, int i)
     return (h1(k, n) + i + 2 * i * i) % n;
 }
 
-int double_hashing_username(const string &userName, int n, int i)
+int double_hashing(const string &userName, int n, int i)
 {
     int k = hash_string(userName);
     // Utilizando como primer método el método de la division y luego el
