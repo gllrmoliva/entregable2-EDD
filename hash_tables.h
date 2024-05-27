@@ -13,6 +13,7 @@ using namespace std;
 
 // Máximo de intentos de una operación en una hash table.
 const int MAX_ATTEMPTS = 50000;
+User DELETED_VAR = User("", 0, "DELETED_VAR", 0, 0, 0, "");
 
 class UserNameHashTable
 {
@@ -78,80 +79,89 @@ class CloseHashTableUserName
 {
 public:
     int size;
-    vector<User> table; // Notemos que esto es una tabla con punteros de struct User
-    int (*hashing_method)(const string &, int, int);
+    vector<User *> table;
+    unsigned int (*hashing_method)(const string &, int, int);
 
-    CloseHashTableUserName(int size, int (*hashing_method)(const string &, int, int))
-        : size(size), hashing_method(hashing_method), table(size)
+    CloseHashTableUserName(int size, unsigned int (*hashing_method)(const string &, int, int))
+        : size(size), hashing_method(hashing_method), table(size, nullptr)
     {
     }
 
     ~CloseHashTableUserName()
     {
+        for (auto &user : table)
+        {
+            if (user && user->userName != "DELETED_VAR")
+            {
+                delete user;
+            }
+        }
     }
 
-    void insert(const string &key, User &user_data)
+    void insert(const string &key, User *user_data)
     {
         int i = 0;
         unsigned int index = hashing_method(key, size, i);
-        while (table[index].userId != 0 && (table[index].userName != "DELETED_VAR") && i <= MAX_ATTEMPTS)
+        while (i < MAX_ATTEMPTS)
         {
+            if (!table[index] || table[index]->userName == "DELETED_VAR")
+            {
+                table[index] = new User(*user_data);
+                return;
+            }
             i++;
             index = hashing_method(key, size, i);
         }
-        if (i <= MAX_ATTEMPTS)
-            table[index] = user_data;
+        cout << "Tabla hash está llena o se alcanzó el máximo de intentos." << endl;
     }
 
     User *search(const string &key)
     {
         int i = 0;
         unsigned int index = hashing_method(key, size, i);
-        while (table[index].userId != 0 && table[index].userName != key && i <= MAX_ATTEMPTS)
+        while (i < MAX_ATTEMPTS && table[index])
         {
+            if (table[index]->userName == key)
+            {
+                cout << "Indice en tabla hash: " << index << endl;
+                printUser(table[index]);
+                cout << endl;
+                return table[index];
+            }
             i++;
             index = hashing_method(key, size, i);
         }
-        if (table[index].userId != 0 && table[index].userName == key && i <= MAX_ATTEMPTS)
-        {
-            std::cout << "Indice en tabla hash: " << index << endl;
-            printUser(&table[index]);
-            std::cout << endl;
-
-            return &table[index];
-        }
-        std::cout << "No se encontro el usuario" << endl;
-        return nullptr; // No se encontró el usuario
+        cout << "No se encontró el usuario" << endl;
+        return nullptr;
     }
 
     void remove(const string &key)
     {
         int i = 0;
         unsigned int index = hashing_method(key, size, i);
-        while (table[index].userId != 0 && table[index].userName != key && i <= MAX_ATTEMPTS)
+        while (i < MAX_ATTEMPTS && table[index])
         {
+            if (table[index]->userName == key)
+            {
+                delete table[index]; // Liberar la memoria
+                table[index] = new User(DELETED_VAR);
+                return;
+            }
             i++;
             index = hashing_method(key, size, i);
         }
-        if (table[index].userId != 0 && table[index].userName == key)
-        {
-            // Se usa un usuario con el nombre DELETED_VAR
-            User DELETED_VAR = User("", 0, "DELETED_VAR", 0, 0, 0, "");
-            table[index] = DELETED_VAR;
-        }
     }
 
-    void tellmethesize()
+    void tellmethesize() const
     {
         int n = 0;
-        for (int i = 0; i < size; i++)
+        for (const auto &entry : table)
         {
-            if (table[i].userId != 0 && table[i].userName != "DELETED_VAR")
+            if (entry && entry->userName != "DELETED_VAR")
             {
-                n += 1;
+                n++;
             }
         }
-
         cout << "La cantidad de elementos es: " << n << endl;
     }
 };
@@ -203,6 +213,16 @@ public:
                 return;
             }
         }
+    }
+
+    void tellmethesize()
+    {
+        int size = 0;
+        for (auto bucket : table)
+        {
+            size += bucket.size();
+        }
+        cout << "El tamaño es de " << size << endl;
     }
 
 private:

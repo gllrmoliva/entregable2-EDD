@@ -7,37 +7,36 @@ using namespace std;
 
 /* Función de hasheo número 1
 @param k: clave a la cual aplicaremos la función hash
-@param n: tamaño de la tabla hash
 */
-int h1(uint64_t k, int n) { return k % n; }
+unsigned int h1(uint64_t k) { return (unsigned int)(k); }
 
 /* Función de hasheo número 2
  @param k: clave a la cual aplicaremos la función hash
  @param n: tamaño de la tabla hash
  */
-int h2(uint64_t k, int n)
+unsigned int h2(uint64_t k)
 {
-    return (k * 2) % n;
+    return (unsigned int)((k * 2));
 }
 
 /* Aplica la función de hasheo de strings vista en clase (polynomial rolling hash function)
 @param str:  palabra a la que se le aplicara la función
 */
-int hash_string(const string &str)
+unsigned int hash_string(const string &str)
 {
-    // TODO: revisar esta función (quizas añadir modulo)
 
     // en esta es la funcion vista en clases, en este caso se utilizo el numero
     //  31 porque es primo y lo recomendaban en diversas fuentes
-    int p = 31;
-    int hash_value = 0;
-    int p_pow = 1;
+    unsigned p = 31;
+    unsigned int hash_value = 0;
+    unsigned int p_pow = 1;
     for (char c : str)
     {
         hash_value += (c - 'a' + 1) * p_pow;
         p_pow *= p;
     }
-    return abs(hash_value);
+    return str[0] + str[1] * p + str[2] * p * p; // ejemplo de funcion de hasheo mala, se nota la diferencia de tiempo
+    return hash_value;
 }
 
 //--- Métodos de Open addressing o hashing cerrado ---
@@ -50,7 +49,7 @@ int hash_string(const string &str)
 int linear_probing(uint64_t k, int n, int i)
 {
     // Utilizando el método de la division
-    return (h1(k, n) + i) % n;
+    return (h1(k) + i) % n;
 }
 
 /* Quadratic probing
@@ -61,7 +60,7 @@ int linear_probing(uint64_t k, int n, int i)
 int quadratic_probing(uint64_t k, int n, int i)
 {
     // Utilizando el método de la division
-    return (h1(k, n) + i + 2 * i * i) % n;
+    return (h1(k) + i + 2 * i * i) % n;
 }
 
 /* Double hashing
@@ -73,31 +72,31 @@ int double_hashing(uint64_t k, int n, int i)
 {
     // Utilizando como primer método el método de la division y luego el
     // método de la multiplicacion
-    return (h1(k, n) + i * (h2(k, n) + 1)) % n;
+    return (h1(k) + i * (h2(k) + 1)) % n;
 }
 
 // TODO: quizas cambiar las funciones _username por un overloading de las funciones anteriores
-int linear_probing(const string &userName, int n, int i)
+unsigned int linear_probing(const string &userName, int n, int i)
 {
-    int k = hash_string(userName);
+    unsigned k = hash_string(userName);
 
     // Utilizando el método de la division
-    return (h1(k, n) + i) % n;
+    return (h1(k) + i) % n;
 }
-int quadratic_probing(const string &userName, int n, int i)
+unsigned int quadratic_probing(const string &userName, int n, int i)
 {
-    int k = hash_string(userName);
+    unsigned k = hash_string(userName);
 
     // Utilizando el método de la division
-    return (h1(k, n) + i + 2 * i * i) % n;
+    return (h1(k) + i + 2 * i * i) % n;
 }
 
-int double_hashing(const string &userName, int n, int i)
+unsigned int double_hashing(const string &userName, int n, int i)
 {
-    int k = hash_string(userName);
+    unsigned k = hash_string(userName);
     // Utilizando como primer método el método de la division y luego el
     // método de la multiplicacion
-    return abs((h1(k, n) + i * (h2(k, n) + 1)) % n);
+    return (h1(k) + i * (h2(k) + 1)) % n;
 }
 
 #endif
