@@ -11,6 +11,16 @@
 
 using namespace std;
 
+/**
+ * @brief Convierte un número en notación científica a decimal.
+ *
+ * Esta función toma una cadena que representa un número en notación científica,
+ * y la convierte a un número en punto flotante y lo convierte a un entero
+ * sin signo de 64 bits.
+ *
+ * @param scientific La cadena que contiene el número en notación científica.
+ * @return El número convertido en decimal
+ */
 uint64_t scientificToNormal(const std::string &scientific)
 {
     std::istringstream iss(scientific);
@@ -20,6 +30,7 @@ uint64_t scientificToNormal(const std::string &scientific)
     uint64_t normal = static_cast<uint64_t>(number);
     return normal;
 }
+
 /*
 Struct que guarda los datos de un usuario.
 */
@@ -105,10 +116,15 @@ vector<User> readCSV(const std::string &filename)
 
     return users;
 }
-
-/*Imprime en la consola los datos de un User
-@param foundUser: User del cual se mostraran los datos
-*/
+/**
+ * @brief Imprime los datos del usuario si lo encuentra, en caso contrario, imprime que no lo encontro.
+ *
+ * Esta función toma un puntero a un objeto User y, si el puntero no es nulo,
+ * imprime los datos del usuario. Si el puntero es nulo imprime un mensaje
+ * indicando que el usuario no fue encontrado.
+ *
+ * @param foundUser El puntero al usuario a encontrar
+ */
 void printUser(User *foundUser)
 {
     if (foundUser)

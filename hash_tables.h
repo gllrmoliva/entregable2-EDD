@@ -24,16 +24,29 @@ public:
     virtual ~UserNameHashTable() = default;
 };
 
+/**
+ * @brief Clase que representa una tabla hash para almacenar objetors User.
+*/
 class HashTable
 {
 public:
-    int size;
-    vector<User *> table;
-    int (*hashing_method)(uint64_t, int, int);
+    int size; ///< Tamaño de la tabla hash.
+    vector<User *> table; ///< Vector que almacena punteros a onjetos User.
+    int (*hashing_method)(uint64_t, int, int); ///< Puntero a la función de hash.
 
+    /**
+     * @brief Constructor para inicializar la tabla hash con un tamaño dado y un método de hash.
+     * @param size Tamaño de la tabla hash.
+     * @param hashing_method Puntero a la función de hash que se usará.
+    */
     HashTable(int size, int (*hashing_method)(uint64_t, int, int))
         : size(size), hashing_method(hashing_method), table(size, nullptr) {}
 
+    /**
+     * @brief Inserta un usuario en la tabla hash.
+     * @param userId El ID del usuario a insertar.
+     * @param user Puntero al objeto User que se va a insertar.
+     */
     void insert(uint64_t userId, User *user)
     {
         int i = 0;
@@ -51,6 +64,11 @@ public:
         std::cout << "Error: Hash table overflow" << endl;
     }
 
+    /**
+     * @brief Busca un usuario en la tabla hash por su ID.
+     * @param userId El ID del usuario a buscar.
+     * @return Puntero al objeto User si se encuentra, nullptr en caso contrario.
+     */
     User *search(uint64_t userId)
     {
         int i = 0;
@@ -66,6 +84,10 @@ public:
         } while (i < size);
         return nullptr;
     }
+
+    /**
+     * @brief Destructor para liberar la memoria asignada a los objetos User en la tabla hash.
+     */
     ~HashTable()
     {
         for (auto user : table)
@@ -231,23 +253,41 @@ private:
         return linear_probing(key, size, 0);
     }
 };
-//---------------FUNCIONES TEST--------------------//
 
-// Tablaa hash con separate chaining (encadenamiento)
+/**
+ * @brief Clase que implementa una tabla hash utilizando encadenamiento (separate chaining) para la resolución de colisiones.
+ */
 class HashTableChaining
 {
 public:
-    int size;
-    vector<vector<User *>> table;
+    int size; ///< Tamaño de la tabla hash
+    vector<vector<User *>> table; ///< Vector de vectores que representa la tabla hash con listas de encadenamiento
 
+    /**
+     * @brief Constructor de la clase HashTableChaining.
+     * 
+     * @param size El tamaño de la tabla hash.
+     */
     HashTableChaining(int size) : size(size), table(size) {}
 
+    /**
+     * @brief Inserta un usuario en la tabla hash.
+     * 
+     * @param userId El ID del usuario a insertar.
+     * @param user Un puntero al objeto User que contiene los datos del usuario.
+     */
     void insert(uint64_t userId, User *user)
     {
         int index = userId % size;
         table[index].push_back(user);
     }
 
+    /**
+     * @brief Busca un usuario en la tabla hash por su ID.
+     * 
+     * @param userId El ID del usuario a buscar.
+     * @return Un puntero al objeto User encontrado, o nullptr si no se encontró.
+     */
     User *search(uint64_t userId)
     {
         int index = userId % size;
@@ -259,6 +299,9 @@ public:
         return nullptr;
     }
 
+    /**
+     * @brief Destructor de la clase HashTableChaining. Libera la memoria de todos los usuarios almacenados.
+     */
     ~HashTableChaining()
     {
         for (auto &bucket : table)
