@@ -11,15 +11,15 @@
 
 using namespace std;
 
-/*
-Almacena los datos de un usuario de X, estos datos son:
-- university
-- userId
-- userName
-- numberTweets
-- friendsCount
-- followersCount
-- createdAt
+/**
+ * @brief Convierte un número en notación científica a decimal.
+ * 
+ * Esta función toma una cadena que representa un número en notación científica,
+ * y la convierte a un número en punto flotante y lo convierte a un entero
+ * sin signo de 64 bits.
+ * 
+ * @param scientific La cadena que contiene el número en notación científica.
+ * @return El número convertido en decimal
 */
 uint64_t scientificToNormal(const std::string &scientific)
 {
@@ -31,6 +31,16 @@ uint64_t scientificToNormal(const std::string &scientific)
     return normal;
 }
 
+/*
+Almacena los datos de un usuario de X, estos datos son:
+- university
+- userId
+- userName
+- numberTweets
+- friendsCount
+- followersCount
+- createdAt
+*/
 struct User
 {
     string university;
@@ -88,7 +98,7 @@ vector<User> readCSV(const std::string &filename)
             int followersCount = stoi(tokens[5]);
             string createdAt = tokens[6];
 
-            std::cout << "Usuario leído: " << userName << ", userId: " << userId << endl;
+            std::cout << "Usuario leido: " << userName << ", userId: " << userId << endl;
 
             // emplace_back esta buena, no necesitas crear por fuera el objeto, lo crea solo, pero obviamente
             // le tienes que dar los parametros
@@ -100,7 +110,15 @@ vector<User> readCSV(const std::string &filename)
 
     return users;
 }
-
+/**
+ * @brief Imprime los datos del usuario si lo encuentra, en caso contrario, imprime que no lo encontro.
+ * 
+ * Esta función toma un puntero a un objeto User y, si el puntero no es nulo,
+ * imprime los datos del usuario. Si el puntero es nulo imprime un mensaje
+ * indicando que el usuario no fue encontrado.
+ * 
+ * @param foundUser El puntero al usuario a encontrar
+*/
 void printUser(User *foundUser)
 {
     if (foundUser)
