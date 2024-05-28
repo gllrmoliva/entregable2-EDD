@@ -13,14 +13,14 @@ using namespace std;
 
 /**
  * @brief Convierte un número en notación científica a decimal.
- * 
+ *
  * Esta función toma una cadena que representa un número en notación científica,
  * y la convierte a un número en punto flotante y lo convierte a un entero
  * sin signo de 64 bits.
- * 
+ *
  * @param scientific La cadena que contiene el número en notación científica.
  * @return El número convertido en decimal
-*/
+ */
 uint64_t scientificToNormal(const std::string &scientific)
 {
     std::istringstream iss(scientific);
@@ -32,14 +32,7 @@ uint64_t scientificToNormal(const std::string &scientific)
 }
 
 /*
-Almacena los datos de un usuario de X, estos datos son:
-- university
-- userId
-- userName
-- numberTweets
-- friendsCount
-- followersCount
-- createdAt
+Struct que guarda los datos de un usuario.
 */
 struct User
 {
@@ -51,20 +44,33 @@ struct User
     int followersCount;
     string createdAt;
 
-    // constructor por defecto
+    /*
+    constructor por defecto de User, si se crea un User, utilizado cuando no se especifica el valor
+    de un parametro.
+    */
     User() : university(""), userId(0), userName(""), numberTweets(0), friendsCount(0), followersCount(0), createdAt("")
     {
     }
 
-    // Este es el constructor de User, simplemente asigna las valor a las variables
-    User(string uni, uint64_t id, string name, int tweets, int friends, int followers, string created)
+    /*
+    Contructor de struct User.
+    @param uni: universidad a la que sigue.
+    @param id: identificador del usuario
+    @param name: nombre de usuario.
+    @param tweets: cantidad de tweets.
+    @param friends: cantidad de amigos.
+    @param followers: número de seguidores.
+    @param created: fecha de creación de la cuenta.
+    */
+    User(const string &uni, uint64_t id, const string &name, int tweets, int friends, int followers, const string &created)
         : university(uni), userId(id), userName(name), numberTweets(tweets), friendsCount(friends), followersCount(followers), createdAt(created) {}
 };
 
 /*
 Carga los datos del CSV y los pasa a un vector de la STL
-información para crear el codigo:
-https://www.geeksforgeeks.org/how-to-read-data-from-csv-file-to-a-2d-array-in-cpp/
+@param filename: nombre del archivo con extención.
+@return Vector con todos los usuarios cargados satisfactoriamente
+@note Referencia: https://www.geeksforgeeks.org/how-to-read-data-from-csv-file-to-a-2d-array-in-cpp/
 */
 vector<User> readCSV(const std::string &filename)
 {
@@ -97,8 +103,7 @@ vector<User> readCSV(const std::string &filename)
             int friendsCount = stoi(tokens[4]);
             int followersCount = stoi(tokens[5]);
             string createdAt = tokens[6];
-
-            //std::cout << "Usuario leido: " << userName << ", userId: " << userId << endl;
+            // std::cout << "Usuario leído: " << userName << ", userId: " << userId << endl;
 
             // emplace_back esta buena, no necesitas crear por fuera el objeto, lo crea solo, pero obviamente
             // le tienes que dar los parametros
@@ -112,13 +117,13 @@ vector<User> readCSV(const std::string &filename)
 }
 /**
  * @brief Imprime los datos del usuario si lo encuentra, en caso contrario, imprime que no lo encontro.
- * 
+ *
  * Esta función toma un puntero a un objeto User y, si el puntero no es nulo,
  * imprime los datos del usuario. Si el puntero es nulo imprime un mensaje
  * indicando que el usuario no fue encontrado.
- * 
+ *
  * @param foundUser El puntero al usuario a encontrar
-*/
+ */
 void printUser(User *foundUser)
 {
     if (foundUser)
