@@ -38,7 +38,6 @@ unsigned int hash_string(const string &str)
     return str[0] + str[1] * p + str[2] * p * p; // ejemplo de funcion de hasheo mala, se nota la diferencia de tiempo
     return hash_value;
 }
-
 //--- Métodos de Open addressing o hashing cerrado ---
 
 /* Linear probing
