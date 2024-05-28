@@ -16,9 +16,12 @@ int h1(uint64_t k, int n) { return k % n; }
 // n: tamaño de la tabla hash
 int h2(uint64_t k, int n)
 {
-    return k * 53 + k * k * 13 + 18;
+    // Un hash secundario para doble hashing debería devolver un valor que nunca sea cero y ser independiente de la función de hash primaria.
+    int hash = (k * 53 + k * k * 13 + 18) % n;
+    if (hash == 0)
+        hash = 1; // Para asegurarnos de que nunca sea cero, que es importante para el doble hashing.
+    return hash;
 }
-
 //--- Métodos de Open addressing o hashing cerrado ---
 
 // Linear probing

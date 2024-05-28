@@ -11,10 +11,6 @@
 #include "functions.h"
 #include "time_tests.h"
 
-#include "hash_functions.h"
-#include "hash_tables.h"
-#include "functions.h"
-
 using namespace std;
 
 /**
@@ -42,7 +38,7 @@ void test_windows()
   HashTableChaining ht_chaining(30103);
   unordered_map<uint64_t, User *> ht_unordered_map;
 
-  // Insertar usuarios en cada tabla hash
+// Insertar usuarios en cada tabla hash
   for (const auto &user : users)
   {
     ht_linear.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
@@ -51,6 +47,33 @@ void test_windows()
     ht_chaining.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
     ht_unordered_map[user.userId] = new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt);
   }
+
+  std::cout << "Tamaño del objeto User: " << sizeof(User) << " bytes" << std::endl;
+
+  size_t ht_probing_size = 30103 * sizeof(User*);
+
+  std::cout << "Tamaño de Tabla Hash con probing en KB: " << ht_probing_size / 1024.0 << " KB" << std::endl;
+
+  size_t ht_chaining_base_size = 30103 * sizeof(std::vector<User*>);
+
+  // Suponemos un promedio de 1.5 elementos por bucket
+  double average_elements_per_bucket = 1.5;
+  size_t total_elements = static_cast<size_t>(30103 * average_elements_per_bucket);
+  size_t ht_chaining_total_size = ht_chaining_base_size + total_elements * sizeof(User*);
+
+  double htChainingBaseSizeMB = static_cast<double>(ht_chaining_base_size) / (1024 * 1024);
+  double htChainingTotalSizeMB = static_cast<double>(ht_chaining_total_size) / (1024 * 1024);
+
+  // Imprimir resultados
+  std::cout << "Tamaño base de HashTableChaining: " << htChainingBaseSizeMB << " MB" << std::endl;
+  std::cout << "Tamaño total de HashTableChaining: " << htChainingTotalSizeMB << " MB" << std::endl;
+
+  size_t unordered_map_size = total_elements * (sizeof(uint64_t) + sizeof(User*));
+
+  double unorderedMapSizeKB = static_cast<double>(unordered_map_size) / 1024;
+
+  // Imprimir el resultado
+  std::cout << "Tamaño aproximado de std::unordered_map: " << unorderedMapSizeKB << " KB" << std::endl;
 
   // Pedir al usuario que ingrese un ID de usuario a buscar
   std::string userIdInput;
@@ -82,6 +105,50 @@ void test_windows()
   auto foundUserUnorderedMap = ht_unordered_map.find(userIdToSearch) != ht_unordered_map.end() ? ht_unordered_map[userIdToSearch] : nullptr;
   cout << "Busqueda con unordered_map:" << endl;
   printUser(foundUserUnorderedMap);
+
+  int tableSize = 30103;
+
+  insertarYCalcularTiempo(users, 1000, tableSize, linear_probing, "Linear Probing");
+  insertarYCalcularTiempo(users, 5000, tableSize, linear_probing, "Linear Probing");
+  insertarYCalcularTiempo(users, 10000, tableSize, linear_probing, "Linear Probing");
+  insertarYCalcularTiempo(users, 15000, tableSize, linear_probing, "Linear Probing");
+  insertarYCalcularTiempo(users, 20000, tableSize, linear_probing, "Linear Probing");
+
+  insertarYCalcularTiempo(users, 1000, tableSize, quadratic_probing, "Quadratic Probing");
+  insertarYCalcularTiempo(users, 5000, tableSize, quadratic_probing, "Quadratic Probing");
+  insertarYCalcularTiempo(users, 10000, tableSize, quadratic_probing, "Quadratic Probing");
+  insertarYCalcularTiempo(users, 15000, tableSize, quadratic_probing, "Quadratic Probing");
+  insertarYCalcularTiempo(users, 20000, tableSize, quadratic_probing, "Quadratic Probing");
+
+  insertarYCalcularTiempo(users, 1000, tableSize, double_hashing, "Double Hashing");
+  insertarYCalcularTiempo(users, 5000, tableSize, double_hashing, "Double Hashing");
+  insertarYCalcularTiempo(users, 10000, tableSize, double_hashing, "Double Hashing");
+  insertarYCalcularTiempo(users, 15000, tableSize, double_hashing, "Double Hashing");
+  insertarYCalcularTiempo(users, 20000, tableSize, double_hashing, "Double Hashing");
+
+  insertarYCalcularTiempo2(users, 1000, tableSize, "Chaining");
+  insertarYCalcularTiempo2(users, 5000, tableSize, "Chaining");
+  insertarYCalcularTiempo2(users, 10000, tableSize, "Chaining");
+  insertarYCalcularTiempo2(users, 15000, tableSize, "Chaining");
+  insertarYCalcularTiempo2(users, 20000, tableSize, "Chaining");
+
+  insertarYCalcularTiempo3(users, 1000, ht_unordered_map, "Unordered_map");
+  insertarYCalcularTiempo3(users, 5000, ht_unordered_map, "Unordered_map");
+  insertarYCalcularTiempo3(users, 10000, ht_unordered_map, "Unordered_map");
+  insertarYCalcularTiempo3(users, 15000, ht_unordered_map, "Unordered_map");
+  insertarYCalcularTiempo3(users, 20000, ht_unordered_map, "Unordered_map");
+
+  // Crear estructuras de datos para almacenar usuarios
+  std::unordered_map<uint64_t, User> hashMap;
+
+  // Insertar usuarios en las estructuras de datos
+  insertUsers(users, hashMap);
+
+  // Medir el tiempo promedio de búsqueda para usuarios almacenados
+  tiempoPromedioUserGuardado(users, hashMap);
+
+  // Medir el tiempo de búsqueda para usuarios no almacenados
+  tiempoPromedioUserNoGuardado(users, hashMap);
 }
 
 void test_linux()
@@ -104,6 +171,6 @@ void test_linux()
 
 int main(int argc, char const *argv[])
 {
-  test_linux();
+  test_windows();
   return 0;
 }

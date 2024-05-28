@@ -98,7 +98,7 @@ vector<User> readCSV(const std::string &filename)
             int followersCount = stoi(tokens[5]);
             string createdAt = tokens[6];
 
-            std::cout << "Usuario leido: " << userName << ", userId: " << userId << endl;
+            //std::cout << "Usuario leido: " << userName << ", userId: " << userId << endl;
 
             // emplace_back esta buena, no necesitas crear por fuera el objeto, lo crea solo, pero obviamente
             // le tienes que dar los parametros
@@ -134,6 +134,12 @@ void printUser(User *foundUser)
     else
     {
         std::cout << "Usuario no encontrado" << endl;
+    }
+}
+
+void insertUsers(std::vector<User>& users, std::unordered_map<uint64_t, User>& hashMap) {
+    for (const auto& user : users) {
+        hashMap[user.userId] = user;
     }
 }
 
