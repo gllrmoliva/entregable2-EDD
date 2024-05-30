@@ -106,6 +106,26 @@ void test_windows()
   cout << "Busqueda con unordered_map:" << endl;
   printUser(foundUserUnorderedMap);
 
+  // Crear estructuras de datos para almacenar usuarios
+  std::unordered_map<uint64_t, User> hashMap;
+
+  // Insertar usuarios en las estructuras de datos
+  insertUsers(users, hashMap);
+
+  // Medir el tiempo promedio de búsqueda para usuarios almacenados
+  tiempoPromedioUserGuardado2(users, &ht_linear, "Linear Probing");
+  tiempoPromedioUserGuardado2(users, &ht_quadratic, "Quadratic Probing");
+  tiempoPromedioUserGuardado2(users, &ht_double, "Double Hashing");
+  tiempoPromedioUserGuardado3(users, "Chaining");
+  tiempoPromedioUserGuardado(users, hashMap);
+
+  // Medir el tiempo de búsqueda para usuarios no almacenados
+  tiempoPromedioUserNoGuardado2(users, &ht_linear, "Linear Probing");
+  tiempoPromedioUserNoGuardado2(users, &ht_quadratic, "Quadratic Probing");
+  tiempoPromedioUserNoGuardado2(users, &ht_double, "Double Hashing");
+  tiempoPromedioUserNoGuardado3(users, "Chaining");
+  tiempoPromedioUserNoGuardado(users, hashMap);
+  
   int tableSize = 30103;
 
   insertarYCalcularTiempo(users, 1000, tableSize, linear_probing, "Linear Probing");
@@ -137,18 +157,6 @@ void test_windows()
   insertarYCalcularTiempo3(users, 10000, ht_unordered_map, "Unordered_map");
   insertarYCalcularTiempo3(users, 15000, ht_unordered_map, "Unordered_map");
   insertarYCalcularTiempo3(users, 20000, ht_unordered_map, "Unordered_map");
-
-  // Crear estructuras de datos para almacenar usuarios
-  std::unordered_map<uint64_t, User> hashMap;
-
-  // Insertar usuarios en las estructuras de datos
-  insertUsers(users, hashMap);
-
-  // Medir el tiempo promedio de búsqueda para usuarios almacenados
-  tiempoPromedioUserGuardado(users, hashMap);
-
-  // Medir el tiempo de búsqueda para usuarios no almacenados
-  tiempoPromedioUserNoGuardado(users, hashMap);
 }
 
 void test_linux()

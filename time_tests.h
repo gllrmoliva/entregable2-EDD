@@ -78,23 +78,24 @@ void tiempoPromedioUserGuardado(const std::vector<User>& users, const std::unord
     for (const auto& user : users) {
         auto it = hashMap.find(user.userId);
         if (it != hashMap.end()) {
-            // El usuario está almacenado
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
-    std::cout << "Tiempo promedio de busqueda para usuarios almacenados: " << duration.count() / users.size() << " segundos" << std::endl;
+    std::cout << "Tiempo total de busqueda para usuarios almacenados en Unordered: " << duration.count() << " segundos" << std::endl;
+    std::cout << "Tiempo promedio de busqueda para usuarios almacenados en Unordered: " << duration.count() / users.size() << " segundos" << std::endl;
 }
 
 // Función para realizar búsquedas de usuarios no almacenados
 void tiempoPromedioUserNoGuardado(const std::vector<User>& users, const std::unordered_map<uint64_t, User>& hashMap) {
     auto start = std::chrono::high_resolution_clock::now();
     for (const auto& user : users) {
-        auto it = hashMap.find(user.userId + 1); // Usuario no almacenado
+        hashMap.find(user.userId + 1); // Usuario no almacenado
     }
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
-    std::cout << "Tiempo promedio de busqueda para usuarios no almacenados: " << duration.count() / users.size() << " segundos" << std::endl;
+    std::cout << "Tiempo total de busqueda para usuarios no almacenados en Unordered: " << duration.count() << " segundos" << std::endl;
+    std::cout << "Tiempo promedio de busqueda para usuarios no almacenados en Unordered: " << duration.count() / users.size() << " segundos" << std::endl;
 }
 
 // TODO: claramente tiene más sentido hacer un polimorfismo para que la función sea global para
@@ -202,5 +203,51 @@ chrono::duration<double> test_insert_by_username(vector<User> &users, unordered_
 
     std::cout << "Tiempo promedio: " << average.count() << " segundos." << std::endl;
     return average;
+}
+
+void tiempoPromedioUserGuardado2(const vector<User>& users, HashTable* ht, const string& hashTableType) {
+    auto start = std::chrono::high_resolution_clock::now();
+    for (const auto& user : users) {
+        ht->search(user.userId);
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+    std::cout << "Tiempo total de busqueda para usuarios almacenados en " << hashTableType << ": " << duration.count() << " segundos" << std::endl;
+    std::cout << "Tiempo promedio de busqueda para usuarios almacenados en " << hashTableType << ": " << duration.count() / users.size() << " segundos" << std::endl;
+}
+
+void tiempoPromedioUserGuardado3(const vector<User>& users, const string& hashTableType) {
+    HashTableChaining ht_chaining(30103);
+    auto start = std::chrono::high_resolution_clock::now();
+    for (const auto& user : users) {
+        ht_chaining.search(user.userId);
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+    std::cout << "Tiempo total de busqueda para usuarios almacenados en " << hashTableType << ": " << duration.count() << " segundos" << std::endl;
+    std::cout << "Tiempo promedio de busqueda para usuarios almacenados en " << hashTableType << ": " << duration.count() / users.size() << " segundos" << std::endl;
+}
+
+void tiempoPromedioUserNoGuardado2(const std::vector<User>& users, HashTable* ht, const std::string& hashTableType) {
+    auto start = std::chrono::high_resolution_clock::now();
+    for (const auto& user : users) {
+        ht->search(user.userId + 1); // Usuario no almacenado
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+    std::cout << "Tiempo total de busqueda para usuarios no almacenados en " << hashTableType << ": " << duration.count() << " segundos" << std::endl;
+    std::cout << "Tiempo promedio de busqueda para usuarios no almacenados en " << hashTableType << ": " << duration.count() / users.size() << " segundos" << std::endl;
+}
+
+void tiempoPromedioUserNoGuardado3(const std::vector<User>& users, const string& hashTableType) {
+    HashTableChaining ht_chaining(30103);
+    auto start = std::chrono::high_resolution_clock::now();
+    for (const auto& user : users) {
+        ht_chaining.search(user.userId + 1); // Usuario no almacenado
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+    std::cout << "Tiempo total de busqueda para usuarios no almacenados en " << hashTableType << ": " << duration.count() << " segundos" << std::endl;
+    std::cout << "Tiempo promedio de busqueda para usuarios no almacenados en " << hashTableType << ": " << duration.count() / users.size() << " segundos" << std::endl;
 }
 #endif
