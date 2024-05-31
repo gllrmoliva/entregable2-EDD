@@ -15,7 +15,7 @@ using namespace std;
 
 /**
  * @brief Prueba varias implementaciones de tablas hash para buscar usuarios a partir de un archivo CSV.
- * 
+ *
  * Esta función lee los datos de usuarios desde un archivo CSV y los inserta en varias tablas hash
  * utilizando diferentes métodos de resolución de colisiones (Linear Probing, Quadratic Probing, Double Hashing y Encadenamiento).
  * Luego, permite al usuario buscar un usuario por su ID, ingresado en notación científica o decimal, y muestra los resultados de la búsqueda.
@@ -32,13 +32,13 @@ void test_windows()
   }
 
   // Crear tablas hash con diferentes métodos de resolución de colisiones
-  HashTable ht_linear(30103, linear_probing);
-  HashTable ht_quadratic(30103, quadratic_probing);
-  HashTable ht_double(30103, double_hashing);
-  HashTableChaining ht_chaining(30103);
+  CloseHashTableUserId ht_linear(30103, linear_probing);
+  CloseHashTableUserId ht_quadratic(30103, quadratic_probing);
+  CloseHashTableUserId ht_double(30103, double_hashing);
+  OpenHashTableUserId ht_chaining(30103);
   unordered_map<uint64_t, User *> ht_unordered_map;
 
-// Insertar usuarios en cada tabla hash
+  // Insertar usuarios en cada tabla hash
   for (const auto &user : users)
   {
     ht_linear.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
@@ -50,16 +50,16 @@ void test_windows()
 
   std::cout << "Tamaño del objeto User: " << sizeof(User) << " bytes" << std::endl;
 
-  size_t ht_probing_size = 30103 * sizeof(User*);
+  size_t ht_probing_size = 30103 * sizeof(User *);
 
   std::cout << "Tamaño de Tabla Hash con probing en KB: " << ht_probing_size / 1024.0 << " KB" << std::endl;
 
-  size_t ht_chaining_base_size = 30103 * sizeof(std::vector<User*>);
+  size_t ht_chaining_base_size = 30103 * sizeof(std::vector<User *>);
 
   // Suponemos un promedio de 1.5 elementos por bucket
   double average_elements_per_bucket = 1.5;
   size_t total_elements = static_cast<size_t>(30103 * average_elements_per_bucket);
-  size_t ht_chaining_total_size = ht_chaining_base_size + total_elements * sizeof(User*);
+  size_t ht_chaining_total_size = ht_chaining_base_size + total_elements * sizeof(User *);
 
   double htChainingBaseSizeMB = static_cast<double>(ht_chaining_base_size) / (1024 * 1024);
   double htChainingTotalSizeMB = static_cast<double>(ht_chaining_total_size) / (1024 * 1024);
@@ -68,7 +68,7 @@ void test_windows()
   std::cout << "Tamaño base de HashTableChaining: " << htChainingBaseSizeMB << " MB" << std::endl;
   std::cout << "Tamaño total de HashTableChaining: " << htChainingTotalSizeMB << " MB" << std::endl;
 
-  size_t unordered_map_size = total_elements * (sizeof(uint64_t) + sizeof(User*));
+  size_t unordered_map_size = total_elements * (sizeof(uint64_t) + sizeof(User *));
 
   double unorderedMapSizeKB = static_cast<double>(unordered_map_size) / 1024;
 
@@ -125,69 +125,26 @@ void test_windows()
   tiempoPromedioUserNoGuardado2(users, &ht_double, "Double Hashing");
   tiempoPromedioUserNoGuardado3(users, "Chaining");
   tiempoPromedioUserNoGuardado(users, hashMap);
-  
+
   int tableSize = 30103;
-
-  insertarYCalcularTiempo(users, 1000, tableSize, linear_probing, "Linear Probing");
-  insertarYCalcularTiempo(users, 5000, tableSize, linear_probing, "Linear Probing");
-  insertarYCalcularTiempo(users, 10000, tableSize, linear_probing, "Linear Probing");
-  insertarYCalcularTiempo(users, 15000, tableSize, linear_probing, "Linear Probing");
-  insertarYCalcularTiempo(users, 20000, tableSize, linear_probing, "Linear Probing");
-
-  insertarYCalcularTiempo(users, 1000, tableSize, quadratic_probing, "Quadratic Probing");
-  insertarYCalcularTiempo(users, 5000, tableSize, quadratic_probing, "Quadratic Probing");
-  insertarYCalcularTiempo(users, 10000, tableSize, quadratic_probing, "Quadratic Probing");
-  insertarYCalcularTiempo(users, 15000, tableSize, quadratic_probing, "Quadratic Probing");
-  insertarYCalcularTiempo(users, 20000, tableSize, quadratic_probing, "Quadratic Probing");
-
-  insertarYCalcularTiempo(users, 1000, tableSize, double_hashing, "Double Hashing");
-  insertarYCalcularTiempo(users, 5000, tableSize, double_hashing, "Double Hashing");
-  insertarYCalcularTiempo(users, 10000, tableSize, double_hashing, "Double Hashing");
-  insertarYCalcularTiempo(users, 15000, tableSize, double_hashing, "Double Hashing");
-  insertarYCalcularTiempo(users, 20000, tableSize, double_hashing, "Double Hashing");
-
-  insertarYCalcularTiempo2(users, 1000, tableSize, "Chaining");
-  insertarYCalcularTiempo2(users, 5000, tableSize, "Chaining");
-  insertarYCalcularTiempo2(users, 10000, tableSize, "Chaining");
-  insertarYCalcularTiempo2(users, 15000, tableSize, "Chaining");
-  insertarYCalcularTiempo2(users, 20000, tableSize, "Chaining");
-
-  insertarYCalcularTiempo3(users, 1000, ht_unordered_map, "Unordered_map");
-  insertarYCalcularTiempo3(users, 5000, ht_unordered_map, "Unordered_map");
-  insertarYCalcularTiempo3(users, 10000, ht_unordered_map, "Unordered_map");
-  insertarYCalcularTiempo3(users, 15000, ht_unordered_map, "Unordered_map");
-  insertarYCalcularTiempo3(users, 20000, ht_unordered_map, "Unordered_map");
 }
 
 void test_linux()
 {
   vector<User> users = readCSV("universities_followers.csv");
   const int table_size = 22079;
-  int n_tests = 1;
 
-  CloseHashTableUserName linear_table(table_size, linear_probing);
-  CloseHashTableUserName double_table(table_size, double_hashing);
-  CloseHashTableUserName quadratic_table(table_size, quadratic_probing);
-  OpenHashTableUserName open_table(table_size);
-  unordered_map<string, User> unordered_map;
-
-  cout << "LINEAR" << endl;
-  test_insert_by_username(users, linear_table, n_tests);
-  cout << endl;
-  cout << "DOUBLE" << endl;
-  test_insert_by_username(users, double_table, n_tests);
-  cout << endl;
-  cout << "QUADRATIC" << endl;
-  test_insert_by_username(users, quadratic_table, n_tests);
-  cout << endl;
-  cout << "OPEN" << endl;
-  test_insert_by_username(users, open_table, n_tests);
-  cout << "UNORDERED MAP" << endl;
-  test_insert_by_username(users, unordered_map, n_tests);
+  // Pruebas con clase User ID
+  test_insert(user_id_open, table_size, users, 20000);
+  test_insert(unordered_map_by_id, table_size, users, 20000);
+  test_insert(user_id_close, table_size, users, 20000, linear_probing, nullptr);
+  test_insert(user_id_close, table_size, users, 20000, linear_probing, nullptr);
+  test_insert(user_id_close, table_size, users, 20000, linear_probing, nullptr);
+  test_inserts_by_username(10, users, table_size, "test");
 }
 
 int main(int argc, char const *argv[])
 {
-  test_windows();
+  test_linux();
   return 0;
 }

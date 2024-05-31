@@ -67,11 +67,11 @@ struct User
 };
 
 /*
-Carga los datos del CSV y los pasa a un vector de la STL
-@param filename: nombre del archivo con extención.
-@return Vector con todos los usuarios cargados satisfactoriamente
-@note Referencia: https://www.geeksforgeeks.org/how-to-read-data-from-csv-file-to-a-2d-array-in-cpp/
-*/
+ * @brief Carga los datos del CSV y los pasa a un vector de la STL
+ * @param filename: nombre del archivo con extención.
+ * @return Vector con todos los usuarios cargados satisfactoriamente
+ * @note Referencia: https://www.geeksforgeeks.org/how-to-read-data-from-csv-file-to-a-2d-array-in-cpp/
+ */
 vector<User> readCSV(const std::string &filename)
 {
     vector<User> users;
@@ -142,8 +142,10 @@ void printUser(User *foundUser)
     }
 }
 
-void insertUsers(std::vector<User>& users, std::unordered_map<uint64_t, User>& hashMap) {
-    for (const auto& user : users) {
+void insertUsers(std::vector<User> &users, std::unordered_map<uint64_t, User> &hashMap)
+{
+    for (const auto &user : users)
+    {
         hashMap[user.userId] = user;
     }
 }
