@@ -12,7 +12,6 @@ unsigned int h1(uint64_t k) { return (unsigned int)(k); }
 
 /* Función de hasheo número 2
  @param k: clave a la cual aplicaremos la función hash
- @param n: tamaño de la tabla hash
  */
 unsigned int h2(uint64_t k)
 {
@@ -35,7 +34,6 @@ unsigned int hash_string(const string &str)
         hash_value += (c - 'a' + 1) * p_pow;
         p_pow *= p;
     }
-    return str[0] + str[1] * p + str[2] * p * p; // ejemplo de funcion de hasheo mala, se nota la diferencia de tiempo
     return hash_value;
 }
 //--- Métodos de Open addressing o hashing cerrado ---
@@ -74,7 +72,11 @@ int double_hashing(uint64_t k, int n, int i)
     return (h1(k) + i * (h2(k) + 1)) % n;
 }
 
-// TODO: quizas cambiar las funciones _username por un overloading de las funciones anteriores
+/* Linear probing
+@param k: clave a la cual aplicaremos la función hash
+@param n: tamaño de la tabla hash
+@param i: número del intento
+*/
 unsigned int linear_probing(const string &userName, int n, int i)
 {
     unsigned k = hash_string(userName);
@@ -82,6 +84,11 @@ unsigned int linear_probing(const string &userName, int n, int i)
     // Utilizando el método de la division
     return (h1(k) + i) % n;
 }
+/* Quadratic probing
+@param k: clave a la cual aplicaremos la función hash
+@param n: tamaño de la tabla hash
+@param i: número del intento
+*/
 unsigned int quadratic_probing(const string &userName, int n, int i)
 {
     unsigned k = hash_string(userName);
@@ -90,6 +97,11 @@ unsigned int quadratic_probing(const string &userName, int n, int i)
     return (h1(k) + i + 2 * i * i) % n;
 }
 
+/* Double hashing
+@param k: clave a la cual aplicaremos la función hash
+@param n: tamaño de la tabla hash
+@param i: número del intento
+*/
 unsigned int double_hashing(const string &userName, int n, int i)
 {
     unsigned k = hash_string(userName);
