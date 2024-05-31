@@ -134,19 +134,13 @@ void test_linux()
   vector<User> users = readCSV("universities_followers.csv");
   const int table_size = 22079;
 
-  // Pruebas con clave User Name
-  test_insert(user_name_open, table_size, users, 20000);
-  test_insert(unordered_map_by_name, table_size, users, 20000);
-  test_insert(user_name_close, table_size, users, 20000, nullptr, linear_probing);
-  test_insert(user_name_close, table_size, users, 20000, nullptr, double_hashing);
-  test_insert(user_name_close, table_size, users, 20000, nullptr, quadratic_probing);
-
   // Pruebas con clase User ID
   test_insert(user_id_open, table_size, users, 20000);
   test_insert(unordered_map_by_id, table_size, users, 20000);
   test_insert(user_id_close, table_size, users, 20000, linear_probing, nullptr);
   test_insert(user_id_close, table_size, users, 20000, linear_probing, nullptr);
   test_insert(user_id_close, table_size, users, 20000, linear_probing, nullptr);
+  test_inserts_by_username(10, users, table_size, "test");
 }
 
 int main(int argc, char const *argv[])

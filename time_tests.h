@@ -208,4 +208,29 @@ double test_insert(HashTableType type, int max_size, vector<User> &users, int n_
 
     return duration.count();
 }
+void test_inserts_by_username(int n_tests, vector<User> users, int table_size, string file_name)
+{
+    int n_inserts[] = {1000, 5000, 10000, 15000, 20000};
+    double averages[] = {0, 0, 0, 0, 0};
+    ofstream file_out(file_name + ".csv", false ? ios::trunc : ios::app);
+    file_out << "Cantidad de inserciones, lineal probing, double hashing, quadratic probing, open hashtable, unordered map," << endl;
+    for (int inserts : n_inserts)
+    {
+        file_out << inserts << ", ";
+        for (int i = 0; i < n_tests; i++)
+        {
+            averages[0] += test_insert(user_name_close, table_size, users, inserts, nullptr, linear_probing);
+            averages[1] += test_insert(user_name_close, table_size, users, inserts, nullptr, double_hashing);
+            averages[2] += test_insert(user_name_close, table_size, users, inserts, nullptr, quadratic_probing);
+            averages[3] += test_insert(user_name_open, table_size, users, inserts);
+            averages[4] += test_insert(unordered_map_by_name, table_size, users, inserts);
+        }
+        for (int j = 0; j < 5; j++)
+        {
+            file_out << averages[j] / n_tests << ",";
+        }
+        file_out << endl;
+    }
+    file_out.close();
+}
 #endif
