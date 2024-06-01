@@ -4,7 +4,6 @@
 #include <cmath>
 #include <string>
 #include <iostream>
-#include <cstdint>
 #include <vector>
 #include <sstream>
 #include <fstream>
@@ -21,13 +20,13 @@ using namespace std;
  * @param scientific La cadena que contiene el número en notación científica.
  * @return El número convertido en decimal
  */
-uint64_t scientificToNormal(const std::string &scientific)
+unsigned long long scientificToNormal(const std::string &scientific)
 {
     std::istringstream iss(scientific);
     double number;
 
     iss >> number; // Convertir la cadena a un numero en punto flotante
-    uint64_t normal = static_cast<uint64_t>(number);
+    unsigned long long normal = static_cast<unsigned long long>(number);
     return normal;
 }
 
@@ -37,7 +36,7 @@ Struct que guarda los datos de un usuario.
 struct User
 {
     string university;
-    uint64_t userId; // este tipo de dato es un entero positivo muy grande (64 bits)
+    unsigned long long userId; // este tipo de dato es un entero positivo muy grande (64 bits)
     string userName;
     int numberTweets;
     int friendsCount;
@@ -62,16 +61,16 @@ struct User
     @param followers: número de seguidores.
     @param created: fecha de creación de la cuenta.
     */
-    User(const string &uni, uint64_t id, const string &name, int tweets, int friends, int followers, const string &created)
+    User(const string &uni, unsigned long long id, const string &name, int tweets, int friends, int followers, const string &created)
         : university(uni), userId(id), userName(name), numberTweets(tweets), friendsCount(friends), followersCount(followers), createdAt(created) {}
 };
 
 /*
- * @brief Carga los datos del CSV y los pasa a un vector de la STL
- * @param filename: nombre del archivo con extención.
- * @return Vector con todos los usuarios cargados satisfactoriamente
- * @note Referencia: https://www.geeksforgeeks.org/how-to-read-data-from-csv-file-to-a-2d-array-in-cpp/
- */
+* @brief Carga los datos del CSV y los pasa a un vector de la STL
+* @param filename: nombre del archivo con extención.
+* @return Vector con todos los usuarios cargados satisfactoriamente
+@note Referencia: https://www.geeksforgeeks.org/how-to-read-data-from-csv-file-to-a-2d-array-in-cpp/
+*/
 vector<User> readCSV(const std::string &filename)
 {
     vector<User> users;
@@ -97,7 +96,7 @@ vector<User> readCSV(const std::string &filename)
         if (tokens.size() == 7)
         {
             string university = tokens[0];
-            uint64_t userId = scientificToNormal(tokens[1]); // Convertir a numero normal
+            unsigned long long userId = scientificToNormal(tokens[1]); // Convertir a numero normal
             string userName = tokens[2];
             int numberTweets = stoi(tokens[3]);
             int friendsCount = stoi(tokens[4]);
@@ -142,7 +141,7 @@ void printUser(User *foundUser)
     }
 }
 
-void insertUsers(std::vector<User> &users, std::unordered_map<uint64_t, User> &hashMap)
+void insertUsers(std::vector<User> &users, std::unordered_map<unsigned long long, User> &hashMap)
 {
     for (const auto &user : users)
     {

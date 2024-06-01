@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <string>
-#include <cstdint>
 #include <iostream>
 
 #include "functions.h"
@@ -25,16 +24,16 @@ User DELETED_VAR = User("", 0, "DELETED_VAR", 0, 0, 0, "");
 class CloseHashTableUserId
 {
 public:
-    int size;                                  ///< Tamaño de la tabla hash.
-    vector<User *> table;                      ///< Vector que almacena punteros a onjetos User.
-    int (*hashing_method)(uint64_t, int, int); ///< Puntero a la función de hash.
+    int size;                                            ///< Tamaño de la tabla hash.
+    int (*hashing_method)(unsigned long long, int, int); ///< Puntero a la función de hash.
+    vector<User *> table;                                ///< Vector que almacena punteros a onjetos User.
 
     /**
      * @brief Constructor para inicializar la tabla hash con un tamaño dado y un método de hash.
      * @param size Tamaño de la tabla hash.
      * @param hashing_method Puntero a la función de hash que se usará.
      */
-    CloseHashTableUserId(int size, int (*hashing_method)(uint64_t, int, int))
+    CloseHashTableUserId(int size, int (*hashing_method)(unsigned long long, int, int))
         : size(size), hashing_method(hashing_method), table(size, nullptr) {}
 
     /**
@@ -42,7 +41,7 @@ public:
      * @param userId El ID del usuario a insertar.
      * @param user Puntero al objeto User que se va a insertar.
      */
-    void insert(uint64_t userId, User *user)
+    void insert(unsigned long long userId, User *user)
     {
         int i = 0;
         int index;
@@ -64,7 +63,7 @@ public:
      * @param userId El ID del usuario a buscar.
      * @return Puntero al objeto User si se encuentra, nullptr en caso contrario.
      */
-    User *search(uint64_t userId)
+    User *search(unsigned long long userId)
     {
         int i = 0;
         int index;
@@ -104,7 +103,7 @@ public:
      * @param userId El ID del usuario a insertar.
      * @param user Un puntero al objeto User que contiene los datos del usuario.
      */
-    void insert(uint64_t userId, User *user)
+    void insert(unsigned long long userId, User *user)
     {
         unsigned int index = userId % max_size;
         table[index].push_back(user);
@@ -117,7 +116,7 @@ public:
      * @param userId El ID del usuario a buscar.
      * @return Un puntero al objeto User encontrado, o nullptr si no se encontró.
      */
-    User *search(uint64_t userId)
+    User *search(unsigned long long userId)
     {
         unsigned int index = userId % max_size;
         for (User *user : table[index])
@@ -133,7 +132,7 @@ public:
      *
      * @param key Id del usuario a buscar.
      */
-    void remove(uint64_t key)
+    void remove(unsigned long long key)
     {
         unsigned int index = key % max_size;
         auto &bucket = table[index];
@@ -164,8 +163,8 @@ class CloseHashTableUserName
 public:
     int max_size;
     int size = 0;
-    vector<User *> table;
     unsigned int (*hashing_method)(const string &, int, int);
+    vector<User *> table;
 
     /**
      * @brief Constructor de la clase CloseHashUserName.
@@ -176,6 +175,14 @@ public:
     CloseHashTableUserName(int size, unsigned int (*hashing_method)(const string &, int, int))
         : max_size(size), hashing_method(hashing_method), table(size, nullptr)
     {
+    }
+
+    ~CloseHashTableUserName()
+    {
+        for (User *user : table)
+        {
+            delete user;
+        }
     }
 
     /**
@@ -221,15 +228,13 @@ public:
         {
             if (table[index]->userName == key)
             {
-                cout << "Indice en tabla hash: " << index << endl;
-                printUser(table[index]);
-                cout << endl;
+                cout << "NUMERO DE INDICE: " << index << endl;
+                cout << table[index] << endl;
                 return table[index];
             }
             i++;
             index = hashing_method(key, max_size, i);
         }
-        cout << "No se encontró el usuario" << endl;
         return nullptr;
     }
 
@@ -304,9 +309,6 @@ public:
         {
             if (user->userName == key)
             {
-                std::cout << "INDICE: " << index << endl;
-                printUser(user);
-                std::cout << endl;
                 return user;
             }
         }

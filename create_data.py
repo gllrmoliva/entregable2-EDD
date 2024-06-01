@@ -78,5 +78,3 @@ if __name__ == "__main__":
 
     random_data = generate_random_data(universities, num_entries)
     write_to_csv('fake_data.csv', random_data)
-
-# PD: es absurdamente sencillo editar archivos en python keee

@@ -24,93 +24,9 @@ enum HashTableType
     unordered_map_by_id,
 };
 
-// Función para realizar búsquedas de usuarios almacenados
-void tiempoPromedioUserGuardado(const std::vector<User> &users, const std::unordered_map<uint64_t, User> &hashMap)
-{
-    auto start = std::chrono::high_resolution_clock::now();
-    for (const auto &user : users)
-    {
-        auto it = hashMap.find(user.userId);
-        if (it != hashMap.end())
-        {
-        }
-    }
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-    std::cout << "Tiempo total de busqueda para usuarios almacenados en Unordered: " << duration.count() << " segundos" << std::endl;
-    std::cout << "Tiempo promedio de busqueda para usuarios almacenados en Unordered: " << duration.count() / users.size() << " segundos" << std::endl;
-}
-
-// Función para realizar búsquedas de usuarios no almacenados
-void tiempoPromedioUserNoGuardado(const std::vector<User> &users, const std::unordered_map<uint64_t, User> &hashMap)
-{
-    auto start = std::chrono::high_resolution_clock::now();
-    for (const auto &user : users)
-    {
-        hashMap.find(user.userId + 1); // Usuario no almacenado
-    }
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-    std::cout << "Tiempo total de busqueda para usuarios no almacenados en Unordered: " << duration.count() << " segundos" << std::endl;
-    std::cout << "Tiempo promedio de busqueda para usuarios no almacenados en Unordered: " << duration.count() / users.size() << " segundos" << std::endl;
-}
-
-// TODO: claramente tiene más sentido hacer un polimorfismo para que la función sea global para
-// todas las tablas hash, pero por ahora sera con overloading
-
-void tiempoPromedioUserGuardado2(const vector<User> &users, CloseHashTableUserId *ht, const string &hashTableType)
-{
-    auto start = std::chrono::high_resolution_clock::now();
-    for (const auto &user : users)
-    {
-        ht->search(user.userId);
-    }
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-    std::cout << "Tiempo total de busqueda para usuarios almacenados en " << hashTableType << ": " << duration.count() << " segundos" << std::endl;
-    std::cout << "Tiempo promedio de busqueda para usuarios almacenados en " << hashTableType << ": " << duration.count() / users.size() << " segundos" << std::endl;
-}
-
-void tiempoPromedioUserGuardado3(const vector<User> &users, const string &hashTableType)
-{
-    OpenHashTableUserId ht_chaining(30103);
-    auto start = std::chrono::high_resolution_clock::now();
-    for (const auto &user : users)
-    {
-        ht_chaining.search(user.userId);
-    }
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-    std::cout << "Tiempo total de busqueda para usuarios almacenados en " << hashTableType << ": " << duration.count() << " segundos" << std::endl;
-    std::cout << "Tiempo promedio de busqueda para usuarios almacenados en " << hashTableType << ": " << duration.count() / users.size() << " segundos" << std::endl;
-}
-
-void tiempoPromedioUserNoGuardado2(const std::vector<User> &users, CloseHashTableUserId *ht, const std::string &hashTableType)
-{
-    auto start = std::chrono::high_resolution_clock::now();
-    for (const auto &user : users)
-    {
-        ht->search(user.userId + 1); // Usuario no almacenado
-    }
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-    std::cout << "Tiempo total de busqueda para usuarios no almacenados en " << hashTableType << ": " << duration.count() << " segundos" << std::endl;
-    std::cout << "Tiempo promedio de busqueda para usuarios no almacenados en " << hashTableType << ": " << duration.count() / users.size() << " segundos" << std::endl;
-}
-
-void tiempoPromedioUserNoGuardado3(const std::vector<User> &users, const string &hashTableType)
-{
-    OpenHashTableUserId ht_chaining(30103);
-    auto start = std::chrono::high_resolution_clock::now();
-    for (const auto &user : users)
-    {
-        ht_chaining.search(user.userId + 1); // Usuario no almacenado
-    }
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-    std::cout << "Tiempo total de busqueda para usuarios no almacenados en " << hashTableType << ": " << duration.count() << " segundos" << std::endl;
-    std::cout << "Tiempo promedio de busqueda para usuarios no almacenados en " << hashTableType << ": " << duration.count() / users.size() << " segundos" << std::endl;
-}
+//----------------------------------------------------------------------//
+//----------------------------TESTS DE INSERT---------------------------//
+//----------------------------------------------------------------------//
 
 /**
  * @brief Dado una base de datos de usuarios en forma de vector, inserta n_inserts usuarios a una tabla hash elegida y
@@ -125,7 +41,7 @@ void tiempoPromedioUserNoGuardado3(const std::vector<User> &users, const string 
  *
  */
 double test_insert(HashTableType type, int max_size, vector<User> &users, int n_inserts,
-                   int (*hashing_method_id)(uint64_t, int, int) = nullptr,
+                   int (*hashing_method_id)(unsigned long long, int, int) = nullptr,
                    unsigned int (*hashing_method_name)(const string &, int, int) = nullptr)
 {
     auto start = chrono::high_resolution_clock::now();
@@ -204,33 +120,324 @@ double test_insert(HashTableType type, int max_size, vector<User> &users, int n_
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> duration = end - start;
 
-    cout << "Tiempo: " << duration.count() << " segundos." << endl;
-
     return duration.count();
 }
+/**
+ * @brief Aplica la función test_insert() a todas las tablas hash con key username una cantidad
+ * de veces seleccionada por el usuario, los datos guardan de forma externa en un archivo con extención .csv.
+ * En este archivo se guardan los datos de los experimentos en el siguiente orden: tipo de hasheo, número de inserts, tiempo.
+ *
+ * @param n_tests: cantidad de test a ejecutar.
+ * @param users: usuarios los cuales se insertaran a las tablas hash.
+ * @param table_size: tamaño de las tablas a insertar datos.
+ * @param file_name: nombre del archivo saliente, este se pone sin la extension.
+ *
+ * @note Todas las tablas a testear tienen el mismo tamaño.
+ */
 void test_inserts_by_username(int n_tests, vector<User> users, int table_size, string file_name)
 {
     int n_inserts[] = {1000, 5000, 10000, 15000, 20000};
-    double averages[] = {0, 0, 0, 0, 0};
     ofstream file_out(file_name + ".csv", false ? ios::trunc : ios::app);
-    file_out << "Cantidad de inserciones, lineal probing, double hashing, quadratic probing, open hashtable, unordered map," << endl;
+    file_out << "Tipo de hasheo, Número de inserciones, Tiempo(s)" << endl;
     for (int inserts : n_inserts)
     {
-        file_out << inserts << ", ";
         for (int i = 0; i < n_tests; i++)
         {
-            averages[0] += test_insert(user_name_close, table_size, users, inserts, nullptr, linear_probing);
-            averages[1] += test_insert(user_name_close, table_size, users, inserts, nullptr, double_hashing);
-            averages[2] += test_insert(user_name_close, table_size, users, inserts, nullptr, quadratic_probing);
-            averages[3] += test_insert(user_name_open, table_size, users, inserts);
-            averages[4] += test_insert(unordered_map_by_name, table_size, users, inserts);
+            file_out << "lineal probing," << inserts << ",";
+            file_out << test_insert(user_name_close, table_size, users, inserts, nullptr, linear_probing) << endl;
+            file_out << "double hashing," << inserts << ",";
+            file_out << test_insert(user_name_close, table_size, users, inserts, nullptr, double_hashing) << endl;
+            file_out << "quadratic probing," << inserts << ",";
+            file_out << test_insert(user_name_close, table_size, users, inserts, nullptr, quadratic_probing) << endl;
+            file_out << "chaining," << inserts << ",";
+            file_out << test_insert(user_name_open, table_size, users, inserts) << endl;
+            file_out << "STL unordered map," << inserts << ",";
+            file_out << test_insert(unordered_map_by_name, table_size, users, inserts) << endl;
         }
-        for (int j = 0; j < 5; j++)
-        {
-            file_out << averages[j] / n_tests << ",";
-        }
-        file_out << endl;
     }
     file_out.close();
 }
+/**
+ * @brief Aplica la función test_insert() a todas las tablas hash con key userid una cantidad
+ * de veces seleccionada por el usuario, los datos guardan de forma externa en un archivo con extención .csv.
+ * En este archivo se guardan los datos de los experimentos en el siguiente orden: tipo de hasheo, número de inserts, tiempo.
+ *
+ * @param n_tests: cantidad de tests a ejecutar.
+ * @param users: usuarios los cuales se insertaran a las tablas hash.
+ * @param table_size: tamaño de las tablas a insertar datos.
+ * @param file_name: nombre del archivo saliente, este se pone sin la extension.
+ *
+ * @note Todas las tablas a testear tienen el mismo tamaño.
+ */
+void test_inserts_by_userid(int n_tests, vector<User> users, int table_size, string file_name)
+{
+    int n_inserts[] = {1000, 5000, 10000, 15000, 20000};
+    ofstream file_out(file_name + ".csv", ios::app);
+    file_out << "Tipo de hasheo, Número de inserciones, Tiempo(s)" << endl;
+    for (int inserts : n_inserts)
+    {
+        for (int i = 0; i < n_tests; i++)
+        {
+            file_out << "lineal probing," << inserts << ",";
+            file_out << test_insert(user_id_close, table_size, users, inserts, linear_probing, nullptr) << endl;
+            file_out << "double hashing," << inserts << ",";
+            file_out << test_insert(user_id_close, table_size, users, inserts, double_hashing, nullptr) << endl;
+            file_out << "quadratic probing," << inserts << ",";
+            file_out << test_insert(user_id_close, table_size, users, inserts, quadratic_probing, nullptr) << endl;
+            file_out << "chaining," << inserts << ",";
+            file_out << test_insert(user_id_open, table_size, users, inserts) << endl;
+            file_out << "STL unordered map," << inserts << ",";
+            file_out << test_insert(unordered_map_by_id, table_size, users, inserts) << endl;
+        }
+    }
+    file_out.close();
+}
+
+//----------------------------------------------------------------------//
+//----------------------------TESTS DE SEARCH---------------------------//
+//----------------------------------------------------------------------//
+
+// En test seach no tiene mucho sentido hacer un switch que construya tablas hash, por lo que
+// En este caso solo se hara override en la función
+
+/**
+ * @brief Calcula la cantidad de tiempo que demora buscar una cantidad de User's dada por el usuario
+ * @param hash_table: Tabla hash la cual ya posee datos dentro de sí
+ * @param users_to_search: Usuarios que se usaran para las busquedas
+ * @param n_searchs: Cantidad de busquedas que se haran en el test.
+ */
+double test_search(CloseHashTableUserId &hash_table, vector<User> users_to_search, int n_searchs)
+{
+    auto start = chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < n_searchs; i++)
+    {
+        hash_table.search(users_to_search[i].userId);
+    }
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> duration = end - start;
+
+    return duration.count();
+}
+
+/**
+ * @brief Calcula la cantidad de tiempo que demora buscar una cantidad de User's dada por el usuario
+ * @param hash_table: Tabla hash la cual ya posee datos dentro de sí
+ * @param users_to_search: Usuarios que se usaran para las busquedas
+ * @param n_searchs: Cantidad de busquedas que se haran en el test.
+ */
+double test_search(OpenHashTableUserId &hash_table, vector<User> users_to_search, int n_searchs)
+{
+    auto start = chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < n_searchs; i++)
+    {
+        hash_table.search(users_to_search[i].userId);
+    }
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> duration = end - start;
+
+    return duration.count();
+}
+
+/**
+ * @brief Calcula la cantidad de tiempo que demora buscar una cantidad de User's dada por el usuario
+ * @param hash_table: Tabla hash la cual ya posee datos dentro de sí
+ * @param users_to_search: Usuarios que se usaran para las busquedas
+ * @param n_searchs: Cantidad de busquedas que se haran en el test.
+ */
+double test_search(unordered_map<unsigned long long, User> &hash_table, vector<User> users_to_search, int n_searchs)
+{
+    auto start = chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < n_searchs; i++)
+    {
+        hash_table.find(users_to_search[i].userId);
+    }
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> duration = end - start;
+
+    return duration.count();
+}
+
+/**
+ * @brief Calcula la cantidad de tiempo que demora buscar una cantidad de User's dada por el usuario
+ * @param hash_table: Tabla hash la cual ya posee datos dentro de sí
+ * @param users_to_search: Usuarios que se usaran para las busquedas
+ * @param n_searchs: Cantidad de busquedas que se haran en el test.
+ */
+double test_search(CloseHashTableUserName &hash_table, vector<User> users_to_search, int n_searchs)
+{
+    auto start = chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < n_searchs; i++)
+    {
+        hash_table.search(users_to_search[i].userName);
+    }
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> duration = end - start;
+
+    return duration.count();
+}
+
+/**
+ * @brief Calcula la cantidad de tiempo que demora buscar una cantidad de User's dada por el usuario
+ * @param hash_table: Tabla hash la cual ya posee datos dentro de sí
+ * @param users_to_search: Usuarios que se usaran para las busquedas
+ * @param n_searchs: Cantidad de busquedas que se haran en el test.
+ */
+double test_search(OpenHashTableUserName &hash_table, vector<User> users_to_search, int n_searchs)
+{
+    auto start = chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < n_searchs; i++)
+    {
+        hash_table.search(users_to_search[i].userName);
+    }
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> duration = end - start;
+
+    return duration.count();
+}
+
+/**
+ * @brief Calcula la cantidad de tiempo que demora buscar una cantidad de User's dada por el usuario
+ * @param hash_table: Tabla hash la cual ya posee datos dentro de sí
+ * @param users_to_search: Usuarios que se usaran para las busquedas
+ * @param n_searchs: Cantidad de busquedas que se haran en el test.
+ */
+double test_search(unordered_map<string, User> &hash_table, vector<User> users_to_search, int n_searchs)
+{
+    auto start = chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < n_searchs; i++)
+    {
+        hash_table.find(users_to_search[i].userName);
+    }
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> duration = end - start;
+
+    return duration.count();
+}
+
+/**
+ * @brief Aplica la función test_search() a todas las tablas hash con key username una cantidad
+ * de veces seleccionada por el usuario, los datos guardan de forma externa en un archivo con extención .csv.
+ * En este archivo se guardan los datos de los experimentos en el siguiente orden: tipo de hasheo, número de busquedas, tiempo.
+ *
+ * @param n_tests: cantidad de tests a ejecutar.
+ * @param users_in_tables: usuarios los cuales estaran dentro de las tablas.
+ * @param users_to_search: usuarios los cuales se buscaran dentro de las tablas.
+ * @param table_size: tamaño de las tablas a insertar datos.
+ * @param file_name: nombre del archivo saliente, este se pone sin la extension.
+ *
+ * @note Todas las tablas a testear tienen el mismo tamaño.
+ */
+void test_searchs_by_username(int n_tests, vector<User> users_in_tables, vector<User> users_to_search,
+                              int table_size, string file_name)
+{
+    CloseHashTableUserName linear_table(table_size, linear_probing);
+    CloseHashTableUserName double_table(table_size, double_hashing);
+    CloseHashTableUserName quadratic_table(table_size, quadratic_probing);
+    OpenHashTableUserName chaining_table(table_size);
+    unordered_map<string, User> STL_table(table_size);
+
+    // rellenemos las tablas con datos
+    for (User user : users_in_tables)
+    {
+        linear_table.insert(user.userName, &user);
+        double_table.insert(user.userName, &user);
+        quadratic_table.insert(user.userName, &user);
+        chaining_table.insert(user.userName, &user);
+        STL_table[user.userName] = user;
+    }
+
+    int n_searchs[] = {1000, 5000, 10000, 15000, 20000};
+
+    ofstream file_out(file_name + ".csv", false ? ios::trunc : ios::app);
+
+    file_out << "Tipo de hasheo, Número de busquedas, Tiempo(s)" << endl;
+
+    for (int searchs : n_searchs)
+    {
+        for (int j = 0; j < n_tests; j++)
+        {
+            file_out << "lineal probing," << searchs << ",";
+            file_out << test_search(linear_table, users_to_search, searchs) << endl;
+            file_out << "double hashing," << searchs << ",";
+            file_out << test_search(double_table, users_to_search, searchs) << endl;
+            file_out << "quadratic probing," << searchs << ",";
+            file_out << test_search(quadratic_table, users_to_search, searchs) << endl;
+            file_out << "chaining," << searchs << ",";
+            file_out << test_search(chaining_table, users_to_search, searchs) << endl;
+            file_out << "STL unordered map," << searchs << ",";
+            file_out << test_search(STL_table, users_to_search, searchs) << endl;
+        }
+    }
+    file_out.close();
+}
+
+/**
+ * @brief Aplica la función test_search() a todas las tablas hash con key userid una cantidad
+ * de veces seleccionada por el usuario, los datos guardan de forma externa en un archivo con extención .csv.
+ * En este archivo se guardan los datos de los experimentos en el siguiente orden: tipo de hasheo, número de busquedas, tiempo.
+ *
+ * @param n_tests: cantidad de tests a ejecutar.
+ * @param users_in_tables: usuarios los cuales estaran dentro de las tablas.
+ * @param users_to_search: usuarios los cuales se buscaran dentro de las tablas.
+ * @param table_size: tamaño de las tablas a insertar datos.
+ * @param file_name: nombre del archivo saliente, este se pone sin la extension.
+ *
+ * @note Todas las tablas a testear tienen el mismo tamaño.
+ */
+void test_searchs_by_userid(int n_tests, vector<User> users_in_tables, vector<User> users_to_search,
+                            int table_size, string file_name)
+{
+    CloseHashTableUserId linear_table(table_size, linear_probing);
+    CloseHashTableUserId double_table(table_size, double_hashing);
+    CloseHashTableUserId quadratic_table(table_size, quadratic_probing);
+    OpenHashTableUserId chaining_table(table_size);
+    unordered_map<unsigned long long, User> STL_table(table_size);
+
+    // rellenemos las tablas con datos
+    for (User user : users_in_tables)
+    {
+        linear_table.insert(user.userId, &user);
+        double_table.insert(user.userId, &user);
+        quadratic_table.insert(user.userId, &user);
+        chaining_table.insert(user.userId, &user);
+        STL_table[user.userId] = user;
+    }
+
+    int n_searchs[] = {1000, 5000, 10000, 15000, 20000};
+
+    ofstream file_out(file_name + ".csv", ios::app);
+
+    file_out << "Tipo de hasheo, Número de busquedas, Tiempo(s)" << endl;
+
+    for (int searchs : n_searchs)
+    {
+        for (int j = 0; j < n_tests; j++)
+        {
+            file_out << "lineal probing," << searchs << ",";
+            file_out << test_search(linear_table, users_to_search, searchs) << endl;
+            file_out << "double hashing," << searchs << ",";
+            file_out << test_search(double_table, users_to_search, searchs) << endl;
+            file_out << "quadratic probing," << searchs << ",";
+            file_out << test_search(quadratic_table, users_to_search, searchs) << endl;
+            file_out << "chaining," << searchs << ",";
+            file_out << test_search(chaining_table, users_to_search, searchs) << endl;
+            file_out << "STL unordered map," << searchs << ",";
+            file_out << test_search(STL_table, users_to_search, searchs) << endl;
+        }
+    }
+    file_out.close();
+}
+
 #endif
