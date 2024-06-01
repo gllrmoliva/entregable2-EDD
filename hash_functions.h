@@ -1,19 +1,18 @@
 #ifndef HASH_FUNCTIONS
 #define HASH_FUNCTIONS
 #include <string>
-#include <cstdint>
 
 using namespace std;
 
 /* Función de hasheo número 1
 @param k: clave a la cual aplicaremos la función hash
 */
-unsigned int h1(uint64_t k) { return (unsigned int)(k); }
+unsigned int h1(unsigned long long k) { return (unsigned int)(k); }
 
 /* Función de hasheo número 2
  @param k: clave a la cual aplicaremos la función hash
  */
-unsigned int h2(uint64_t k)
+unsigned int h2(unsigned long long k)
 {
     return (unsigned int)((k * 2));
 }
@@ -43,7 +42,7 @@ unsigned int hash_string(const string &str)
 @param n: tamaño de la tabla hash
 @param i: número del intento
 */
-int linear_probing(uint64_t k, int n, int i)
+int linear_probing(unsigned long long k, int n, int i)
 {
     // Utilizando el método de la division
     return (h1(k) + i) % n;
@@ -54,10 +53,10 @@ int linear_probing(uint64_t k, int n, int i)
 @param n: tamaño de la tabla hash
 @param i: número del intento
 */
-int quadratic_probing(uint64_t k, int n, int i)
+int quadratic_probing(unsigned long long k, int n, int i)
 {
     // Utilizando el método de la division
-    return (h1(k) + i + 2 * i * i) % n;
+    return (h1(k) + i * i) % n;
 }
 
 /* Double hashing
@@ -65,7 +64,7 @@ int quadratic_probing(uint64_t k, int n, int i)
 @param n: tamaño de la tabla hash
 @param i: número del intento
 */
-int double_hashing(uint64_t k, int n, int i)
+int double_hashing(unsigned long long k, int n, int i)
 {
     // Utilizando como primer método el método de la division y luego el
     // método de la multiplicacion

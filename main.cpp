@@ -3,7 +3,6 @@
 #include <unordered_map>
 #include <vector>
 #include <string>
-#include <cstdint>
 #include <chrono>
 
 #include "hash_functions.h"
@@ -36,7 +35,7 @@ void test_windows()
   CloseHashTableUserId ht_quadratic(30103, quadratic_probing);
   CloseHashTableUserId ht_double(30103, double_hashing);
   OpenHashTableUserId ht_chaining(30103);
-  unordered_map<uint64_t, User *> ht_unordered_map;
+  unordered_map<unsigned long long, User *> ht_unordered_map;
 
   // Insertar usuarios en cada tabla hash
   for (const auto &user : users)
@@ -68,7 +67,7 @@ void test_windows()
   std::cout << "Tamaño base de HashTableChaining: " << htChainingBaseSizeMB << " MB" << std::endl;
   std::cout << "Tamaño total de HashTableChaining: " << htChainingTotalSizeMB << " MB" << std::endl;
 
-  size_t unordered_map_size = total_elements * (sizeof(uint64_t) + sizeof(User *));
+  size_t unordered_map_size = total_elements * (sizeof(unsigned long long) + sizeof(User *));
 
   double unorderedMapSizeKB = static_cast<double>(unordered_map_size) / 1024;
 
@@ -81,7 +80,7 @@ void test_windows()
   cin >> userIdInput;
 
   // Convertir el ID de usuario ingresado de notación científica a decimal si es necesario
-  uint64_t userIdToSearch = scientificToNormal(userIdInput);
+  unsigned long long userIdToSearch = scientificToNormal(userIdInput);
 
   cout << "Buscando usuario con userId: " << userIdToSearch << endl;
 
@@ -107,43 +106,30 @@ void test_windows()
   printUser(foundUserUnorderedMap);
 
   // Crear estructuras de datos para almacenar usuarios
-  std::unordered_map<uint64_t, User> hashMap;
+  std::unordered_map<unsigned long long, User> hashMap;
 
   // Insertar usuarios en las estructuras de datos
   insertUsers(users, hashMap);
-
-  // Medir el tiempo promedio de búsqueda para usuarios almacenados
-  tiempoPromedioUserGuardado2(users, &ht_linear, "Linear Probing");
-  tiempoPromedioUserGuardado2(users, &ht_quadratic, "Quadratic Probing");
-  tiempoPromedioUserGuardado2(users, &ht_double, "Double Hashing");
-  tiempoPromedioUserGuardado3(users, "Chaining");
-  tiempoPromedioUserGuardado(users, hashMap);
-
-  // Medir el tiempo de búsqueda para usuarios no almacenados
-  tiempoPromedioUserNoGuardado2(users, &ht_linear, "Linear Probing");
-  tiempoPromedioUserNoGuardado2(users, &ht_quadratic, "Quadratic Probing");
-  tiempoPromedioUserNoGuardado2(users, &ht_double, "Double Hashing");
-  tiempoPromedioUserNoGuardado3(users, "Chaining");
-  tiempoPromedioUserNoGuardado(users, hashMap);
 
   int tableSize = 30103;
 }
 
 void test_linux()
 {
-  vector<User> users = readCSV("universities_followers.csv");
-  const int table_size = 22079;
+  vector<User> real_users = readCSV("universities_followers.csv");
+  vector<User> fake_users = readCSV("fake_data.csv");
+  const int table_size = 30103;
 
-  // Pruebas con clase User ID
-  test_insert(user_id_open, table_size, users, 20000);
-  test_insert(unordered_map_by_id, table_size, users, 20000);
-  test_insert(user_id_close, table_size, users, 20000, linear_probing, nullptr);
-  test_insert(user_id_close, table_size, users, 20000, linear_probing, nullptr);
-  test_insert(user_id_close, table_size, users, 20000, linear_probing, nullptr);
-  test_inserts_by_username(10, users, table_size, "test");
+  // hacemos las pruebas
+
+  test_inserts_by_username(50, real_users, table_size, "tests/insert_by_username");
+  test_inserts_by_userid(50, real_users, table_size, "tests/insert_by_userid");
+
+  test_searchs_by_username(50, real_users, fake_users, table_size, "tests/search_by_username");
+  test_searchs_by_userid(50, real_users, fake_users, table_size, "tests/search_by_userid");
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
   test_linux();
   return 0;
