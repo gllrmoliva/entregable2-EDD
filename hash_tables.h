@@ -7,6 +7,7 @@
 
 #include "functions.h"
 #include "hash_functions.h"
+#include <unordered_set>
 
 using namespace std;
 
@@ -27,6 +28,7 @@ public:
     int size;                                            ///< Tamaño de la tabla hash.
     int (*hashing_method)(unsigned long long, int, int); ///< Puntero a la función de hash.
     vector<User *> table;                                ///< Vector que almacena punteros a onjetos User.
+    unordered_set<unsigned long long> userids;           ///< Conjunto para mantener un registro de los userids ya insertados.
 
     /**
      * @brief Constructor para inicializar la tabla hash con un tamaño dado y un método de hash.
@@ -43,6 +45,10 @@ public:
      */
     void insert(unsigned long long userId, User *user)
     {
+        if (userids.find(userId) != userids.end()) {
+            return;
+        }
+
         int i = 0;
         int index;
         do
@@ -51,6 +57,7 @@ public:
             if (table[index] == nullptr)
             {
                 table[index] = user;
+                userids.insert(userId); 
                 return;
             }
             i++;
@@ -89,6 +96,7 @@ public:
     int max_size; ///< Tamaño de la tabla hash
     int size = 0;
     vector<vector<User *>> table; ///< Vector de vectores que representa la tabla hash con listas de encadenamiento
+    unordered_set<unsigned long long> userids; ///< Conjunto para mantener un registro de los userids ya insertados.
 
     /**
      * @brief Constructor de la clase HashTableChaining.
@@ -105,9 +113,14 @@ public:
      */
     void insert(unsigned long long userId, User *user)
     {
+        if (userids.find(userId) != userids.end()) {
+            return;
+        }
+
         unsigned int index = userId % max_size;
         table[index].push_back(user);
         size++;
+        userids.insert(userId); 
     }
 
     /**

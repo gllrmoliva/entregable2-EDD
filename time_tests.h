@@ -14,6 +14,14 @@
 using namespace std;
 using namespace std::chrono;
 
+/**
+ * @enum HashTableType
+ * @brief Enumera los diferentes tipos de tablas hash utilizadas en la aplicación.
+ *
+ * Este enum define varios tipos de tablas hash que pueden ser utilizados 
+ * para almacenar y buscar usuarios, ya sea por ID o por nombre, utilizando 
+ * diferentes métodos de resolución de colisiones.
+ */
 enum HashTableType
 {
     user_id_open,
