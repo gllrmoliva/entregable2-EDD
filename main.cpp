@@ -104,14 +104,6 @@ void test_windows()
   auto foundUserUnorderedMap = ht_unordered_map.find(userIdToSearch) != ht_unordered_map.end() ? ht_unordered_map[userIdToSearch] : nullptr;
   cout << "Busqueda con unordered_map:" << endl;
   printUser(foundUserUnorderedMap);
-
-  // Crear estructuras de datos para almacenar usuarios
-  std::unordered_map<unsigned long long, User> hashMap;
-
-  // Insertar usuarios en las estructuras de datos
-  insertUsers(users, hashMap);
-
-  int tableSize = 30103;
 }
 
 void test_linux()
@@ -131,6 +123,6 @@ void test_linux()
 
 int main()
 {
-  test_linux();
+  test_windows();
   return 0;
 }

@@ -51,7 +51,7 @@ struct User
     {
     }
 
-    /*
+    /**
     Contructor de struct User.
     @param uni: universidad a la que sigue.
     @param id: identificador del usuario
@@ -65,7 +65,7 @@ struct User
         : university(uni), userId(id), userName(name), numberTweets(tweets), friendsCount(friends), followersCount(followers), createdAt(created) {}
 };
 
-/*
+/**
 * @brief Carga los datos del CSV y los pasa a un vector de la STL
 * @param filename: nombre del archivo con extención.
 * @return Vector con todos los usuarios cargados satisfactoriamente
@@ -138,14 +138,6 @@ void printUser(User *foundUser)
     else
     {
         std::cout << "Usuario no encontrado" << endl;
-    }
-}
-
-void insertUsers(std::vector<User> &users, std::unordered_map<unsigned long long, User> &hashMap)
-{
-    for (const auto &user : users)
-    {
-        hashMap[user.userId] = user;
     }
 }
 
