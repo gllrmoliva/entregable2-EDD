@@ -1,9 +1,0 @@
-Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Cantidad de colisiones
-Linear by userid, 0,30103,0
-Double by userid, 0,30103,0
-Quadratic by userid, 0,30103,0
-Chaining by userid, 0,30103,0
-Linear by username, 0,30103,0
-Double by username, 0,30103,0
-Quadratic by username, 0,30103,0
-Chaining by username,0,30103,0

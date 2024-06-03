@@ -139,8 +139,8 @@ void test_linux()
 
   for (int i = 0; i <= 20000; i = i + 2500)
   {
-    memory_test(table_size, i, real_users, "tests/test_de_memory" + to_string(i / 2500));
-    colisions_test(table_size, i, real_users, "tests/test_colisiones" + to_string(i / 2500));
+    memory_test(table_size, i, real_users, "tests/test_de_memory");
+    colisions_test(table_size, i, real_users, "tests/test_colisiones");
   }
 }
 

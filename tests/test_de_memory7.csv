@@ -1,9 +1,0 @@
-Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Uso de memoria(bits)
-Linear by userid,17500,30103,3612368
-Double by userid, 17500,30103,3612368
-Quadratic by userid, 17500,30103,3612368
-Chaining by userid,17500,30103,2745440
-Linear by username,17500,30103,3612368
-Double by username,17500,30103,3612368
-Quadratic by username,17500,30103,3612368
-Chaining by username, 17500,30103,2745440

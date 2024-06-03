@@ -30,7 +30,6 @@ public:
     int totalCollisions = 0;                             ///< Contador global de colisiones                                            ///< Tamaño de la tabla hash.
     int (*hashing_method)(unsigned long long, int, int); ///< Puntero a la función de hash.
     vector<User *> table;                                ///< Vector que almacena punteros a onjetos User.
-    unordered_set<unsigned long long> userids;           ///< Conjunto para mantener un registro de los userids ya insertados.
 
     /**
      * @brief Constructor para inicializar la tabla hash con un tamaño dado y un método de hash.
@@ -47,10 +46,6 @@ public:
      */
     void insert(unsigned long long userId, User *user)
     {
-        if (userids.find(userId) != userids.end())
-        {
-            return;
-        }
 
         int i = 0;
         int index;
@@ -62,7 +57,6 @@ public:
             if (table[index] == nullptr)
             {
                 table[index] = user;
-                userids.insert(userId);
                 totalCollisions += collisionCount;
                 size++;
                 return;
@@ -134,8 +128,7 @@ public:
     int max_size; ///< Tamaño de la tabla hash
     int size = 0;
     int totalCollisions = 0;
-    vector<vector<User *>> table;              ///< Vector de vectores que representa la tabla hash con listas de encadenamiento
-    unordered_set<unsigned long long> userids; ///< Conjunto para mantener un registro de los userids ya insertados.
+    vector<vector<User *>> table; ///< Vector de vectores que representa la tabla hash con listas de encadenamiento
 
     /**
      * @brief Constructor de la clase HashTableChaining.
@@ -152,19 +145,14 @@ public:
      */
     void insert(unsigned long long userId, User *user)
     {
-        if (userids.find(userId) != userids.end())
-        {
-            return;
-        }
 
-        unsigned int index = userId % max_size;
+        unsigned int index = hashing_method(userId);
         if (!table[index].empty())
         {
             totalCollisions++;
         }
         table[index].push_back(user);
         size++;
-        userids.insert(userId);
     }
 
     /**
@@ -186,7 +174,7 @@ public:
      */
     User *search(unsigned long long userId)
     {
-        unsigned int index = userId % max_size;
+        unsigned int index = hashing_method(userId);
         for (User *user : table[index])
         {
             if (user->userId == userId)
@@ -216,6 +204,19 @@ public:
         count += sizeof(size);
 
         return count;
+    }
+
+private:
+    /**
+     * @brief remueve un usuario en la tabla hash por su UserID, si este no existe no hace nada.
+     *
+     * @param key ID del usuario a buscar.
+     *
+     * @return
+     */
+    unsigned int hashing_method(unsigned long long key)
+    {
+        return key % max_size;
     }
 };
 
@@ -266,11 +267,6 @@ public:
         unsigned int index = hashing_method(key, max_size, i);
         while (i < MAX_ATTEMPTS)
         {
-            if (table[index] && table[index]->userName == key)
-            {
-                // cout << "La key ya esta en uso." << endl;
-                return;
-            }
             if (!table[index] || table[index]->userName == "DELETED_VAR")
             {
                 table[index] = new User(*user_data);
@@ -347,7 +343,6 @@ public:
     int size = 0;
     int totalCollisions = 0;
     vector<vector<User *>> table; // Tabla de vectores de User
-    unordered_set<string> keys;   ///< Conjunto para mantener un registro de los userids ya insertados.
 
     /**
      * @brief Constructor de la clase OpenHashTableUserName.
@@ -364,10 +359,6 @@ public:
      */
     void insert(const string &key, User *user_data)
     {
-        if (keys.find(key) != keys.end())
-        {
-            return;
-        }
 
         unsigned int index = hashing_method(key);
         if (!table[index].empty())
@@ -377,7 +368,6 @@ public:
 
         table[index].push_back(user_data);
         size++;
-        keys.insert(key);
     }
 
     /**
@@ -441,7 +431,7 @@ private:
      */
     unsigned int hashing_method(const string &key)
     {
-        return linear_probing(key, max_size, 0);
+        return hash_string(key) % max_size;
     }
 };
 

@@ -457,7 +457,7 @@ void test_searchs_by_userid(int n_tests, vector<User> users_in_tables, vector<Us
 void memory_test(int table_size, int n_elements, vector<User> users, string file_name)
 {
     // esto es más que nada para poder transformar a KB, MB, de forma sencilla
-    int CONSTANT = 1;
+    int CONSTANT = 8 * 1000;
     // User ID
     CloseHashTableUserId id_linear(table_size, linear_probing);
     CloseHashTableUserId id_double(table_size, double_hashing);
@@ -485,8 +485,7 @@ void memory_test(int table_size, int n_elements, vector<User> users, string file
     }
 
     ofstream file_out(file_name + ".csv", ios::app);
-
-    file_out << "Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Uso de memoria(bits)" << endl;
+    // file_out << "Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Memoria usada(KB)" << endl;
 
     file_out << "Linear by userid," << n_elements << "," << table_size << "," << id_linear.get_memory_usage() / CONSTANT << endl;
     file_out << "Double by userid, " << n_elements << "," << table_size << "," << id_double.get_memory_usage() / CONSTANT << endl;
@@ -540,7 +539,7 @@ void colisions_test(int table_size, int n_elements, vector<User> users, string f
 
     ofstream file_out(file_name + ".csv", ios::app);
 
-    file_out << "Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Cantidad de colisiones" << endl;
+    // file_out << "Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Cantidad de colisiones" << endl;
 
     file_out << "Linear by userid, " << n_elements << "," << table_size << "," << id_linear.getCollision() << endl;
     file_out << "Double by userid, " << n_elements << "," << table_size << "," << id_double.getCollision() << endl;
