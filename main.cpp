@@ -123,16 +123,25 @@ void test_linux()
   vector<User> real_users = readCSV("universities_followers.csv");
   vector<User> fake_users = readCSV("fake_data.csv");
   const int table_size = 30103;
+  int n_tests = 100;
 
-  // hacemos las pruebas
+  // Pruebas de inserción
+  test_inserts_by_username(n_tests, real_users, table_size, "tests/insert_by_username");
+  test_inserts_by_userid(n_tests, real_users, table_size, "tests/insert_by_userid");
 
-  // test_inserts_by_username(50, real_users, table_size, "tests/insert_by_username");
-  // test_inserts_by_userid(50, real_users, table_size, "tests/insert_by_userid");
+  // Pruebas de busqueda usuarios existentes
+  test_searchs_by_username(n_tests, real_users, real_users, table_size, "tests/search_by_username_realusers");
+  test_searchs_by_username(n_tests, real_users, real_users, table_size, "tests/search_by_username_realusers");
 
-  // test_searchs_by_username(50, real_users, fake_users, table_size, "tests/search_by_username");
-  // test_searchs_by_userid(50, real_users, fake_users, table_size, "tests/search_by_userid");
-  memory_test(1367, 1000, real_users, "test de memory");
-  colisions_test(1367, 1000, real_users, "test colisiones");
+  // Pruebas de busqueda usuarios no existentes
+  test_searchs_by_username(n_tests, real_users, fake_users, table_size, "tests/search_by_username_fakeusers");
+  test_searchs_by_userid(n_tests, real_users, fake_users, table_size, "tests/search_by_userid_fakeusers");
+
+  for (int i = 0; i < 20000; i + 2500)
+  {
+    memory_test(table_size, i, real_users, "tests/test_de_memory" + to_string(i / 2500));
+    colisions_test(table_size, i, real_users, "tests/test_colisiones" + to_string(i / 2500));
+  }
 }
 
 int main()
