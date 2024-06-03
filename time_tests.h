@@ -512,7 +512,6 @@ void memory_test(int table_size, int n_elements, vector<User> users, string file
 void colisions_test(int table_size, int n_elements, vector<User> users, string file_name)
 {
     // esto es más que nada para poder transformar a KB, MB, de forma sencilla
-    int CONSTANT = 1;
     // User ID
     CloseHashTableUserId id_linear(table_size, linear_probing);
     CloseHashTableUserId id_double(table_size, double_hashing);
@@ -543,7 +542,7 @@ void colisions_test(int table_size, int n_elements, vector<User> users, string f
 
     file_out << "Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Cantidad de colisiones" << endl;
 
-    file_out << "Linear by userid" << n_elements << "," << table_size << "," << id_linear.getCollision() << endl;
+    file_out << "Linear by userid, " << n_elements << "," << table_size << "," << id_linear.getCollision() << endl;
     file_out << "Double by userid" << n_elements << "," << table_size << "," << id_double.getCollision() << endl;
     file_out << "Quadratic by userid" << n_elements << "," << table_size << "," << id_quadratic.getCollision() << endl;
     file_out << "Chaining by userid" << n_elements << "," << table_size << "," << openuserid.getCollision() << endl;

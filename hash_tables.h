@@ -12,7 +12,7 @@
 using namespace std;
 
 // Máximo de intentos de una operación en una hash table.
-const int MAX_ATTEMPTS = 50000;
+const int MAX_ATTEMPTS = 5000;
 User DELETED_VAR = User("", 0, "DELETED_VAR", 0, 0, 0, "");
 
 //---------------------------------------------------------------//
@@ -309,8 +309,6 @@ public:
         {
             if (table[index]->userName == key)
             {
-                cout << "NUMERO DE INDICE: " << index << endl;
-                cout << table[index] << endl;
                 return table[index];
             }
             i++;
