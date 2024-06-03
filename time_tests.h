@@ -18,8 +18,8 @@ using namespace std::chrono;
  * @enum HashTableType
  * @brief Enumera los diferentes tipos de tablas hash utilizadas en la aplicación.
  *
- * Este enum define varios tipos de tablas hash que pueden ser utilizados 
- * para almacenar y buscar usuarios, ya sea por ID o por nombre, utilizando 
+ * Este enum define varios tipos de tablas hash que pueden ser utilizados
+ * para almacenar y buscar usuarios, ya sea por ID o por nombre, utilizando
  * diferentes métodos de resolución de colisiones.
  */
 enum HashTableType
@@ -144,7 +144,7 @@ double test_insert(HashTableType type, int max_size, vector<User> &users, int n_
  */
 void test_inserts_by_username(int n_tests, vector<User> users, int table_size, string file_name)
 {
-    int n_inserts[] = {1000, 5000, 10000, 15000, 20000};
+    int n_inserts[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 20000};
     ofstream file_out(file_name + ".csv", false ? ios::trunc : ios::app);
     file_out << "Tipo de hasheo, Número de inserciones, Tiempo(s)" << endl;
     for (int inserts : n_inserts)
@@ -179,7 +179,7 @@ void test_inserts_by_username(int n_tests, vector<User> users, int table_size, s
  */
 void test_inserts_by_userid(int n_tests, vector<User> users, int table_size, string file_name)
 {
-    int n_inserts[] = {1000, 5000, 10000, 15000, 20000};
+    int n_inserts[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 20000};
     ofstream file_out(file_name + ".csv", ios::app);
     file_out << "Tipo de hasheo, Número de inserciones, Tiempo(s)" << endl;
     for (int inserts : n_inserts)
@@ -365,10 +365,9 @@ void test_searchs_by_username(int n_tests, vector<User> users_in_tables, vector<
         chaining_table.insert(user.userName, &user);
         STL_table[user.userName] = user;
     }
+    int n_searchs[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 20000};
 
-    int n_searchs[] = {1000, 5000, 10000, 15000, 20000};
-
-    ofstream file_out(file_name + ".csv", false ? ios::trunc : ios::app);
+    ofstream file_out(file_name + ".csv", ios::app);
 
     file_out << "Tipo de hasheo, Número de busquedas, Tiempo(s)" << endl;
 
@@ -422,8 +421,7 @@ void test_searchs_by_userid(int n_tests, vector<User> users_in_tables, vector<Us
         chaining_table.insert(user.userId, &user);
         STL_table[user.userId] = user;
     }
-
-    int n_searchs[] = {1000, 5000, 10000, 15000, 20000};
+    int n_searchs[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 20000};
 
     ofstream file_out(file_name + ".csv", ios::app);
 
@@ -445,6 +443,116 @@ void test_searchs_by_userid(int n_tests, vector<User> users_in_tables, vector<Us
             file_out << test_search(STL_table, users_to_search, searchs) << endl;
         }
     }
+    file_out.close();
+}
+
+/**
+ * @brief Guarda cuanta memoria utiliza cada tabla hash de User en un archivo .csv
+ *
+ * @param table_size: Tamaño de la tabla (este es estático).
+ * @param n_elements: Cantidad de elementos dentro de la tabla.
+ * @param users: vector con usuarios los cuales se añadiran a las tablas.
+ * @param file_name: nombre del archivo de salida, este no debe contener la extención .csv.
+ */
+void memory_test(int table_size, int n_elements, vector<User> users, string file_name)
+{
+    // esto es más que nada para poder transformar a KB, MB, de forma sencilla
+    int CONSTANT = 1;
+    // User ID
+    CloseHashTableUserId id_linear(table_size, linear_probing);
+    CloseHashTableUserId id_double(table_size, double_hashing);
+    CloseHashTableUserId id_quadratic(table_size, quadratic_probing);
+    OpenHashTableUserId openuserid(table_size);
+    for (int i = 0; i < n_elements; i++)
+    {
+        id_linear.insert(users[i].userId, &users[i]);
+        id_double.insert(users[i].userId, &users[i]);
+        id_quadratic.insert(users[i].userId, &users[i]);
+        openuserid.insert(users[i].userId, &users[i]);
+    }
+
+    // User Name
+    CloseHashTableUserName name_linear(table_size, linear_probing);
+    CloseHashTableUserName name_double(table_size, double_hashing);
+    CloseHashTableUserName name_quadratic(table_size, quadratic_probing);
+    OpenHashTableUserName openusername(table_size);
+    for (int i = 0; i < n_elements; i++)
+    {
+        name_linear.insert(users[i].userName, &users[i]);
+        name_double.insert(users[i].userName, &users[i]);
+        name_quadratic.insert(users[i].userName, &users[i]);
+        openusername.insert(users[i].userName, &users[i]);
+    }
+
+    ofstream file_out(file_name + ".csv", ios::app);
+
+    file_out << "Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Uso de memoria(bits)" << endl;
+
+    file_out << "Linear by userid" << n_elements << "," << table_size << "," << id_linear.get_memory_usage() / CONSTANT << endl;
+    file_out << "Double by userid" << n_elements << "," << table_size << "," << id_double.get_memory_usage() / CONSTANT << endl;
+    file_out << "Quadratic by userid" << n_elements << "," << table_size << "," << id_quadratic.get_memory_usage() / CONSTANT << endl;
+    file_out << "Chaining by userid" << n_elements << "," << table_size << "," << openuserid.get_memory_usage() / CONSTANT << endl;
+
+    file_out << "Linear by username" << n_elements << "," << table_size << "," << name_linear.get_memory_usage() / CONSTANT << endl;
+    file_out << "Double by username" << n_elements << "," << table_size << "," << name_double.get_memory_usage() / CONSTANT << endl;
+    file_out << "Quadratic by username" << n_elements << "," << table_size << "," << name_quadratic.get_memory_usage() / CONSTANT << endl;
+    file_out << "Chaining by username" << n_elements << "," << table_size << "," << openusername.get_memory_usage() / CONSTANT << endl;
+
+    file_out.close();
+}
+
+/**
+ * @brief Guarda cuantas colisiones tuvo cada tabla hash de User en un archivo .csv
+ *
+ * @param table_size: Tamaño de la tabla (este es estático).
+ * @param n_elements: Cantidad de elementos dentro de la tabla.
+ * @param users: vector con usuarios los cuales se añadiran a las tablas.
+ * @param file_name: nombre del archivo de salida, este no debe contener la extención .csv.
+ */
+void colisions_test(int table_size, int n_elements, vector<User> users, string file_name)
+{
+    // esto es más que nada para poder transformar a KB, MB, de forma sencilla
+    int CONSTANT = 1;
+    // User ID
+    CloseHashTableUserId id_linear(table_size, linear_probing);
+    CloseHashTableUserId id_double(table_size, double_hashing);
+    CloseHashTableUserId id_quadratic(table_size, quadratic_probing);
+    OpenHashTableUserId openuserid(table_size);
+    for (int i = 0; i < n_elements; i++)
+    {
+        id_linear.insert(users[i].userId, &users[i]);
+        id_double.insert(users[i].userId, &users[i]);
+        id_quadratic.insert(users[i].userId, &users[i]);
+        openuserid.insert(users[i].userId, &users[i]);
+    }
+
+    // User Name
+    CloseHashTableUserName name_linear(table_size, linear_probing);
+    CloseHashTableUserName name_double(table_size, double_hashing);
+    CloseHashTableUserName name_quadratic(table_size, quadratic_probing);
+    OpenHashTableUserName openusername(table_size);
+    for (int i = 0; i < n_elements; i++)
+    {
+        name_linear.insert(users[i].userName, &users[i]);
+        name_double.insert(users[i].userName, &users[i]);
+        name_quadratic.insert(users[i].userName, &users[i]);
+        openusername.insert(users[i].userName, &users[i]);
+    }
+
+    ofstream file_out(file_name + ".csv", ios::app);
+
+    file_out << "Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Cantidad de colisiones" << endl;
+
+    file_out << "Linear by userid" << n_elements << "," << table_size << "," << id_linear.getCollision() << endl;
+    file_out << "Double by userid" << n_elements << "," << table_size << "," << id_double.getCollision() << endl;
+    file_out << "Quadratic by userid" << n_elements << "," << table_size << "," << id_quadratic.getCollision() << endl;
+    file_out << "Chaining by userid" << n_elements << "," << table_size << "," << openuserid.getCollision() << endl;
+
+    file_out << "Linear by username" << n_elements << "," << table_size << "," << name_linear.getCollision() << endl;
+    file_out << "Double by username" << n_elements << "," << table_size << "," << name_double.getCollision() << endl;
+    file_out << "Quadratic by username" << n_elements << "," << table_size << "," << name_quadratic.getCollision() << endl;
+    file_out << "Chaining by username" << n_elements << "," << table_size << "," << openusername.getCollision() << endl;
+
     file_out.close();
 }
 

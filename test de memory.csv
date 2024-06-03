@@ -1,0 +1,27 @@
+Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Uso de memoria(bits)
+Linear by userid1000,30103,3612368
+Double by userid1000,30103,3612368
+Quadratic by userid1000,30103,3612368
+Chaining by userid1000,30103,842360
+Linear by username1000,30103,3612368
+Double by username1000,30103,3612368
+Quadratic by username1000,30103,3612368
+Chainingby username1000,30103,842360
+Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Uso de memoria(bits)
+Linear by userid1000,1367,164048
+Double by userid1000,1367,164048
+Quadratic by userid1000,1367,164048
+Chaining by userid1000,1367,152696
+Linear by username1000,1367,164048
+Double by username1000,1367,164048
+Quadratic by username1000,1367,164048
+Chainingby username1000,1367,152696
+Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Uso de memoria(bits)
+Linear by userid1000,1367,164048
+Double by userid1000,1367,164048
+Quadratic by userid1000,1367,164048
+Chaining by userid1000,1367,152696
+Linear by username1000,1367,164048
+Double by username1000,1367,164048
+Quadratic by username1000,1367,164048
+Chainingby username1000,1367,152696
