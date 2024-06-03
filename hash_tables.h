@@ -146,7 +146,7 @@ public:
     void insert(unsigned long long userId, User *user)
     {
 
-        unsigned int index = userId % max_size;
+        unsigned int index = hashing_method(userId);
         if (!table[index].empty())
         {
             totalCollisions++;
@@ -174,7 +174,7 @@ public:
      */
     User *search(unsigned long long userId)
     {
-        unsigned int index = userId % max_size;
+        unsigned int index = hashing_method(userId);
         for (User *user : table[index])
         {
             if (user->userId == userId)
@@ -204,6 +204,19 @@ public:
         count += sizeof(size);
 
         return count;
+    }
+
+private:
+    /**
+     * @brief remueve un usuario en la tabla hash por su UserID, si este no existe no hace nada.
+     *
+     * @param key ID del usuario a buscar.
+     *
+     * @return
+     */
+    unsigned int hashing_method(unsigned long long key)
+    {
+        return key % max_size;
     }
 };
 
@@ -418,7 +431,7 @@ private:
      */
     unsigned int hashing_method(const string &key)
     {
-        return linear_probing(key, max_size, 0);
+        return hash_string(key) % max_size;
     }
 };
 
