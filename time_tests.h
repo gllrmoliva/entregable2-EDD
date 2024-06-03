@@ -144,7 +144,7 @@ double test_insert(HashTableType type, int max_size, vector<User> &users, int n_
  */
 void test_inserts_by_username(int n_tests, vector<User> users, int table_size, string file_name)
 {
-    int n_inserts[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 20000};
+    int n_inserts[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 19908};
     ofstream file_out(file_name + ".csv", false ? ios::trunc : ios::app);
     file_out << "Tipo de hasheo, Número de inserciones, Tiempo(s)" << endl;
     for (int inserts : n_inserts)
@@ -179,7 +179,7 @@ void test_inserts_by_username(int n_tests, vector<User> users, int table_size, s
  */
 void test_inserts_by_userid(int n_tests, vector<User> users, int table_size, string file_name)
 {
-    int n_inserts[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 20000};
+    int n_inserts[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 19908};
     ofstream file_out(file_name + ".csv", ios::app);
     file_out << "Tipo de hasheo, Número de inserciones, Tiempo(s)" << endl;
     for (int inserts : n_inserts)
@@ -365,7 +365,7 @@ void test_searchs_by_username(int n_tests, vector<User> users_in_tables, vector<
         chaining_table.insert(user.userName, &user);
         STL_table[user.userName] = user;
     }
-    int n_searchs[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 20000};
+    int n_searchs[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 19908};
 
     ofstream file_out(file_name + ".csv", ios::app);
 
@@ -421,7 +421,7 @@ void test_searchs_by_userid(int n_tests, vector<User> users_in_tables, vector<Us
         chaining_table.insert(user.userId, &user);
         STL_table[user.userId] = user;
     }
-    int n_searchs[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 20000};
+    int n_searchs[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 19908};
 
     ofstream file_out(file_name + ".csv", ios::app);
 
@@ -457,7 +457,7 @@ void test_searchs_by_userid(int n_tests, vector<User> users_in_tables, vector<Us
 void memory_test(int table_size, int n_elements, vector<User> users, string file_name)
 {
     // esto es más que nada para poder transformar a KB, MB, de forma sencilla
-    int CONSTANT = 8 * 1000;
+    int CONSTANT = 8 * 1000; // Seteado en KB
     // User ID
     CloseHashTableUserId id_linear(table_size, linear_probing);
     CloseHashTableUserId id_double(table_size, double_hashing);
@@ -510,8 +510,6 @@ void memory_test(int table_size, int n_elements, vector<User> users, string file
  */
 void colisions_test(int table_size, int n_elements, vector<User> users, string file_name)
 {
-    // esto es más que nada para poder transformar a KB, MB, de forma sencilla
-    // User ID
     CloseHashTableUserId id_linear(table_size, linear_probing);
     CloseHashTableUserId id_double(table_size, double_hashing);
     CloseHashTableUserId id_quadratic(table_size, quadratic_probing);
