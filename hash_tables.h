@@ -27,6 +27,7 @@ class CloseHashTableUserId
 public:
     int max_size; ///< Tamaño de la tabla hash.
     int size = 0;
+    int totalCollisions = 0;                             ///< Contador global de colisiones                                            ///< Tamaño de la tabla hash.
     int (*hashing_method)(unsigned long long, int, int); ///< Puntero a la función de hash.
     vector<User *> table;                                ///< Vector que almacena punteros a onjetos User.
     unordered_set<unsigned long long> userids;           ///< Conjunto para mantener un registro de los userids ya insertados.
@@ -53,6 +54,8 @@ public:
 
         int i = 0;
         int index;
+        int collisionCount = 0;
+
         do
         {
             index = hashing_method(userId, max_size, i);
@@ -60,12 +63,25 @@ public:
             {
                 table[index] = user;
                 userids.insert(userId);
+                totalCollisions += collisionCount;
                 size++;
                 return;
             }
             i++;
-        } while (i < max_size);
+            collisionCount++;
+        } while (i < MAX_ATTEMPTS);
         std::cout << "Error: Hash table overflow" << endl;
+    }
+
+    /**
+     *@brief Devuelve el numero total de colisiones que hubo en una Tabla Hash dependiendo
+     * del metodo de resolucion de colisiones utilizado
+     *
+     * @return Numero de colisiones totales
+     */
+    int getCollision()
+    {
+        return totalCollisions;
     }
 
     /**
@@ -117,6 +133,7 @@ class OpenHashTableUserId
 public:
     int max_size; ///< Tamaño de la tabla hash
     int size = 0;
+    int totalCollisions = 0;
     vector<vector<User *>> table;              ///< Vector de vectores que representa la tabla hash con listas de encadenamiento
     unordered_set<unsigned long long> userids; ///< Conjunto para mantener un registro de los userids ya insertados.
 
@@ -141,9 +158,24 @@ public:
         }
 
         unsigned int index = userId % max_size;
+        if (!table[index].empty())
+        {
+            totalCollisions++;
+        }
         table[index].push_back(user);
         size++;
         userids.insert(userId);
+    }
+
+    /**
+     *@brief Devuelve el numero total de colisiones que hubo en una Tabla Hash dependiendo
+     * del metodo de resolucion de colisiones utilizado
+     *
+     * @return Numero de colisiones totales
+     */
+    int getCollision()
+    {
+        return totalCollisions;
     }
 
     /**
@@ -199,6 +231,7 @@ class CloseHashTableUserName
 public:
     int max_size;
     int size = 0;
+    int totalCollisions = 0;
     unsigned int (*hashing_method)(const string &, int, int);
     vector<User *> table;
 
@@ -245,9 +278,21 @@ public:
                 return;
             }
             i++;
+            totalCollisions++;
             index = hashing_method(key, max_size, i);
         }
         cout << "Tabla hash está llena o se alcanzó el máximo de intentos." << endl;
+    }
+
+    /**
+     *@brief Devuelve el numero total de colisiones que hubo en una Tabla Hash dependiendo
+     * del metodo de resolucion de colisiones utilizado
+     *
+     * @return Numero de colisiones totales
+     */
+    int getCollision()
+    {
+        return totalCollisions;
     }
 
     /**
@@ -302,6 +347,7 @@ class OpenHashTableUserName
 public:
     int max_size;
     int size = 0;
+    int totalCollisions = 0;
     vector<vector<User *>> table; // Tabla de vectores de User
     unordered_set<string> keys;   ///< Conjunto para mantener un registro de los userids ya insertados.
 
@@ -326,14 +372,25 @@ public:
         }
 
         unsigned int index = hashing_method(key);
+        if (!table[index].empty())
+        {
+            totalCollisions++;
+        }
+
         table[index].push_back(user_data);
         size++;
         keys.insert(key);
+    }
 
-        // unsigned int index = hashing_method(key);
-
-        // table[index].push_back(user_data);
-        // size++;
+    /**
+     *@brief Devuelve el numero total de colisiones que hubo en una Tabla Hash dependiendo
+     * del metodo de resolucion de colisiones utilizado
+     *
+     * @return Numero de colisiones totales
+     */
+    int getCollision()
+    {
+        return totalCollisions;
     }
 
     /**
