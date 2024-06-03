@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <chrono>
+#include <bits/stdc++.h>
 
 #include "hash_functions.h"
 #include "hash_tables.h"
@@ -23,7 +24,8 @@ void test_windows()
 {
 
   // Leer usuarios desde el archivo CSV
-  vector<User> users = readCSV("D:/Joako/Desktop/Archivos de la U/Estructura de datos/entregable2-EDD/universities_followers.csv");
+  vector<User> users = readCSV("universities_followers.csv");
+  // vector<User> users = readCSV("D:/Joako/Desktop/Archivos de la U/Estructura de datos/entregable2-EDD/universities_followers.csv");
 
   if (users.empty())
   {
@@ -93,22 +95,22 @@ void test_windows()
   cout << "Busqueda con Linear Probing:" << endl;
   printUser(foundUserLinear);
 
-  //auto foundUserQuadratic = ht_quadratic.search(userIdToSearch);
-  //cout << "Busqueda con Quadratic Probing:" << endl;
-  //printUser(foundUserQuadratic);
+  // auto foundUserQuadratic = ht_quadratic.search(userIdToSearch);
+  // cout << "Busqueda con Quadratic Probing:" << endl;
+  // printUser(foundUserQuadratic);
 
   auto foundUserDouble = ht_double.search(userIdToSearch);
   cout << "Busqueda con Double Hashing:" << endl;
   printUser(foundUserDouble);
 
-  //auto foundUserChaining = ht_chaining.search(userIdToSearch);
-  //cout << "Busqueda con Encadenamiento:" << endl;
-  //printUser(foundUserChaining);
+  // auto foundUserChaining = ht_chaining.search(userIdToSearch);
+  // cout << "Busqueda con Encadenamiento:" << endl;
+  // printUser(foundUserChaining);
 
   auto foundUserUnorderedMap = ht_unordered_map.find(userIdToSearch) != ht_unordered_map.end() ? ht_unordered_map[userIdToSearch] : nullptr;
   cout << "Busqueda con unordered_map:" << endl;
   printUser(foundUserUnorderedMap);
-  
+
   std::cout << "Colisiones totales en Linear Probing: " << ht_linear.getCollision() << std::endl;
   std::cout << "Colisiones totales en Double Probing: " << ht_double.getCollision() << std::endl;
   std::cout << "Colisiones totales en Quadratic Probing: " << ht_quadratic.getCollision() << std::endl;
@@ -125,15 +127,58 @@ void test_linux()
 
   // hacemos las pruebas
 
-  test_inserts_by_username(50, real_users, table_size, "tests/insert_by_username");
-  test_inserts_by_userid(50, real_users, table_size, "tests/insert_by_userid");
+  // test_inserts_by_username(50, real_users, table_size, "tests/insert_by_username");
+  // test_inserts_by_userid(50, real_users, table_size, "tests/insert_by_userid");
 
-  test_searchs_by_username(50, real_users, fake_users, table_size, "tests/search_by_username");
-  test_searchs_by_userid(50, real_users, fake_users, table_size, "tests/search_by_userid");
+  // test_searchs_by_username(50, real_users, fake_users, table_size, "tests/search_by_username");
+  // test_searchs_by_userid(50, real_users, fake_users, table_size, "tests/search_by_userid");
+
+  // User ID
+  CloseHashTableUserId id_linear(table_size, linear_probing);
+  CloseHashTableUserId id_double(table_size, double_hashing);
+  CloseHashTableUserId id_quadratic(table_size, quadratic_probing);
+  OpenHashTableUserId openuserid(table_size);
+  for (User user : real_users)
+  {
+    id_linear.insert(user.userId, &user);
+    id_double.insert(user.userId, &user);
+    id_quadratic.insert(user.userId, &user);
+    openuserid.insert(user.userId, &user);
+  }
+
+  // User Name
+  CloseHashTableUserName name_linear(table_size, linear_probing);
+  CloseHashTableUserName name_double(table_size, double_hashing);
+  CloseHashTableUserName name_quadratic(table_size, quadratic_probing);
+  OpenHashTableUserName openusername(table_size);
+  for (User user : real_users)
+  {
+    name_linear.insert(user.userName, &user);
+    name_double.insert(user.userName, &user);
+    name_quadratic.insert(user.userName, &user);
+    openusername.insert(user.userName, &user);
+  }
+
+  cout << endl;
+
+  cout << "###### USER ID ######" << endl;
+  cout << "LINEAR: " << id_linear.get_memory_usage() << " bits" << endl;
+  cout << "DOUBLE: " << id_double.get_memory_usage() << " bits" << endl;
+  cout << "QUADRATIC: " << id_quadratic.get_memory_usage() << " bits" << endl;
+  cout << "CHAINING: " << openuserid.get_memory_usage() << " bits" << endl;
+
+  cout << endl;
+
+  cout << "###### USER NAME ######" << endl;
+  cout << "LINEAR: " << name_linear.get_memory_usage() << " bits" << endl;
+  cout << "DOUBLE: " << name_double.get_memory_usage() << " bits" << endl;
+  cout << "QUADRATIC: " << name_quadratic.get_memory_usage() << " bits" << endl;
+  cout << "CHAINING: " << openusername.get_memory_usage() << " bits" << endl;
 }
 
 int main()
 {
   test_windows();
+  // test_linux();
   return 0;
 }

@@ -25,7 +25,8 @@ User DELETED_VAR = User("", 0, "DELETED_VAR", 0, 0, 0, "");
 class CloseHashTableUserId
 {
 public:
-    int size;
+    int max_size; ///< Tamaño de la tabla hash.
+    int size = 0;
     int totalCollisions = 0;                             ///< Contador global de colisiones                                            ///< Tamaño de la tabla hash.
     int (*hashing_method)(unsigned long long, int, int); ///< Puntero a la función de hash.
     vector<User *> table;                                ///< Vector que almacena punteros a onjetos User.
@@ -37,7 +38,7 @@ public:
      * @param hashing_method Puntero a la función de hash que se usará.
      */
     CloseHashTableUserId(int size, int (*hashing_method)(unsigned long long, int, int))
-        : size(size), hashing_method(hashing_method), table(size, nullptr) {}
+        : max_size(size), hashing_method(hashing_method), table(size, nullptr) {}
 
     /**
      * @brief Inserta un usuario en la tabla hash.
@@ -46,36 +47,40 @@ public:
      */
     void insert(unsigned long long userId, User *user)
     {
-        if (userids.find(userId) != userids.end()) {
+        if (userids.find(userId) != userids.end())
+        {
             return;
         }
 
         int i = 0;
         int index;
         int collisionCount = 0;
+
         do
         {
-            index = hashing_method(userId, size, i);
+            index = hashing_method(userId, max_size, i);
             if (table[index] == nullptr)
             {
                 table[index] = user;
                 userids.insert(userId);
-                totalCollisions += collisionCount; 
+                totalCollisions += collisionCount;
+                size++;
                 return;
             }
             i++;
             collisionCount++;
-        } while (i < size);
+        } while (i < MAX_ATTEMPTS);
         std::cout << "Error: Hash table overflow" << endl;
     }
 
     /**
      *@brief Devuelve el numero total de colisiones que hubo en una Tabla Hash dependiendo
      * del metodo de resolucion de colisiones utilizado
-     * 
+     *
      * @return Numero de colisiones totales
-    */
-    int getCollision(){
+     */
+    int getCollision()
+    {
         return totalCollisions;
     }
 
@@ -90,14 +95,33 @@ public:
         int index;
         do
         {
-            index = hashing_method(userId, size, i);
+            index = hashing_method(userId, max_size, i);
             if (table[index] == nullptr)
                 return nullptr;
             if (table[index]->userId == userId)
                 return table[index];
             i++;
-        } while (i < size);
+        } while (i < max_size);
         return nullptr;
+    }
+
+    /**
+     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bits.
+     */
+    size_t get_memory_usage()
+    {
+        size_t count = 0;
+        // espacio usado por la tabla, esta tabla tiene un máximo de elementos
+        // por ende reservaria el bloque completo de memoria
+        for (auto element : table)
+        {
+            count += sizeof(*element);
+        }
+        // espacio usado por el resto de variables
+        count += sizeof(max_size);
+        count += sizeof(size);
+
+        return count;
     }
 };
 
@@ -110,7 +134,7 @@ public:
     int max_size; ///< Tamaño de la tabla hash
     int size = 0;
     int totalCollisions = 0;
-    vector<vector<User *>> table; ///< Vector de vectores que representa la tabla hash con listas de encadenamiento
+    vector<vector<User *>> table;              ///< Vector de vectores que representa la tabla hash con listas de encadenamiento
     unordered_set<unsigned long long> userids; ///< Conjunto para mantener un registro de los userids ya insertados.
 
     /**
@@ -128,26 +152,29 @@ public:
      */
     void insert(unsigned long long userId, User *user)
     {
-        if (userids.find(userId) != userids.end()) {
+        if (userids.find(userId) != userids.end())
+        {
             return;
         }
 
         unsigned int index = userId % max_size;
-        if (!table[index].empty()) {
-        totalCollisions++;
+        if (!table[index].empty())
+        {
+            totalCollisions++;
         }
         table[index].push_back(user);
         size++;
-        userids.insert(userId); 
+        userids.insert(userId);
     }
 
     /**
      *@brief Devuelve el numero total de colisiones que hubo en una Tabla Hash dependiendo
      * del metodo de resolucion de colisiones utilizado
-     * 
+     *
      * @return Numero de colisiones totales
-    */
-    int getCollision(){
+     */
+    int getCollision()
+    {
         return totalCollisions;
     }
 
@@ -169,26 +196,26 @@ public:
     }
 
     /**
-     * @brief remueve un usuario en la tabla hash por su UserId, si este no existe no hace nada.
-     *
-     * @param key Id del usuario a buscar.
+     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bits.
      */
-    void remove(unsigned long long key)
+    size_t get_memory_usage()
     {
-        unsigned int index = key % max_size;
-        auto &bucket = table[index];
-        int bucket_size = bucket.size();
-
-        for (int i = 0; i < bucket_size; i++)
+        size_t count = 0;
+        // espacio usado por la tabla, esta tabla tiene un máximo de elementos
+        // por ende reservaria el bloque completo de memoria
+        for (auto bucket : table)
         {
-            if (bucket.at(i)->userId == key)
+            count += sizeof(bucket);
+            for (auto element : bucket)
             {
-                // Esto es iniciar el iterador y moverlo hasta el indice correspondiente
-                bucket.erase(bucket.begin() + i);
-                size--;
-                return;
+                count += sizeof(*element);
             }
         }
+        // espacio usado por el resto de variables
+        count += sizeof(max_size);
+        count += sizeof(size);
+
+        return count;
     }
 };
 
@@ -260,10 +287,11 @@ public:
     /**
      *@brief Devuelve el numero total de colisiones que hubo en una Tabla Hash dependiendo
      * del metodo de resolucion de colisiones utilizado
-     * 
+     *
      * @return Numero de colisiones totales
-    */
-    int getCollision(){
+     */
+    int getCollision()
+    {
         return totalCollisions;
     }
 
@@ -292,30 +320,22 @@ public:
     }
 
     /**
-     * @brief remueve un usuario en la tabla hash por su UserName, si este no existe no hace nada.
-     *
-     * @param key nombre del usuario a buscar.
+     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bits.
      */
-    void remove(const string &key)
+    size_t get_memory_usage()
     {
-        int i = 0;
-        unsigned int index = hashing_method(key, max_size, i);
-        while (i < MAX_ATTEMPTS && table[index])
+        size_t count = 0;
+        // espacio usado por la tabla, esta tabla tiene un máximo de elementos
+        // por ende reservaria el bloque completo de memoria
+        for (auto element : table)
         {
-            if (!table[index])
-            {
-                // Esto pasa cuando nos encontramos con un espacio al cual nunca se ha accedido.
-                return;
-            }
-            if (table[index]->userName == key)
-            {
-                table[index] = new User(DELETED_VAR);
-                size--;
-                return;
-            }
-            i++;
-            index = hashing_method(key, max_size, i);
+            count += sizeof(*element);
         }
+        // espacio usado por el resto de variables
+        count += sizeof(max_size);
+        count += sizeof(size);
+
+        return count;
     }
 };
 
@@ -329,6 +349,7 @@ public:
     int size = 0;
     int totalCollisions = 0;
     vector<vector<User *>> table; // Tabla de vectores de User
+    unordered_set<string> keys;   ///< Conjunto para mantener un registro de los userids ya insertados.
 
     /**
      * @brief Constructor de la clase OpenHashTableUserName.
@@ -345,22 +366,30 @@ public:
      */
     void insert(const string &key, User *user_data)
     {
+        if (keys.find(key) != keys.end())
+        {
+            return;
+        }
+
         unsigned int index = hashing_method(key);
-        if (!table[index].empty()) {
-        totalCollisions++; 
+        if (!table[index].empty())
+        {
+            totalCollisions++;
         }
 
         table[index].push_back(user_data);
         size++;
+        keys.insert(key);
     }
 
     /**
      *@brief Devuelve el numero total de colisiones que hubo en una Tabla Hash dependiendo
      * del metodo de resolucion de colisiones utilizado
-     * 
+     *
      * @return Numero de colisiones totales
-    */
-    int getCollision(){
+     */
+    int getCollision()
+    {
         return totalCollisions;
     }
 
@@ -376,34 +405,32 @@ public:
         for (User *user : table[index])
         {
             if (user->userName == key)
-            {
                 return user;
-            }
         }
         return nullptr;
     }
 
     /**
-     * @brief remueve un usuario en la tabla hash por su UserName, si este no existe no hace nada.
-     *
-     * @param key nombre del usuario a buscar.
+     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bits.
      */
-    void remove(const string &key)
+    size_t get_memory_usage()
     {
-        unsigned int index = hashing_method(key);
-        auto &bucket = table[index];
-        int bucket_size = bucket.size();
-
-        for (int i = 0; i < bucket_size; i++)
+        size_t count = 0;
+        // espacio usado por la tabla, esta tabla tiene un máximo de elementos
+        // por ende reservaria el bloque completo de memoria
+        for (auto bucket : table)
         {
-            if (bucket.at(i)->userName == key)
+            count += sizeof(bucket);
+            for (auto element : bucket)
             {
-                // Esto es iniciar el iterador y moverlo hasta el indice correspondiente
-                bucket.erase(bucket.begin() + i);
-                size--;
-                return;
+                count += sizeof(*element);
             }
         }
+        // espacio usado por el resto de variables
+        count += sizeof(max_size);
+        count += sizeof(size);
+
+        return count;
     }
 
 private:

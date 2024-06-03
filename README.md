@@ -1,2 +1,3 @@
 # To-do
-- Discutir sobre si int64_t es mejor que unsigned long long (creo que es mejor el segundo por cosas del compilador)
+- Tener una función que cree un csv con los datos de las coliones
+- Tener una función que cree un csv con los datos de cuanto pesa cada tabla en memoria (investigar sobre unordered_map)
