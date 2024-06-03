@@ -488,15 +488,15 @@ void memory_test(int table_size, int n_elements, vector<User> users, string file
 
     file_out << "Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Uso de memoria(bits)" << endl;
 
-    file_out << "Linear by userid" << n_elements << "," << table_size << "," << id_linear.get_memory_usage() / CONSTANT << endl;
-    file_out << "Double by userid" << n_elements << "," << table_size << "," << id_double.get_memory_usage() / CONSTANT << endl;
-    file_out << "Quadratic by userid" << n_elements << "," << table_size << "," << id_quadratic.get_memory_usage() / CONSTANT << endl;
-    file_out << "Chaining by userid" << n_elements << "," << table_size << "," << openuserid.get_memory_usage() / CONSTANT << endl;
+    file_out << "Linear by userid," << n_elements << "," << table_size << "," << id_linear.get_memory_usage() / CONSTANT << endl;
+    file_out << "Double by userid, " << n_elements << "," << table_size << "," << id_double.get_memory_usage() / CONSTANT << endl;
+    file_out << "Quadratic by userid, " << n_elements << "," << table_size << "," << id_quadratic.get_memory_usage() / CONSTANT << endl;
+    file_out << "Chaining by userid," << n_elements << "," << table_size << "," << openuserid.get_memory_usage() / CONSTANT << endl;
 
-    file_out << "Linear by username" << n_elements << "," << table_size << "," << name_linear.get_memory_usage() / CONSTANT << endl;
-    file_out << "Double by username" << n_elements << "," << table_size << "," << name_double.get_memory_usage() / CONSTANT << endl;
-    file_out << "Quadratic by username" << n_elements << "," << table_size << "," << name_quadratic.get_memory_usage() / CONSTANT << endl;
-    file_out << "Chaining by username" << n_elements << "," << table_size << "," << openusername.get_memory_usage() / CONSTANT << endl;
+    file_out << "Linear by username," << n_elements << "," << table_size << "," << name_linear.get_memory_usage() / CONSTANT << endl;
+    file_out << "Double by username," << n_elements << "," << table_size << "," << name_double.get_memory_usage() / CONSTANT << endl;
+    file_out << "Quadratic by username," << n_elements << "," << table_size << "," << name_quadratic.get_memory_usage() / CONSTANT << endl;
+    file_out << "Chaining by username, " << n_elements << "," << table_size << "," << openusername.get_memory_usage() / CONSTANT << endl;
 
     file_out.close();
 }
@@ -543,14 +543,14 @@ void colisions_test(int table_size, int n_elements, vector<User> users, string f
     file_out << "Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Cantidad de colisiones" << endl;
 
     file_out << "Linear by userid, " << n_elements << "," << table_size << "," << id_linear.getCollision() << endl;
-    file_out << "Double by userid" << n_elements << "," << table_size << "," << id_double.getCollision() << endl;
-    file_out << "Quadratic by userid" << n_elements << "," << table_size << "," << id_quadratic.getCollision() << endl;
-    file_out << "Chaining by userid" << n_elements << "," << table_size << "," << openuserid.getCollision() << endl;
+    file_out << "Double by userid, " << n_elements << "," << table_size << "," << id_double.getCollision() << endl;
+    file_out << "Quadratic by userid, " << n_elements << "," << table_size << "," << id_quadratic.getCollision() << endl;
+    file_out << "Chaining by userid, " << n_elements << "," << table_size << "," << openuserid.getCollision() << endl;
 
-    file_out << "Linear by username" << n_elements << "," << table_size << "," << name_linear.getCollision() << endl;
-    file_out << "Double by username" << n_elements << "," << table_size << "," << name_double.getCollision() << endl;
-    file_out << "Quadratic by username" << n_elements << "," << table_size << "," << name_quadratic.getCollision() << endl;
-    file_out << "Chaining by username" << n_elements << "," << table_size << "," << openusername.getCollision() << endl;
+    file_out << "Linear by username, " << n_elements << "," << table_size << "," << name_linear.getCollision() << endl;
+    file_out << "Double by username, " << n_elements << "," << table_size << "," << name_double.getCollision() << endl;
+    file_out << "Quadratic by username, " << n_elements << "," << table_size << "," << name_quadratic.getCollision() << endl;
+    file_out << "Chaining by username," << n_elements << "," << table_size << "," << openusername.getCollision() << endl;
 
     file_out.close();
 }

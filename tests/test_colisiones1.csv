@@ -1,0 +1,9 @@
+Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Cantidad de colisiones
+Linear by userid, 2500,30103,109
+Double by userid, 2500,30103,109
+Quadratic by userid, 2500,30103,108
+Chaining by userid, 2500,30103,105
+Linear by username, 2500,30103,109
+Double by username, 2500,30103,103
+Quadratic by username, 2500,30103,110
+Chaining by username,2500,30103,97
