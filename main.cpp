@@ -18,7 +18,11 @@ int main()
   /*
   Primero guardamos los datos en los CSV dentro de vectores, exite uno para usuarios que no estaran en la base
   de datos y otros los cuales si se encontraran. Los que no se encontraran fueron generados con un
-  script de python.
+  script de python. "create_data"
+  */
+  /*
+  Notemos además que se genero otro archivo, con los seguidores de universidades, esto ya que habian usuarios repetidos.
+  Se eliminaron los repetidos con un script de python "delete_duplicates"
   */
   vector<User> real_users = readCSV("universities_followers_without_duplicates.csv");
   vector<User> fake_users = readCSV("fake_data.csv");
