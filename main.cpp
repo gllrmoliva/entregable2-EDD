@@ -32,19 +32,23 @@ void test_windows()
 
   // Crear tablas hash con diferentes métodos de resolución de colisiones
   CloseHashTableUserId ht_linear(30103, linear_probing);
-  CloseHashTableUserId ht_quadratic(30103, quadratic_probing);
+  CloseHashTableUserName ht_quadratic2(30103, quadratic_probing);
   CloseHashTableUserId ht_double(30103, double_hashing);
+  OpenHashTableUserName ht_chaining2(30103);
   OpenHashTableUserId ht_chaining(30103);
+  CloseHashTableUserId ht_quadratic(30103, quadratic_probing);
   unordered_map<unsigned long long, User *> ht_unordered_map;
 
   // Insertar usuarios en cada tabla hash
   for (const auto &user : users)
   {
     ht_linear.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-    ht_quadratic.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_quadratic2.insert(user.userName, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
     ht_double.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
-    ht_chaining.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_chaining2.insert(user.userName, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
     ht_unordered_map[user.userId] = new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt);
+    ht_quadratic.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
+    ht_chaining.insert(user.userId, new User(user.university, user.userId, user.userName, user.numberTweets, user.friendsCount, user.followersCount, user.createdAt));
   }
 
   std::cout << "Tamaño del objeto User: " << sizeof(User) << " bytes" << std::endl;
@@ -89,21 +93,28 @@ void test_windows()
   cout << "Busqueda con Linear Probing:" << endl;
   printUser(foundUserLinear);
 
-  auto foundUserQuadratic = ht_quadratic.search(userIdToSearch);
-  cout << "Busqueda con Quadratic Probing:" << endl;
-  printUser(foundUserQuadratic);
+  //auto foundUserQuadratic = ht_quadratic.search(userIdToSearch);
+  //cout << "Busqueda con Quadratic Probing:" << endl;
+  //printUser(foundUserQuadratic);
 
   auto foundUserDouble = ht_double.search(userIdToSearch);
   cout << "Busqueda con Double Hashing:" << endl;
   printUser(foundUserDouble);
 
-  auto foundUserChaining = ht_chaining.search(userIdToSearch);
-  cout << "Busqueda con Encadenamiento:" << endl;
-  printUser(foundUserChaining);
+  //auto foundUserChaining = ht_chaining.search(userIdToSearch);
+  //cout << "Busqueda con Encadenamiento:" << endl;
+  //printUser(foundUserChaining);
 
   auto foundUserUnorderedMap = ht_unordered_map.find(userIdToSearch) != ht_unordered_map.end() ? ht_unordered_map[userIdToSearch] : nullptr;
   cout << "Busqueda con unordered_map:" << endl;
   printUser(foundUserUnorderedMap);
+  
+  std::cout << "Colisiones totales en Linear Probing: " << ht_linear.getCollision() << std::endl;
+  std::cout << "Colisiones totales en Double Probing: " << ht_double.getCollision() << std::endl;
+  std::cout << "Colisiones totales en Quadratic Probing: " << ht_quadratic.getCollision() << std::endl;
+  std::cout << "Colisiones totales en Chaining: " << ht_chaining.getCollision() << std::endl;
+  std::cout << "Colisiones totales en Quadratic2 Probing: " << ht_quadratic2.getCollision() << std::endl;
+  std::cout << "Colisiones totales en Chaining2: " << ht_chaining2.getCollision() << std::endl;
 }
 
 void test_linux()
