@@ -131,7 +131,7 @@ void test_linux()
 
   // Pruebas de busqueda usuarios existentes
   test_searchs_by_username(n_tests, real_users, real_users, table_size, "tests/search_by_username_realusers");
-  test_searchs_by_username(n_tests, real_users, real_users, table_size, "tests/search_by_username_realusers");
+  test_searchs_by_userid(n_tests, real_users, real_users, table_size, "tests/search_by_userid_realusers");
 
   // Pruebas de busqueda usuarios no existentes
   test_searchs_by_username(n_tests, real_users, fake_users, table_size, "tests/search_by_username_fakeusers");
