@@ -1,0 +1,73 @@
+Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Memoria usada(KB)
+Linear by userid,0,30103,451
+Double by userid, 0,30103,451
+Quadratic by userid, 0,30103,451
+Chaining by userid,0,30103,90
+Linear by username,0,30103,451
+Double by username,0,30103,451
+Quadratic by username,0,30103,451
+Chaining by username, 0,30103,90
+Linear by userid,2500,30103,451
+Double by userid, 2500,30103,451
+Quadratic by userid, 2500,30103,451
+Chaining by userid,2500,30103,127
+Linear by username,2500,30103,451
+Double by username,2500,30103,451
+Quadratic by username,2500,30103,451
+Chaining by username, 2500,30103,127
+Linear by userid,5000,30103,451
+Double by userid, 5000,30103,451
+Quadratic by userid, 5000,30103,451
+Chaining by userid,5000,30103,165
+Linear by username,5000,30103,451
+Double by username,5000,30103,451
+Quadratic by username,5000,30103,451
+Chaining by username, 5000,30103,165
+Linear by userid,7500,30103,451
+Double by userid, 7500,30103,451
+Quadratic by userid, 7500,30103,451
+Chaining by userid,7500,30103,202
+Linear by username,7500,30103,451
+Double by username,7500,30103,451
+Quadratic by username,7500,30103,451
+Chaining by username, 7500,30103,202
+Linear by userid,10000,30103,451
+Double by userid, 10000,30103,451
+Quadratic by userid, 10000,30103,451
+Chaining by userid,10000,30103,240
+Linear by username,10000,30103,451
+Double by username,10000,30103,451
+Quadratic by username,10000,30103,451
+Chaining by username, 10000,30103,240
+Linear by userid,12500,30103,451
+Double by userid, 12500,30103,451
+Quadratic by userid, 12500,30103,451
+Chaining by userid,12500,30103,277
+Linear by username,12500,30103,451
+Double by username,12500,30103,451
+Quadratic by username,12500,30103,451
+Chaining by username, 12500,30103,277
+Linear by userid,15000,30103,451
+Double by userid, 15000,30103,451
+Quadratic by userid, 15000,30103,451
+Chaining by userid,15000,30103,315
+Linear by username,15000,30103,451
+Double by username,15000,30103,451
+Quadratic by username,15000,30103,451
+Chaining by username, 15000,30103,315
+Linear by userid,17500,30103,451
+Double by userid, 17500,30103,451
+Quadratic by userid, 17500,30103,451
+Chaining by userid,17500,30103,352
+Linear by username,17500,30103,451
+Double by username,17500,30103,451
+Quadratic by username,17500,30103,451
+Chaining by username, 17500,30103,352
+Linear by userid,20000,30103,451
+Double by userid, 20000,30103,451
+Quadratic by userid, 20000,30103,451
+Chaining by userid,20000,30103,390
+Linear by username,20000,30103,451
+Double by username,20000,30103,451
+Quadratic by username,20000,30103,451
+Chaining by username, 20000,30103,390
