@@ -44,27 +44,23 @@ public:
      * @param userId El ID del usuario a insertar.
      * @param user Puntero al objeto User que se va a insertar.
      */
-    void insert(unsigned long long userId, User *user)
+    void insert(unsigned long long key, User *user_data)
     {
-
         int i = 0;
-        int index;
-        int collisionCount = 0;
-
-        do
+        unsigned int index = hashing_method(key, max_size, i);
+        while (i < MAX_ATTEMPTS)
         {
-            index = hashing_method(userId, max_size, i);
-            if (table[index] == nullptr)
+            if (!table[index] || table[index]->userName == "DELETED_VAR")
             {
-                table[index] = user;
-                totalCollisions += collisionCount;
+                table[index] = new User(*user_data);
                 size++;
                 return;
             }
             i++;
-            collisionCount++;
-        } while (i < MAX_ATTEMPTS);
-        std::cout << "Error: Hash table overflow" << endl;
+            totalCollisions++;
+            index = hashing_method(key, max_size, i);
+        }
+        cout << "Tabla hash está llena o se alcanzó el máximo de intentos." << endl;
     }
 
     /**
@@ -97,6 +93,33 @@ public:
             i++;
         } while (i < max_size);
         return nullptr;
+    }
+
+    /**
+     * @brief remueve un usuario en la tabla hash por su UserId, si este no existe no hace nada.
+     *
+     * @param key nombre del usuario a buscar.
+     */
+    void remove(unsigned long long &key)
+    {
+        int i = 0;
+        unsigned int index = hashing_method(key, max_size, i);
+        while (i < MAX_ATTEMPTS && table[index])
+        {
+            if (!table[index])
+            {
+                // Esto pasa cuando nos encontramos con un espacio al cual nunca se ha accedido.
+                return;
+            }
+            if (table[index]->userId == key)
+            {
+                table[index] = new User(DELETED_VAR);
+                size--;
+                return;
+            }
+            i++;
+            index = hashing_method(key, max_size, i);
+        }
     }
 
     /**
@@ -181,6 +204,29 @@ public:
                 return user;
         }
         return nullptr;
+    }
+
+    /**
+     * @brief remueve un usuario en la tabla hash por su UserId, si este no existe no hace nada.
+     *
+     * @param key Id del usuario a buscar.
+     */
+    void remove(unsigned long long key)
+    {
+        unsigned int index = hashing_method(key);
+        auto &bucket = table[index];
+        int bucket_size = bucket.size();
+
+        for (int i = 0; i < bucket_size; i++)
+        {
+            if (bucket.at(i)->userId == key)
+            {
+                // Esto es iniciar el iterador y moverlo hasta el indice correspondiente
+                bucket.erase(bucket.begin() + i);
+                size--;
+                return;
+            }
+        }
     }
 
     /**
@@ -314,6 +360,33 @@ public:
     }
 
     /**
+     * @brief remueve un usuario en la tabla hash por su UserName, si este no existe no hace nada.
+     *
+     * @param key nombre del usuario a buscar.
+     */
+    void remove(const string &key)
+    {
+        int i = 0;
+        unsigned int index = hashing_method(key, max_size, i);
+        while (i < MAX_ATTEMPTS && table[index])
+        {
+            if (!table[index])
+            {
+                // Esto pasa cuando nos encontramos con un espacio al cual nunca se ha accedido.
+                return;
+            }
+            if (table[index]->userName == key)
+            {
+                table[index] = new User(DELETED_VAR);
+                size--;
+                return;
+            }
+            i++;
+            index = hashing_method(key, max_size, i);
+        }
+    }
+
+    /**
      * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bits.
      */
     size_t get_memory_usage()
@@ -396,6 +469,28 @@ public:
                 return user;
         }
         return nullptr;
+    }
+    /**
+     * @brief remueve un usuario en la tabla hash por su UserName, si este no existe no hace nada.
+     *
+     * @param key nombre del usuario a buscar.
+     */
+    void remove(const string &key)
+    {
+        unsigned int index = hashing_method(key);
+        auto &bucket = table[index];
+        int bucket_size = bucket.size();
+
+        for (int i = 0; i < bucket_size; i++)
+        {
+            if (bucket.at(i)->userName == key)
+            {
+                // Esto es iniciar el iterador y moverlo hasta el indice correspondiente
+                bucket.erase(bucket.begin() + i);
+                size--;
+                return;
+            }
+        }
     }
 
     /**

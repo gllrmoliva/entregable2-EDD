@@ -1,0 +1,4001 @@
+Tipo de hasheo, Número de busquedas, Tiempo(s)
+lineal probing,1000,0.000110836
+double hashing,1000,0.000121531
+quadratic probing,1000,6.1547e-05
+chaining,1000,2.6e-08
+STL unordered map,1000,1.1127e-05
+lineal probing,1000,4.4451e-05
+double hashing,1000,5.0996e-05
+quadratic probing,1000,5.0082e-05
+chaining,1000,5.1e-08
+STL unordered map,1000,1.0032e-05
+lineal probing,1000,4.2084e-05
+double hashing,1000,4.3836e-05
+quadratic probing,1000,4.6234e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,1.0001e-05
+lineal probing,1000,0.000126898
+double hashing,1000,5.9717e-05
+quadratic probing,1000,7.4773e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,7.77e-06
+lineal probing,1000,5.3113e-05
+double hashing,1000,5.1802e-05
+quadratic probing,1000,5.0091e-05
+chaining,1000,2.8e-08
+STL unordered map,1000,6.534e-06
+lineal probing,1000,7.0465e-05
+double hashing,1000,4.3045e-05
+quadratic probing,1000,4.3759e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,6.33e-06
+lineal probing,1000,4.5332e-05
+double hashing,1000,7.8658e-05
+quadratic probing,1000,6.1146e-05
+chaining,1000,2.7e-08
+STL unordered map,1000,9.441e-06
+lineal probing,1000,5.694e-05
+double hashing,1000,5.4249e-05
+quadratic probing,1000,4.997e-05
+chaining,1000,4.9e-08
+STL unordered map,1000,5.782e-06
+lineal probing,1000,4.446e-05
+double hashing,1000,4.2909e-05
+quadratic probing,1000,4.3942e-05
+chaining,1000,5.2e-08
+STL unordered map,1000,5.748e-06
+lineal probing,1000,4.0389e-05
+double hashing,1000,5.5158e-05
+quadratic probing,1000,0.000178714
+chaining,1000,2.6e-08
+STL unordered map,1000,7.764e-06
+lineal probing,1000,9.1397e-05
+double hashing,1000,0.000107134
+quadratic probing,1000,5.5672e-05
+chaining,1000,5.6e-08
+STL unordered map,1000,5.527e-06
+lineal probing,1000,4.8816e-05
+double hashing,1000,5.8942e-05
+quadratic probing,1000,4.9517e-05
+chaining,1000,3.5e-08
+STL unordered map,1000,5.587e-06
+lineal probing,1000,4.8696e-05
+double hashing,1000,4.3369e-05
+quadratic probing,1000,4.3356e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,3.4791e-05
+lineal probing,1000,7.06e-05
+double hashing,1000,8.6067e-05
+quadratic probing,1000,7.9205e-05
+chaining,1000,3.94e-07
+STL unordered map,1000,5.912e-06
+lineal probing,1000,6.1431e-05
+double hashing,1000,5.562e-05
+quadratic probing,1000,5.3911e-05
+chaining,1000,4e-08
+STL unordered map,1000,6.244e-06
+lineal probing,1000,4.6652e-05
+double hashing,1000,4.7517e-05
+quadratic probing,1000,4.6514e-05
+chaining,1000,4.8e-08
+STL unordered map,1000,6.912e-06
+lineal probing,1000,9.5179e-05
+double hashing,1000,7.0366e-05
+quadratic probing,1000,7.9478e-05
+chaining,1000,4.5e-08
+STL unordered map,1000,5.931e-06
+lineal probing,1000,7.3334e-05
+double hashing,1000,5.5317e-05
+quadratic probing,1000,4.6363e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,5.164e-06
+lineal probing,1000,4.0604e-05
+double hashing,1000,4.0779e-05
+quadratic probing,1000,4.3227e-05
+chaining,1000,4.4e-08
+STL unordered map,1000,4.917e-06
+lineal probing,1000,3.8162e-05
+double hashing,1000,5.9289e-05
+quadratic probing,1000,8.6024e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,1.3218e-05
+lineal probing,1000,0.000199426
+double hashing,1000,4.9762e-05
+quadratic probing,1000,4.963e-05
+chaining,1000,4.2e-08
+STL unordered map,1000,5.394e-06
+lineal probing,1000,4.259e-05
+double hashing,1000,4.1355e-05
+quadratic probing,1000,4.2245e-05
+chaining,1000,7.4e-08
+STL unordered map,1000,4.827e-06
+lineal probing,1000,3.9288e-05
+double hashing,1000,3.8267e-05
+quadratic probing,1000,3.9741e-05
+chaining,1000,1.9e-08
+STL unordered map,1000,1.8938e-05
+lineal probing,1000,7.5028e-05
+double hashing,1000,6.0292e-05
+quadratic probing,1000,7.0136e-05
+chaining,1000,4.4e-08
+STL unordered map,1000,9.727e-06
+lineal probing,1000,5.2334e-05
+double hashing,1000,4.7195e-05
+quadratic probing,1000,4.4174e-05
+chaining,1000,2.5e-08
+STL unordered map,1000,6.001e-06
+lineal probing,1000,5.4462e-05
+double hashing,1000,4.4611e-05
+quadratic probing,1000,3.9546e-05
+chaining,1000,1.7e-08
+STL unordered map,1000,6.183e-06
+lineal probing,1000,7.3462e-05
+double hashing,1000,5.7972e-05
+quadratic probing,1000,5.9662e-05
+chaining,1000,8.6e-08
+STL unordered map,1000,5.791e-06
+lineal probing,1000,6.9728e-05
+double hashing,1000,4.8012e-05
+quadratic probing,1000,4.7284e-05
+chaining,1000,4.3e-08
+STL unordered map,1000,5.582e-06
+lineal probing,1000,4.2508e-05
+double hashing,1000,4.0163e-05
+quadratic probing,1000,4.1062e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,5.303e-06
+lineal probing,1000,3.7966e-05
+double hashing,1000,3.7887e-05
+quadratic probing,1000,3.7185e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,2.3348e-05
+lineal probing,1000,6.5423e-05
+double hashing,1000,5.8915e-05
+quadratic probing,1000,0.000279155
+chaining,1000,1.3e-08
+STL unordered map,1000,5.256e-06
+lineal probing,1000,4.7969e-05
+double hashing,1000,4.4938e-05
+quadratic probing,1000,4.8558e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,5.147e-06
+lineal probing,1000,4.3763e-05
+double hashing,1000,4.5931e-05
+quadratic probing,1000,4.8962e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.883e-06
+lineal probing,1000,4.5233e-05
+double hashing,1000,8.2729e-05
+quadratic probing,1000,7.3029e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,1.1406e-05
+lineal probing,1000,9.6918e-05
+double hashing,1000,6.7953e-05
+quadratic probing,1000,5.3281e-05
+chaining,1000,3.9e-08
+STL unordered map,1000,4.607e-06
+lineal probing,1000,4.2133e-05
+double hashing,1000,4.0134e-05
+quadratic probing,1000,4.0233e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,4.422e-06
+lineal probing,1000,3.667e-05
+double hashing,1000,3.4402e-05
+quadratic probing,1000,4.0301e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,1.3507e-05
+lineal probing,1000,7.9068e-05
+double hashing,1000,5.9346e-05
+quadratic probing,1000,0.000106037
+chaining,1000,2.3e-08
+STL unordered map,1000,5.16e-06
+lineal probing,1000,4.7478e-05
+double hashing,1000,4.3692e-05
+quadratic probing,1000,4.4206e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,5.15e-06
+lineal probing,1000,3.7709e-05
+double hashing,1000,3.7402e-05
+quadratic probing,1000,3.8179e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,4.803e-06
+lineal probing,1000,3.9683e-05
+double hashing,1000,4.0407e-05
+quadratic probing,1000,4.3073e-05
+chaining,1000,2.8e-08
+STL unordered map,1000,5.839e-06
+lineal probing,1000,5.7301e-05
+double hashing,1000,8.0071e-05
+quadratic probing,1000,7.3243e-05
+chaining,1000,2.4e-08
+STL unordered map,1000,5.225e-06
+lineal probing,1000,4.5305e-05
+double hashing,1000,4.1608e-05
+quadratic probing,1000,5.5512e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,4.673e-06
+lineal probing,1000,3.7261e-05
+double hashing,1000,4.3178e-05
+quadratic probing,1000,3.7896e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,4.382e-06
+lineal probing,1000,5.4185e-05
+double hashing,1000,4.0437e-05
+quadratic probing,1000,6.185e-05
+chaining,1000,6.6e-08
+STL unordered map,1000,3.1472e-05
+lineal probing,1000,5.0227e-05
+double hashing,1000,4.8308e-05
+quadratic probing,1000,4.6009e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,4.664e-06
+lineal probing,1000,4.1989e-05
+double hashing,1000,3.8658e-05
+quadratic probing,1000,4.114e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,4.265e-06
+lineal probing,1000,3.6478e-05
+double hashing,1000,3.6901e-05
+quadratic probing,1000,3.963e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,9.232e-06
+lineal probing,1000,5.6361e-05
+double hashing,1000,6.7495e-05
+quadratic probing,1000,7.4913e-05
+chaining,1000,2.3e-08
+STL unordered map,1000,4.524e-06
+lineal probing,1000,4.9302e-05
+double hashing,1000,4.5914e-05
+quadratic probing,1000,4.2918e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.715e-06
+lineal probing,1000,3.7522e-05
+double hashing,1000,3.6301e-05
+quadratic probing,1000,3.6175e-05
+chaining,1000,1.5e-08
+STL unordered map,1000,4.394e-06
+lineal probing,1000,3.6106e-05
+double hashing,1000,3.6242e-05
+quadratic probing,1000,5.0324e-05
+chaining,1000,1.6e-08
+STL unordered map,1000,5.636e-06
+lineal probing,1000,6.0082e-05
+double hashing,1000,0.000163249
+quadratic probing,1000,5.9031e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,4.61e-06
+lineal probing,1000,5.1344e-05
+double hashing,1000,4.2847e-05
+quadratic probing,1000,3.9731e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,4.899e-06
+lineal probing,1000,3.8265e-05
+double hashing,1000,3.6389e-05
+quadratic probing,1000,3.8888e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,4.566e-06
+lineal probing,1000,0.000167949
+double hashing,1000,6.9615e-05
+quadratic probing,1000,8.4832e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,1.1174e-05
+lineal probing,1000,5.0409e-05
+double hashing,1000,4.9458e-05
+quadratic probing,1000,4.5522e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.828e-06
+lineal probing,1000,4.0129e-05
+double hashing,1000,3.8667e-05
+quadratic probing,1000,3.9265e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.621e-06
+lineal probing,1000,4.2403e-05
+double hashing,1000,5.1092e-05
+quadratic probing,1000,4.6638e-05
+chaining,1000,2.8e-08
+STL unordered map,1000,4.898e-06
+lineal probing,1000,7.7048e-05
+double hashing,1000,0.000331458
+quadratic probing,1000,5.1328e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.697e-06
+lineal probing,1000,4.7975e-05
+double hashing,1000,4.3847e-05
+quadratic probing,1000,4.2896e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,5.344e-06
+lineal probing,1000,3.8444e-05
+double hashing,1000,3.8191e-05
+quadratic probing,1000,4.0594e-05
+chaining,1000,1.5e-08
+STL unordered map,1000,4.742e-06
+lineal probing,1000,4.4579e-05
+double hashing,1000,0.000209891
+quadratic probing,1000,5.3006e-05
+chaining,1000,1.9e-08
+STL unordered map,1000,5.105e-06
+lineal probing,1000,7.5671e-05
+double hashing,1000,4.8648e-05
+quadratic probing,1000,4.7308e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.707e-06
+lineal probing,1000,4.1027e-05
+double hashing,1000,3.7478e-05
+quadratic probing,1000,3.9889e-05
+chaining,1000,1.6e-08
+STL unordered map,1000,4.618e-06
+lineal probing,1000,3.6987e-05
+double hashing,1000,3.3684e-05
+quadratic probing,1000,5.379e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,9.682e-06
+lineal probing,1000,7.5853e-05
+double hashing,1000,6.0197e-05
+quadratic probing,1000,0.000322099
+chaining,1000,2.5e-08
+STL unordered map,1000,6.124e-06
+lineal probing,1000,6.1274e-05
+double hashing,1000,5.4294e-05
+quadratic probing,1000,5.1151e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.895e-06
+lineal probing,1000,7.2399e-05
+double hashing,1000,5.6383e-05
+quadratic probing,1000,5.3146e-05
+chaining,1000,1.5e-08
+STL unordered map,1000,7.473e-06
+lineal probing,1000,8.9734e-05
+double hashing,1000,6.8718e-05
+quadratic probing,1000,5.8041e-05
+chaining,1000,1.7e-08
+STL unordered map,1000,1.3033e-05
+lineal probing,1000,0.000127629
+double hashing,1000,6.7634e-05
+quadratic probing,1000,9.1563e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,5.236e-06
+lineal probing,1000,5.2749e-05
+double hashing,1000,5.4389e-05
+quadratic probing,1000,5.1186e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,6.248e-06
+lineal probing,1000,6.5815e-05
+double hashing,1000,7.5961e-05
+quadratic probing,1000,5.3385e-05
+chaining,1000,1.6e-08
+STL unordered map,1000,8.866e-06
+lineal probing,1000,7.1633e-05
+double hashing,1000,5.1626e-05
+quadratic probing,1000,4.958e-05
+chaining,1000,4.1e-08
+STL unordered map,1000,5.236e-06
+lineal probing,1000,5.3973e-05
+double hashing,1000,5.0591e-05
+quadratic probing,1000,4.8673e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,5.035e-06
+lineal probing,1000,5.3377e-05
+double hashing,1000,3.9909e-05
+quadratic probing,1000,4.2336e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.623e-06
+lineal probing,1000,4.2692e-05
+double hashing,1000,3.4476e-05
+quadratic probing,1000,3.6433e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,5.013e-06
+lineal probing,1000,6.0457e-05
+double hashing,1000,3.1128e-05
+quadratic probing,1000,3.463e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.942e-06
+lineal probing,1000,3.2607e-05
+double hashing,1000,3.4438e-05
+quadratic probing,1000,5.0084e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.669e-06
+lineal probing,1000,3.2501e-05
+double hashing,1000,3.2758e-05
+quadratic probing,1000,3.5367e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,4.767e-06
+lineal probing,1000,2.9106e-05
+double hashing,1000,2.9022e-05
+quadratic probing,1000,3.7864e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.64e-06
+lineal probing,1000,2.7234e-05
+double hashing,1000,2.7964e-05
+quadratic probing,1000,3.4628e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.463e-06
+lineal probing,1000,2.6627e-05
+double hashing,1000,2.8775e-05
+quadratic probing,1000,2.9049e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.607e-06
+lineal probing,1000,3.268e-05
+double hashing,1000,3.2608e-05
+quadratic probing,1000,3.1054e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.454e-06
+lineal probing,1000,3.5631e-05
+double hashing,1000,3.8051e-05
+quadratic probing,1000,8.5992e-05
+chaining,1000,2.1e-08
+STL unordered map,1000,4.965e-06
+lineal probing,1000,5.2164e-05
+double hashing,1000,7.559e-05
+quadratic probing,1000,4.6596e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,5.545e-06
+lineal probing,1000,5.0688e-05
+double hashing,1000,4.5692e-05
+quadratic probing,1000,4.5214e-05
+chaining,1000,1.8e-08
+STL unordered map,1000,5.456e-06
+lineal probing,1000,4.1755e-05
+double hashing,1000,3.8922e-05
+quadratic probing,1000,3.7862e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,5.085e-06
+lineal probing,1000,5.783e-05
+double hashing,1000,4.0907e-05
+quadratic probing,1000,5.784e-05
+chaining,1000,1.9e-08
+STL unordered map,1000,4.792e-06
+lineal probing,1000,3.8043e-05
+double hashing,1000,4.992e-05
+quadratic probing,1000,3.6842e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.651e-06
+lineal probing,1000,3.3857e-05
+double hashing,1000,3.4343e-05
+quadratic probing,1000,3.5481e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.699e-06
+lineal probing,1000,3.8109e-05
+double hashing,1000,3.8123e-05
+quadratic probing,1000,4.3166e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,4.435e-06
+lineal probing,1000,3.1301e-05
+double hashing,1000,3.1957e-05
+quadratic probing,1000,3.4003e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,4.428e-06
+lineal probing,1000,3.0225e-05
+double hashing,1000,3.0666e-05
+quadratic probing,1000,3.1576e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,4.442e-06
+lineal probing,1000,3.7388e-05
+double hashing,1000,4.9827e-05
+quadratic probing,1000,3.3343e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.564e-06
+lineal probing,1000,3.1199e-05
+double hashing,1000,3.128e-05
+quadratic probing,1000,3.9685e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,8.456e-06
+lineal probing,1000,8.3457e-05
+double hashing,1000,6.3248e-05
+quadratic probing,1000,4.9941e-05
+chaining,1000,2.3e-08
+STL unordered map,1000,6.753e-06
+lineal probing,1000,4.6654e-05
+double hashing,1000,4.5183e-05
+quadratic probing,1000,4.4778e-05
+chaining,1000,1.2e-08
+STL unordered map,1000,4.579e-06
+lineal probing,1000,3.9077e-05
+double hashing,1000,4.0667e-05
+quadratic probing,1000,4.0289e-05
+chaining,1000,1.4e-08
+STL unordered map,1000,4.58e-06
+lineal probing,1000,5.7479e-05
+double hashing,1000,3.5488e-05
+quadratic probing,1000,3.8659e-05
+chaining,1000,1.3e-08
+STL unordered map,1000,4.524e-06
+lineal probing,2500,0.000125622
+double hashing,2500,0.000111673
+quadratic probing,2500,9.2062e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,2.2054e-05
+lineal probing,2500,8.5359e-05
+double hashing,2500,8.1079e-05
+quadratic probing,2500,9.092e-05
+chaining,2500,1.9e-08
+STL unordered map,2500,2.5623e-05
+lineal probing,2500,0.000149587
+double hashing,2500,0.0001642
+quadratic probing,2500,0.000289827
+chaining,2500,1.3e-08
+STL unordered map,2500,2.3992e-05
+lineal probing,2500,0.000142875
+double hashing,2500,0.00019355
+quadratic probing,2500,0.000178198
+chaining,2500,1.5e-08
+STL unordered map,2500,2.5527e-05
+lineal probing,2500,0.000207199
+double hashing,2500,0.000183204
+quadratic probing,2500,0.00011916
+chaining,2500,1.4e-08
+STL unordered map,2500,2.277e-05
+lineal probing,2500,0.000161264
+double hashing,2500,0.000174337
+quadratic probing,2500,0.000119732
+chaining,2500,1.4e-08
+STL unordered map,2500,2.4632e-05
+lineal probing,2500,0.000135522
+double hashing,2500,0.000124775
+quadratic probing,2500,0.000119111
+chaining,2500,1.4e-08
+STL unordered map,2500,2.2278e-05
+lineal probing,2500,0.000111382
+double hashing,2500,0.000107809
+quadratic probing,2500,0.000106583
+chaining,2500,1.4e-08
+STL unordered map,2500,2.2033e-05
+lineal probing,2500,0.000132035
+double hashing,2500,0.000105423
+quadratic probing,2500,0.000107761
+chaining,2500,1.5e-08
+STL unordered map,2500,2.2645e-05
+lineal probing,2500,9.8909e-05
+double hashing,2500,0.000104608
+quadratic probing,2500,0.000119434
+chaining,2500,1.4e-08
+STL unordered map,2500,2.283e-05
+lineal probing,2500,0.000128124
+double hashing,2500,0.000117935
+quadratic probing,2500,0.000116925
+chaining,2500,1.4e-08
+STL unordered map,2500,2.3093e-05
+lineal probing,2500,0.000113704
+double hashing,2500,0.000117154
+quadratic probing,2500,0.000137984
+chaining,2500,1.5e-08
+STL unordered map,2500,2.164e-05
+lineal probing,2500,0.000141329
+double hashing,2500,0.00013148
+quadratic probing,2500,0.000137177
+chaining,2500,2e-08
+STL unordered map,2500,2.2048e-05
+lineal probing,2500,0.00012982
+double hashing,2500,0.000123535
+quadratic probing,2500,0.000123773
+chaining,2500,6.7e-08
+STL unordered map,2500,2.2532e-05
+lineal probing,2500,0.000131843
+double hashing,2500,0.000121999
+quadratic probing,2500,0.0001257
+chaining,2500,6.7e-08
+STL unordered map,2500,2.171e-05
+lineal probing,2500,0.000129462
+double hashing,2500,0.000150323
+quadratic probing,2500,0.000172363
+chaining,2500,5.6e-08
+STL unordered map,2500,2.6185e-05
+lineal probing,2500,0.000137941
+double hashing,2500,0.000131647
+quadratic probing,2500,0.000149735
+chaining,2500,1.8e-08
+STL unordered map,2500,2.5261e-05
+lineal probing,2500,0.00013028
+double hashing,2500,0.00016413
+quadratic probing,2500,0.000176681
+chaining,2500,2.9e-08
+STL unordered map,2500,7.7703e-05
+lineal probing,2500,0.000207834
+double hashing,2500,0.000171962
+quadratic probing,2500,0.000181371
+chaining,2500,2.1e-08
+STL unordered map,2500,2.58e-05
+lineal probing,2500,0.000162127
+double hashing,2500,0.000204157
+quadratic probing,2500,0.000116108
+chaining,2500,1.7e-08
+STL unordered map,2500,2.224e-05
+lineal probing,2500,0.000156784
+double hashing,2500,0.000112375
+quadratic probing,2500,0.00011856
+chaining,2500,1.5e-08
+STL unordered map,2500,2.502e-05
+lineal probing,2500,0.00017111
+double hashing,2500,0.000142089
+quadratic probing,2500,0.000137796
+chaining,2500,1.7e-08
+STL unordered map,2500,2.3199e-05
+lineal probing,2500,0.000141216
+double hashing,2500,0.000121286
+quadratic probing,2500,0.000114157
+chaining,2500,6.6e-08
+STL unordered map,2500,2.3012e-05
+lineal probing,2500,0.000113143
+double hashing,2500,0.000112036
+quadratic probing,2500,0.000127531
+chaining,2500,3.7e-08
+STL unordered map,2500,2.2056e-05
+lineal probing,2500,0.00013204
+double hashing,2500,0.000121621
+quadratic probing,2500,0.000118452
+chaining,2500,2.3e-08
+STL unordered map,2500,3.1445e-05
+lineal probing,2500,0.00015362
+double hashing,2500,0.00016126
+quadratic probing,2500,0.000273593
+chaining,2500,2.4e-08
+STL unordered map,2500,2.5242e-05
+lineal probing,2500,0.000300221
+double hashing,2500,0.000162802
+quadratic probing,2500,0.000145599
+chaining,2500,3.8e-08
+STL unordered map,2500,2.2853e-05
+lineal probing,2500,0.000141219
+double hashing,2500,0.000156836
+quadratic probing,2500,0.000129677
+chaining,2500,1.4e-08
+STL unordered map,2500,2.8341e-05
+lineal probing,2500,0.000139241
+double hashing,2500,0.000131746
+quadratic probing,2500,0.000140047
+chaining,2500,1.4e-08
+STL unordered map,2500,2.2581e-05
+lineal probing,2500,0.000204494
+double hashing,2500,0.000131965
+quadratic probing,2500,0.000125824
+chaining,2500,1.5e-08
+STL unordered map,2500,2.4741e-05
+lineal probing,2500,0.000111529
+double hashing,2500,0.000161066
+quadratic probing,2500,0.000175159
+chaining,2500,1.18e-07
+STL unordered map,2500,3.006e-05
+lineal probing,2500,0.000147541
+double hashing,2500,0.000118212
+quadratic probing,2500,0.000136125
+chaining,2500,1.3e-08
+STL unordered map,2500,2.3846e-05
+lineal probing,2500,0.000153641
+double hashing,2500,0.000114722
+quadratic probing,2500,0.00012147
+chaining,2500,1.4e-08
+STL unordered map,2500,1.9169e-05
+lineal probing,2500,0.000146761
+double hashing,2500,0.000141044
+quadratic probing,2500,0.000214635
+chaining,2500,1.9e-08
+STL unordered map,2500,2.3245e-05
+lineal probing,2500,0.000173947
+double hashing,2500,0.000116627
+quadratic probing,2500,0.000120519
+chaining,2500,1.3e-08
+STL unordered map,2500,2.0484e-05
+lineal probing,2500,0.000104947
+double hashing,2500,0.000110136
+quadratic probing,2500,0.000176075
+chaining,2500,1.9e-08
+STL unordered map,2500,1.9186e-05
+lineal probing,2500,0.000123011
+double hashing,2500,0.000134049
+quadratic probing,2500,0.000106453
+chaining,2500,1.4e-08
+STL unordered map,2500,1.8716e-05
+lineal probing,2500,9.6247e-05
+double hashing,2500,9.1564e-05
+quadratic probing,2500,9.0113e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8499e-05
+lineal probing,2500,9.8949e-05
+double hashing,2500,8.1505e-05
+quadratic probing,2500,8.3431e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8651e-05
+lineal probing,2500,8.1522e-05
+double hashing,2500,8.0688e-05
+quadratic probing,2500,9.3226e-05
+chaining,2500,1.2e-08
+STL unordered map,2500,1.8975e-05
+lineal probing,2500,8.0035e-05
+double hashing,2500,7.3566e-05
+quadratic probing,2500,7.5648e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8557e-05
+lineal probing,2500,7.2416e-05
+double hashing,2500,6.8128e-05
+quadratic probing,2500,8.3754e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,2.1752e-05
+lineal probing,2500,8.4438e-05
+double hashing,2500,8.3575e-05
+quadratic probing,2500,8.5186e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,2.0624e-05
+lineal probing,2500,7.3511e-05
+double hashing,2500,8.2359e-05
+quadratic probing,2500,7.6264e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8615e-05
+lineal probing,2500,7.0596e-05
+double hashing,2500,7.4193e-05
+quadratic probing,2500,0.000103395
+chaining,2500,1.6e-08
+STL unordered map,2500,4.2331e-05
+lineal probing,2500,0.000121101
+double hashing,2500,0.000431938
+quadratic probing,2500,0.000131747
+chaining,2500,1.4e-08
+STL unordered map,2500,1.8924e-05
+lineal probing,2500,9.8567e-05
+double hashing,2500,9.509e-05
+quadratic probing,2500,9.2388e-05
+chaining,2500,4.3e-08
+STL unordered map,2500,1.8591e-05
+lineal probing,2500,0.000116267
+double hashing,2500,8.5201e-05
+quadratic probing,2500,9.727e-05
+chaining,2500,1.5e-08
+STL unordered map,2500,2.0413e-05
+lineal probing,2500,7.8194e-05
+double hashing,2500,7.9442e-05
+quadratic probing,2500,7.7569e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8648e-05
+lineal probing,2500,9.11e-05
+double hashing,2500,7.3024e-05
+quadratic probing,2500,7.223e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8532e-05
+lineal probing,2500,8.8054e-05
+double hashing,2500,7.4036e-05
+quadratic probing,2500,7.783e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8535e-05
+lineal probing,2500,8.781e-05
+double hashing,2500,7.2956e-05
+quadratic probing,2500,7.4648e-05
+chaining,2500,1.2e-08
+STL unordered map,2500,2.0289e-05
+lineal probing,2500,7.2733e-05
+double hashing,2500,7.2495e-05
+quadratic probing,2500,7.6152e-05
+chaining,2500,3.8e-08
+STL unordered map,2500,1.8555e-05
+lineal probing,2500,7.2638e-05
+double hashing,2500,9.3845e-05
+quadratic probing,2500,7.3951e-05
+chaining,2500,1.4e-08
+STL unordered map,2500,1.8579e-05
+lineal probing,2500,6.8155e-05
+double hashing,2500,6.598e-05
+quadratic probing,2500,7.0199e-05
+chaining,2500,1.2e-08
+STL unordered map,2500,1.8577e-05
+lineal probing,2500,6.6127e-05
+double hashing,2500,7.1263e-05
+quadratic probing,2500,7.7882e-05
+chaining,2500,1.2e-08
+STL unordered map,2500,1.8771e-05
+lineal probing,2500,8.3649e-05
+double hashing,2500,8.3872e-05
+quadratic probing,2500,8.1553e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,2.0447e-05
+lineal probing,2500,6.8927e-05
+double hashing,2500,7.0815e-05
+quadratic probing,2500,9.1169e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,4.5745e-05
+lineal probing,2500,0.000173729
+double hashing,2500,0.000251182
+quadratic probing,2500,0.000126667
+chaining,2500,1.3e-08
+STL unordered map,2500,1.9678e-05
+lineal probing,2500,0.000102249
+double hashing,2500,9.7367e-05
+quadratic probing,2500,9.5476e-05
+chaining,2500,5.9e-08
+STL unordered map,2500,1.9141e-05
+lineal probing,2500,8.7391e-05
+double hashing,2500,8.5731e-05
+quadratic probing,2500,8.9485e-05
+chaining,2500,1.6e-08
+STL unordered map,2500,1.9119e-05
+lineal probing,2500,0.000101925
+double hashing,2500,7.8456e-05
+quadratic probing,2500,8.1141e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8933e-05
+lineal probing,2500,7.9611e-05
+double hashing,2500,8.0118e-05
+quadratic probing,2500,8.4497e-05
+chaining,2500,2.5e-08
+STL unordered map,2500,2.3245e-05
+lineal probing,2500,7.4059e-05
+double hashing,2500,7.3009e-05
+quadratic probing,2500,7.5192e-05
+chaining,2500,5.3e-08
+STL unordered map,2500,1.9039e-05
+lineal probing,2500,9.1651e-05
+double hashing,2500,7.8454e-05
+quadratic probing,2500,7.9785e-05
+chaining,2500,1.4e-08
+STL unordered map,2500,1.9298e-05
+lineal probing,2500,7.1698e-05
+double hashing,2500,7.3747e-05
+quadratic probing,2500,7.4545e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8653e-05
+lineal probing,2500,7.0123e-05
+double hashing,2500,9.9374e-05
+quadratic probing,2500,9.2698e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8978e-05
+lineal probing,2500,7.0964e-05
+double hashing,2500,7.1241e-05
+quadratic probing,2500,8.8707e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8946e-05
+lineal probing,2500,6.6913e-05
+double hashing,2500,7.1045e-05
+quadratic probing,2500,7.5027e-05
+chaining,2500,1.4e-08
+STL unordered map,2500,1.9336e-05
+lineal probing,2500,0.000232739
+double hashing,2500,0.000142044
+quadratic probing,2500,0.000142055
+chaining,2500,1.3e-08
+STL unordered map,2500,3.9558e-05
+lineal probing,2500,0.000104192
+double hashing,2500,9.5917e-05
+quadratic probing,2500,9.7793e-05
+chaining,2500,6.4e-08
+STL unordered map,2500,1.8727e-05
+lineal probing,2500,8.6145e-05
+double hashing,2500,8.495e-05
+quadratic probing,2500,8.7796e-05
+chaining,2500,4.1e-08
+STL unordered map,2500,1.8986e-05
+lineal probing,2500,0.000110134
+double hashing,2500,8.1654e-05
+quadratic probing,2500,8.4303e-05
+chaining,2500,2e-08
+STL unordered map,2500,2.2968e-05
+lineal probing,2500,7.6676e-05
+double hashing,2500,7.2159e-05
+quadratic probing,2500,7.6073e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8498e-05
+lineal probing,2500,7.2301e-05
+double hashing,2500,7.0103e-05
+quadratic probing,2500,7.448e-05
+chaining,2500,1.5e-08
+STL unordered map,2500,2.436e-05
+lineal probing,2500,0.000129301
+double hashing,2500,0.000136007
+quadratic probing,2500,0.000106664
+chaining,2500,1.8e-08
+STL unordered map,2500,2.8945e-05
+lineal probing,2500,0.000137584
+double hashing,2500,0.000133593
+quadratic probing,2500,0.000114072
+chaining,2500,1.2e-08
+STL unordered map,2500,3.3818e-05
+lineal probing,2500,0.000124425
+double hashing,2500,0.000118972
+quadratic probing,2500,0.000162589
+chaining,2500,4e-08
+STL unordered map,2500,2.5678e-05
+lineal probing,2500,0.000174436
+double hashing,2500,0.000111462
+quadratic probing,2500,0.000111824
+chaining,2500,3.9e-08
+STL unordered map,2500,1.8799e-05
+lineal probing,2500,9.9238e-05
+double hashing,2500,9.4017e-05
+quadratic probing,2500,9.3082e-05
+chaining,2500,1.7e-08
+STL unordered map,2500,1.8681e-05
+lineal probing,2500,8.6166e-05
+double hashing,2500,8.4155e-05
+quadratic probing,2500,8.9436e-05
+chaining,2500,2.2e-08
+STL unordered map,2500,4.976e-05
+lineal probing,2500,0.000109535
+double hashing,2500,0.000108122
+quadratic probing,2500,0.000107764
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8744e-05
+lineal probing,2500,0.000122087
+double hashing,2500,0.000101757
+quadratic probing,2500,0.000101604
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8425e-05
+lineal probing,2500,0.000107993
+double hashing,2500,0.000101219
+quadratic probing,2500,8.7153e-05
+chaining,2500,1.2e-08
+STL unordered map,2500,1.8652e-05
+lineal probing,2500,7.5256e-05
+double hashing,2500,8.6466e-05
+quadratic probing,2500,9.8043e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,2.191e-05
+lineal probing,2500,8.2697e-05
+double hashing,2500,8.3404e-05
+quadratic probing,2500,8.1295e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8698e-05
+lineal probing,2500,7.6235e-05
+double hashing,2500,7.7605e-05
+quadratic probing,2500,9.7096e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8652e-05
+lineal probing,2500,8.2607e-05
+double hashing,2500,9.5091e-05
+quadratic probing,2500,8.3114e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8644e-05
+lineal probing,2500,6.5642e-05
+double hashing,2500,6.8982e-05
+quadratic probing,2500,7.8093e-05
+chaining,2500,2.3e-08
+STL unordered map,2500,2.6097e-05
+lineal probing,2500,0.00058863
+double hashing,2500,0.000156391
+quadratic probing,2500,0.000189188
+chaining,2500,1.2e-08
+STL unordered map,2500,1.8714e-05
+lineal probing,2500,0.000120634
+double hashing,2500,9.8689e-05
+quadratic probing,2500,9.6509e-05
+chaining,2500,1.4e-08
+STL unordered map,2500,1.881e-05
+lineal probing,2500,0.000106237
+double hashing,2500,8.3327e-05
+quadratic probing,2500,9.0063e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8772e-05
+lineal probing,2500,0.000130036
+double hashing,2500,0.000126821
+quadratic probing,2500,8.3857e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8653e-05
+lineal probing,2500,7.4735e-05
+double hashing,2500,8.2146e-05
+quadratic probing,2500,7.9522e-05
+chaining,2500,1.2e-08
+STL unordered map,2500,1.855e-05
+lineal probing,2500,7.1975e-05
+double hashing,2500,7.2766e-05
+quadratic probing,2500,7.7225e-05
+chaining,2500,1.4e-08
+STL unordered map,2500,1.8711e-05
+lineal probing,2500,9.188e-05
+double hashing,2500,9.0288e-05
+quadratic probing,2500,7.6166e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,1.8818e-05
+lineal probing,2500,7.8293e-05
+double hashing,2500,7.0656e-05
+quadratic probing,2500,7.517e-05
+chaining,2500,1.3e-08
+STL unordered map,2500,2.3438e-05
+lineal probing,2500,7.7047e-05
+double hashing,2500,7.0254e-05
+quadratic probing,2500,7.7821e-05
+chaining,2500,1.2e-08
+STL unordered map,2500,1.8704e-05
+lineal probing,2500,0.000241618
+double hashing,2500,0.000136299
+quadratic probing,2500,0.000123577
+chaining,2500,7.2e-08
+STL unordered map,2500,2.0461e-05
+lineal probing,2500,0.00015619
+double hashing,2500,0.000118903
+quadratic probing,2500,0.000107769
+chaining,2500,1.3e-08
+STL unordered map,2500,1.9152e-05
+lineal probing,5000,0.000201154
+double hashing,5000,0.000196994
+quadratic probing,5000,0.000191542
+chaining,5000,1.3e-08
+STL unordered map,5000,5.2555e-05
+lineal probing,5000,0.000227912
+double hashing,5000,0.000257353
+quadratic probing,5000,0.000405886
+chaining,5000,2.4e-08
+STL unordered map,5000,5.2439e-05
+lineal probing,5000,0.000241386
+double hashing,5000,0.000213585
+quadratic probing,5000,0.000195633
+chaining,5000,1.4e-08
+STL unordered map,5000,4.6982e-05
+lineal probing,5000,0.000274985
+double hashing,5000,0.000211882
+quadratic probing,5000,0.000182938
+chaining,5000,1.8e-08
+STL unordered map,5000,5.1421e-05
+lineal probing,5000,0.00030442
+double hashing,5000,0.000169926
+quadratic probing,5000,0.000169715
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3887e-05
+lineal probing,5000,0.000164564
+double hashing,5000,0.000155083
+quadratic probing,5000,0.00016015
+chaining,5000,1.3e-08
+STL unordered map,5000,5.136e-05
+lineal probing,5000,0.000153683
+double hashing,5000,0.000150107
+quadratic probing,5000,0.00016334
+chaining,5000,4e-08
+STL unordered map,5000,4.3754e-05
+lineal probing,5000,0.000192599
+double hashing,5000,0.000164604
+quadratic probing,5000,0.000163287
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3524e-05
+lineal probing,5000,0.000175811
+double hashing,5000,0.000172968
+quadratic probing,5000,0.000214616
+chaining,5000,1.4e-08
+STL unordered map,5000,4.3821e-05
+lineal probing,5000,0.000199625
+double hashing,5000,0.000195532
+quadratic probing,5000,0.000319514
+chaining,5000,2.1e-08
+STL unordered map,5000,4.4347e-05
+lineal probing,5000,0.000275236
+double hashing,5000,0.000256839
+quadratic probing,5000,0.000237166
+chaining,5000,1.2e-08
+STL unordered map,5000,4.3936e-05
+lineal probing,5000,0.000264429
+double hashing,5000,0.000259907
+quadratic probing,5000,0.000226791
+chaining,5000,7.3e-08
+STL unordered map,5000,6.7697e-05
+lineal probing,5000,0.000289644
+double hashing,5000,0.000253719
+quadratic probing,5000,0.000253316
+chaining,5000,1.4e-08
+STL unordered map,5000,5.5247e-05
+lineal probing,5000,0.00033101
+double hashing,5000,0.000855828
+quadratic probing,5000,0.000583883
+chaining,5000,1.5e-08
+STL unordered map,5000,4.8088e-05
+lineal probing,5000,0.000236742
+double hashing,5000,0.000227597
+quadratic probing,5000,0.000222221
+chaining,5000,1.4e-08
+STL unordered map,5000,4.8968e-05
+lineal probing,5000,0.000229185
+double hashing,5000,0.00021498
+quadratic probing,5000,0.000222296
+chaining,5000,1.5e-08
+STL unordered map,5000,7.4701e-05
+lineal probing,5000,0.000202549
+double hashing,5000,0.000203314
+quadratic probing,5000,0.000259609
+chaining,5000,2.9e-08
+STL unordered map,5000,8.4103e-05
+lineal probing,5000,0.000214306
+double hashing,5000,0.000214012
+quadratic probing,5000,0.000210772
+chaining,5000,1.4e-08
+STL unordered map,5000,4.8053e-05
+lineal probing,5000,0.000215237
+double hashing,5000,0.000221725
+quadratic probing,5000,0.000196613
+chaining,5000,1.4e-08
+STL unordered map,5000,4.9085e-05
+lineal probing,5000,0.000260424
+double hashing,5000,0.000197107
+quadratic probing,5000,0.000202959
+chaining,5000,1.6e-08
+STL unordered map,5000,6.4911e-05
+lineal probing,5000,0.000200172
+double hashing,5000,0.000217048
+quadratic probing,5000,0.000189592
+chaining,5000,1.5e-08
+STL unordered map,5000,5.5046e-05
+lineal probing,5000,0.000214287
+double hashing,5000,0.000203463
+quadratic probing,5000,0.000198209
+chaining,5000,2.2e-08
+STL unordered map,5000,5.2721e-05
+lineal probing,5000,0.000236174
+double hashing,5000,0.000206294
+quadratic probing,5000,0.000201632
+chaining,5000,1.5e-08
+STL unordered map,5000,6.2996e-05
+lineal probing,5000,0.000306019
+double hashing,5000,0.000305827
+quadratic probing,5000,0.0003707
+chaining,5000,3.1e-08
+STL unordered map,5000,0.000109513
+lineal probing,5000,0.000689112
+double hashing,5000,0.00030378
+quadratic probing,5000,0.000301492
+chaining,5000,1.9e-08
+STL unordered map,5000,4.6495e-05
+lineal probing,5000,0.000217507
+double hashing,5000,0.000212308
+quadratic probing,5000,0.000270021
+chaining,5000,1.4e-08
+STL unordered map,5000,9.2903e-05
+lineal probing,5000,0.000228085
+double hashing,5000,0.000233591
+quadratic probing,5000,0.000289734
+chaining,5000,2.1e-08
+STL unordered map,5000,4.8765e-05
+lineal probing,5000,0.00024121
+double hashing,5000,0.000255818
+quadratic probing,5000,0.000216984
+chaining,5000,1.6e-08
+STL unordered map,5000,9.2306e-05
+lineal probing,5000,0.000381123
+double hashing,5000,0.000225945
+quadratic probing,5000,0.000262757
+chaining,5000,4.1e-08
+STL unordered map,5000,4.8319e-05
+lineal probing,5000,0.000310456
+double hashing,5000,0.000968311
+quadratic probing,5000,0.000223148
+chaining,5000,1.4e-08
+STL unordered map,5000,4.5443e-05
+lineal probing,5000,0.000208477
+double hashing,5000,0.000207443
+quadratic probing,5000,0.000252819
+chaining,5000,2.77e-07
+STL unordered map,5000,6.1508e-05
+lineal probing,5000,0.000212797
+double hashing,5000,0.000283644
+quadratic probing,5000,0.000382359
+chaining,5000,2.1e-08
+STL unordered map,5000,4.3842e-05
+lineal probing,5000,0.000188062
+double hashing,5000,0.000181399
+quadratic probing,5000,0.000176626
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3885e-05
+lineal probing,5000,0.00019791
+double hashing,5000,0.000173941
+quadratic probing,5000,0.000165076
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3493e-05
+lineal probing,5000,0.000187055
+double hashing,5000,0.000170049
+quadratic probing,5000,0.000153085
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3069e-05
+lineal probing,5000,0.000173228
+double hashing,5000,0.000180385
+quadratic probing,5000,0.000172015
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3326e-05
+lineal probing,5000,0.000147617
+double hashing,5000,0.000153908
+quadratic probing,5000,0.000188036
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3524e-05
+lineal probing,5000,0.000161262
+double hashing,5000,0.000158415
+quadratic probing,5000,0.00015843
+chaining,5000,1.3e-08
+STL unordered map,5000,4.314e-05
+lineal probing,5000,0.000156536
+double hashing,5000,0.000172654
+quadratic probing,5000,0.000188429
+chaining,5000,1.2e-08
+STL unordered map,5000,4.3516e-05
+lineal probing,5000,0.000244719
+double hashing,5000,0.000223235
+quadratic probing,5000,0.00019465
+chaining,5000,2.6e-08
+STL unordered map,5000,4.333e-05
+lineal probing,5000,0.000178962
+double hashing,5000,0.000169292
+quadratic probing,5000,0.000162537
+chaining,5000,1.2e-08
+STL unordered map,5000,7.2287e-05
+lineal probing,5000,0.000241866
+double hashing,5000,0.000367363
+quadratic probing,5000,0.000264454
+chaining,5000,3.5e-08
+STL unordered map,5000,4.4269e-05
+lineal probing,5000,0.000243427
+double hashing,5000,0.000227556
+quadratic probing,5000,0.000253338
+chaining,5000,1.4e-08
+STL unordered map,5000,4.2732e-05
+lineal probing,5000,0.000218588
+double hashing,5000,0.000212814
+quadratic probing,5000,0.00022652
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3792e-05
+lineal probing,5000,0.000189783
+double hashing,5000,0.000169347
+quadratic probing,5000,0.000168395
+chaining,5000,4e-08
+STL unordered map,5000,4.3112e-05
+lineal probing,5000,0.000180073
+double hashing,5000,0.000154069
+quadratic probing,5000,0.000159517
+chaining,5000,1.8e-08
+STL unordered map,5000,4.3487e-05
+lineal probing,5000,0.000174716
+double hashing,5000,0.000186434
+quadratic probing,5000,0.000173489
+chaining,5000,1.3e-08
+STL unordered map,5000,4.2914e-05
+lineal probing,5000,0.00015605
+double hashing,5000,0.000145269
+quadratic probing,5000,0.000163277
+chaining,5000,2.9e-08
+STL unordered map,5000,4.3165e-05
+lineal probing,5000,0.000150527
+double hashing,5000,0.00014344
+quadratic probing,5000,0.000148866
+chaining,5000,1.5e-08
+STL unordered map,5000,4.3056e-05
+lineal probing,5000,0.000183871
+double hashing,5000,0.000155353
+quadratic probing,5000,0.000156956
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3034e-05
+lineal probing,5000,0.000168319
+double hashing,5000,0.000177768
+quadratic probing,5000,0.000151253
+chaining,5000,1.3e-08
+STL unordered map,5000,4.311e-05
+lineal probing,5000,0.000149583
+double hashing,5000,0.000157076
+quadratic probing,5000,0.000172717
+chaining,5000,1.2e-08
+STL unordered map,5000,4.2793e-05
+lineal probing,5000,0.000152182
+double hashing,5000,0.000149272
+quadratic probing,5000,0.000165501
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3349e-05
+lineal probing,5000,0.000145907
+double hashing,5000,0.000217202
+quadratic probing,5000,0.000668461
+chaining,5000,2.8e-08
+STL unordered map,5000,6.0262e-05
+lineal probing,5000,0.000281353
+double hashing,5000,0.000209669
+quadratic probing,5000,0.000198951
+chaining,5000,3.9e-08
+STL unordered map,5000,4.4654e-05
+lineal probing,5000,0.000215003
+double hashing,5000,0.000187656
+quadratic probing,5000,0.00017582
+chaining,5000,1.7e-08
+STL unordered map,5000,4.4199e-05
+lineal probing,5000,0.000171853
+double hashing,5000,0.000180789
+quadratic probing,5000,0.000229778
+chaining,5000,1.2e-08
+STL unordered map,5000,5.5889e-05
+lineal probing,5000,0.000320957
+double hashing,5000,0.000214866
+quadratic probing,5000,0.000174808
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3454e-05
+lineal probing,5000,0.000200826
+double hashing,5000,0.000221545
+quadratic probing,5000,0.000193256
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3121e-05
+lineal probing,5000,0.000194959
+double hashing,5000,0.000192174
+quadratic probing,5000,0.000147318
+chaining,5000,1.4e-08
+STL unordered map,5000,4.3081e-05
+lineal probing,5000,0.000162044
+double hashing,5000,0.000155602
+quadratic probing,5000,0.000154966
+chaining,5000,1.2e-08
+STL unordered map,5000,7.5376e-05
+lineal probing,5000,0.000225106
+double hashing,5000,0.000184253
+quadratic probing,5000,0.000168908
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3328e-05
+lineal probing,5000,0.000153782
+double hashing,5000,0.000168131
+quadratic probing,5000,0.000181036
+chaining,5000,1.3e-08
+STL unordered map,5000,4.4504e-05
+lineal probing,5000,0.000150061
+double hashing,5000,0.000145947
+quadratic probing,5000,0.000154676
+chaining,5000,1.3e-08
+STL unordered map,5000,4.8842e-05
+lineal probing,5000,0.000230013
+double hashing,5000,0.000299841
+quadratic probing,5000,0.000467093
+chaining,5000,2.6e-08
+STL unordered map,5000,5.0377e-05
+lineal probing,5000,0.000215033
+double hashing,5000,0.000208695
+quadratic probing,5000,0.000200155
+chaining,5000,1.4e-08
+STL unordered map,5000,4.3494e-05
+lineal probing,5000,0.000193839
+double hashing,5000,0.000200943
+quadratic probing,5000,0.000199869
+chaining,5000,1.9e-08
+STL unordered map,5000,4.3155e-05
+lineal probing,5000,0.000194612
+double hashing,5000,0.000318912
+quadratic probing,5000,0.000191932
+chaining,5000,3e-08
+STL unordered map,5000,5.1531e-05
+lineal probing,5000,0.000218769
+double hashing,5000,0.000209636
+quadratic probing,5000,0.000218196
+chaining,5000,1.2e-08
+STL unordered map,5000,4.3663e-05
+lineal probing,5000,0.000175065
+double hashing,5000,0.00016532
+quadratic probing,5000,0.00016892
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3204e-05
+lineal probing,5000,0.000181736
+double hashing,5000,0.000149638
+quadratic probing,5000,0.000150545
+chaining,5000,1.3e-08
+STL unordered map,5000,5.0152e-05
+lineal probing,5000,0.000188118
+double hashing,5000,0.000147506
+quadratic probing,5000,0.000148871
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3854e-05
+lineal probing,5000,0.000197272
+double hashing,5000,0.000229162
+quadratic probing,5000,0.000303572
+chaining,5000,2.1e-08
+STL unordered map,5000,5.4642e-05
+lineal probing,5000,0.000474898
+double hashing,5000,0.000218128
+quadratic probing,5000,0.000204832
+chaining,5000,1.4e-08
+STL unordered map,5000,4.3191e-05
+lineal probing,5000,0.000193103
+double hashing,5000,0.000200473
+quadratic probing,5000,0.000264685
+chaining,5000,1.65e-07
+STL unordered map,5000,4.4572e-05
+lineal probing,5000,0.000213111
+double hashing,5000,0.000191342
+quadratic probing,5000,0.000187261
+chaining,5000,1.2e-08
+STL unordered map,5000,4.45e-05
+lineal probing,5000,0.000220738
+double hashing,5000,0.000201969
+quadratic probing,5000,0.000186673
+chaining,5000,1.7e-08
+STL unordered map,5000,4.3803e-05
+lineal probing,5000,0.000155819
+double hashing,5000,0.000155502
+quadratic probing,5000,0.000155303
+chaining,5000,4.5e-08
+STL unordered map,5000,4.4808e-05
+lineal probing,5000,0.000168018
+double hashing,5000,0.000197949
+quadratic probing,5000,0.000175566
+chaining,5000,1.5e-08
+STL unordered map,5000,5.2939e-05
+lineal probing,5000,0.000263118
+double hashing,5000,0.000231469
+quadratic probing,5000,0.000265993
+chaining,5000,1.4e-08
+STL unordered map,5000,4.9012e-05
+lineal probing,5000,0.000188576
+double hashing,5000,0.000184244
+quadratic probing,5000,0.000181341
+chaining,5000,3.3e-08
+STL unordered map,5000,4.311e-05
+lineal probing,5000,0.000200919
+double hashing,5000,0.000200284
+quadratic probing,5000,0.000184408
+chaining,5000,1.3e-08
+STL unordered map,5000,4.2993e-05
+lineal probing,5000,0.000155127
+double hashing,5000,0.000152591
+quadratic probing,5000,0.000156194
+chaining,5000,2.6e-07
+STL unordered map,5000,4.3203e-05
+lineal probing,5000,0.000154548
+double hashing,5000,0.000148568
+quadratic probing,5000,0.000154965
+chaining,5000,1.3e-08
+STL unordered map,5000,4.5003e-05
+lineal probing,5000,0.000235454
+double hashing,5000,0.000450297
+quadratic probing,5000,0.000353971
+chaining,5000,1.7e-08
+STL unordered map,5000,6.3784e-05
+lineal probing,5000,0.000226153
+double hashing,5000,0.000208187
+quadratic probing,5000,0.000207619
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3199e-05
+lineal probing,5000,0.000188875
+double hashing,5000,0.000182029
+quadratic probing,5000,0.000180497
+chaining,5000,1.2e-08
+STL unordered map,5000,4.4055e-05
+lineal probing,5000,0.00019887
+double hashing,5000,0.000171459
+quadratic probing,5000,0.000173021
+chaining,5000,1.2e-08
+STL unordered map,5000,5.4446e-05
+lineal probing,5000,0.000175501
+double hashing,5000,0.000199454
+quadratic probing,5000,0.000222279
+chaining,5000,1.3e-08
+STL unordered map,5000,4.544e-05
+lineal probing,5000,0.000203819
+double hashing,5000,0.000186682
+quadratic probing,5000,0.000199655
+chaining,5000,1.3e-08
+STL unordered map,5000,4.4151e-05
+lineal probing,5000,0.000167092
+double hashing,5000,0.00019421
+quadratic probing,5000,0.000284009
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3943e-05
+lineal probing,5000,0.00018752
+double hashing,5000,0.000189294
+quadratic probing,5000,0.000193234
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3687e-05
+lineal probing,5000,0.000158568
+double hashing,5000,0.000229297
+quadratic probing,5000,0.000188422
+chaining,5000,1.3e-08
+STL unordered map,5000,4.405e-05
+lineal probing,5000,0.000192997
+double hashing,5000,0.000173007
+quadratic probing,5000,0.000175051
+chaining,5000,1.6e-08
+STL unordered map,5000,4.3218e-05
+lineal probing,5000,0.000170407
+double hashing,5000,0.000153914
+quadratic probing,5000,0.000160104
+chaining,5000,1.2e-08
+STL unordered map,5000,4.3424e-05
+lineal probing,5000,0.000201566
+double hashing,5000,0.000177421
+quadratic probing,5000,0.000190084
+chaining,5000,1.6e-08
+STL unordered map,5000,4.4214e-05
+lineal probing,5000,0.000473309
+double hashing,5000,0.000323921
+quadratic probing,5000,0.000278391
+chaining,5000,1.4e-08
+STL unordered map,5000,4.3995e-05
+lineal probing,5000,0.000214026
+double hashing,5000,0.000197417
+quadratic probing,5000,0.000191555
+chaining,5000,1.2e-08
+STL unordered map,5000,4.3705e-05
+lineal probing,5000,0.000186206
+double hashing,5000,0.0001798
+quadratic probing,5000,0.000180526
+chaining,5000,3.3e-08
+STL unordered map,5000,4.3971e-05
+lineal probing,5000,0.000195854
+double hashing,5000,0.000186441
+quadratic probing,5000,0.000183539
+chaining,5000,1.3e-08
+STL unordered map,5000,4.3417e-05
+lineal probing,10000,0.000464067
+double hashing,10000,0.000494786
+quadratic probing,10000,0.000434542
+chaining,10000,1.3e-08
+STL unordered map,10000,9.0204e-05
+lineal probing,10000,0.000503269
+double hashing,10000,0.000384436
+quadratic probing,10000,0.000383289
+chaining,10000,1.3e-08
+STL unordered map,10000,9.2819e-05
+lineal probing,10000,0.000562823
+double hashing,10000,0.00110609
+quadratic probing,10000,0.000862789
+chaining,10000,2.2e-08
+STL unordered map,10000,0.000107992
+lineal probing,10000,0.000521317
+double hashing,10000,0.000459989
+quadratic probing,10000,0.00043191
+chaining,10000,1.3e-08
+STL unordered map,10000,9.1127e-05
+lineal probing,10000,0.000450847
+double hashing,10000,0.000466143
+quadratic probing,10000,0.000733086
+chaining,10000,1.3e-08
+STL unordered map,10000,9.0262e-05
+lineal probing,10000,0.000455538
+double hashing,10000,0.000424528
+quadratic probing,10000,0.000450335
+chaining,10000,1.8e-08
+STL unordered map,10000,9.2068e-05
+lineal probing,10000,0.000448864
+double hashing,10000,0.000462139
+quadratic probing,10000,0.000370156
+chaining,10000,1.4e-08
+STL unordered map,10000,9.1815e-05
+lineal probing,10000,0.000393582
+double hashing,10000,0.000375766
+quadratic probing,10000,0.000459817
+chaining,10000,1.3e-08
+STL unordered map,10000,9.049e-05
+lineal probing,10000,0.000448945
+double hashing,10000,0.000455094
+quadratic probing,10000,0.00045704
+chaining,10000,1.2e-08
+STL unordered map,10000,9.1475e-05
+lineal probing,10000,0.000430986
+double hashing,10000,0.000376187
+quadratic probing,10000,0.000399592
+chaining,10000,2.62e-07
+STL unordered map,10000,9.0479e-05
+lineal probing,10000,0.000384982
+double hashing,10000,0.000425924
+quadratic probing,10000,0.000423876
+chaining,10000,1.2e-08
+STL unordered map,10000,0.000113564
+lineal probing,10000,0.000451935
+double hashing,10000,0.000394143
+quadratic probing,10000,0.000427897
+chaining,10000,1.2e-08
+STL unordered map,10000,0.000224442
+lineal probing,10000,0.000728629
+double hashing,10000,0.000825752
+quadratic probing,10000,0.000475252
+chaining,10000,1.1e-08
+STL unordered map,10000,0.000110778
+lineal probing,10000,0.000738599
+double hashing,10000,0.000451224
+quadratic probing,10000,0.00048242
+chaining,10000,3.23e-07
+STL unordered map,10000,9.0209e-05
+lineal probing,10000,0.000473519
+double hashing,10000,0.000447289
+quadratic probing,10000,0.000427174
+chaining,10000,1.3e-08
+STL unordered map,10000,9.2207e-05
+lineal probing,10000,0.000474612
+double hashing,10000,0.000512589
+quadratic probing,10000,0.000380189
+chaining,10000,1.3e-08
+STL unordered map,10000,9.1546e-05
+lineal probing,10000,0.000392378
+double hashing,10000,0.000374323
+quadratic probing,10000,0.000380696
+chaining,10000,1.7e-08
+STL unordered map,10000,9.386e-05
+lineal probing,10000,0.000389165
+double hashing,10000,0.000380456
+quadratic probing,10000,0.00041665
+chaining,10000,1.2e-08
+STL unordered map,10000,9.0863e-05
+lineal probing,10000,0.000394658
+double hashing,10000,0.000406861
+quadratic probing,10000,0.000410447
+chaining,10000,8e-08
+STL unordered map,10000,9.9361e-05
+lineal probing,10000,0.000450192
+double hashing,10000,0.000405731
+quadratic probing,10000,0.00039567
+chaining,10000,1.3e-08
+STL unordered map,10000,9.5065e-05
+lineal probing,10000,0.000426124
+double hashing,10000,0.000423731
+quadratic probing,10000,0.000574448
+chaining,10000,2.4e-08
+STL unordered map,10000,0.000115337
+lineal probing,10000,0.000498994
+double hashing,10000,0.000514949
+quadratic probing,10000,0.000470865
+chaining,10000,1.2e-08
+STL unordered map,10000,0.000131056
+lineal probing,10000,0.000809994
+double hashing,10000,0.000523877
+quadratic probing,10000,0.000502958
+chaining,10000,1.2e-08
+STL unordered map,10000,0.000118231
+lineal probing,10000,0.000551029
+double hashing,10000,0.000565908
+quadratic probing,10000,0.000762608
+chaining,10000,3.88e-07
+STL unordered map,10000,0.000116346
+lineal probing,10000,0.000553779
+double hashing,10000,0.000491886
+quadratic probing,10000,0.000448523
+chaining,10000,2.6e-08
+STL unordered map,10000,9.0673e-05
+lineal probing,10000,0.000443763
+double hashing,10000,0.000492333
+quadratic probing,10000,0.000489291
+chaining,10000,6.4e-08
+STL unordered map,10000,0.000101884
+lineal probing,10000,0.000452687
+double hashing,10000,0.000634554
+quadratic probing,10000,0.000535471
+chaining,10000,1.6e-08
+STL unordered map,10000,0.000192491
+lineal probing,10000,0.000648163
+double hashing,10000,0.000519074
+quadratic probing,10000,0.000491907
+chaining,10000,1.9e-08
+STL unordered map,10000,0.000101095
+lineal probing,10000,0.000501574
+double hashing,10000,0.000489114
+quadratic probing,10000,0.000542386
+chaining,10000,1.9e-08
+STL unordered map,10000,0.000258703
+lineal probing,10000,0.000905585
+double hashing,10000,0.000571473
+quadratic probing,10000,0.000529177
+chaining,10000,1.4e-08
+STL unordered map,10000,0.000113009
+lineal probing,10000,0.000477231
+double hashing,10000,0.000427515
+quadratic probing,10000,0.000432404
+chaining,10000,1.4e-08
+STL unordered map,10000,0.00013424
+lineal probing,10000,0.0005998
+double hashing,10000,0.000702583
+quadratic probing,10000,0.000820461
+chaining,10000,3.4e-08
+STL unordered map,10000,9.9243e-05
+lineal probing,10000,0.000487424
+double hashing,10000,0.00046758
+quadratic probing,10000,0.000432751
+chaining,10000,1.8e-08
+STL unordered map,10000,9.1695e-05
+lineal probing,10000,0.000430301
+double hashing,10000,0.000400332
+quadratic probing,10000,0.00109323
+chaining,10000,5.3e-08
+STL unordered map,10000,0.000324709
+lineal probing,10000,0.000758259
+double hashing,10000,0.000475356
+quadratic probing,10000,0.000509345
+chaining,10000,1.4e-08
+STL unordered map,10000,9.0973e-05
+lineal probing,10000,0.000453692
+double hashing,10000,0.000451908
+quadratic probing,10000,0.000456971
+chaining,10000,1.3e-08
+STL unordered map,10000,0.000109113
+lineal probing,10000,0.000767139
+double hashing,10000,0.000632598
+quadratic probing,10000,0.00132336
+chaining,10000,1.2e-08
+STL unordered map,10000,9.0598e-05
+lineal probing,10000,0.000481555
+double hashing,10000,0.000477295
+quadratic probing,10000,0.000443886
+chaining,10000,1.3e-08
+STL unordered map,10000,0.000107376
+lineal probing,10000,0.000463182
+double hashing,10000,0.000423555
+quadratic probing,10000,0.000761497
+chaining,10000,2.3e-08
+STL unordered map,10000,0.000137636
+lineal probing,10000,0.00129572
+double hashing,10000,0.000509717
+quadratic probing,10000,0.000471402
+chaining,10000,1.7e-08
+STL unordered map,10000,9.2404e-05
+lineal probing,10000,0.000450043
+double hashing,10000,0.000421655
+quadratic probing,10000,0.000411559
+chaining,10000,1.4e-08
+STL unordered map,10000,9.9977e-05
+lineal probing,10000,0.00121027
+double hashing,10000,0.000581447
+quadratic probing,10000,0.000920058
+chaining,10000,1.3e-08
+STL unordered map,10000,9.1221e-05
+lineal probing,10000,0.000540089
+double hashing,10000,0.000501969
+quadratic probing,10000,0.000433547
+chaining,10000,1.8e-08
+STL unordered map,10000,9.188e-05
+lineal probing,10000,0.000426657
+double hashing,10000,0.000430868
+quadratic probing,10000,0.00120138
+chaining,10000,1.3e-08
+STL unordered map,10000,0.000152793
+lineal probing,10000,0.00138209
+double hashing,10000,0.000518552
+quadratic probing,10000,0.000510348
+chaining,10000,1.4e-08
+STL unordered map,10000,0.000108188
+lineal probing,10000,0.00047205
+double hashing,10000,0.000444109
+quadratic probing,10000,0.000424435
+chaining,10000,1.3e-08
+STL unordered map,10000,9.2217e-05
+lineal probing,10000,0.000684808
+double hashing,10000,0.000677816
+quadratic probing,10000,0.00123753
+chaining,10000,1.4e-08
+STL unordered map,10000,9.1378e-05
+lineal probing,10000,0.000490399
+double hashing,10000,0.00051095
+quadratic probing,10000,0.000427056
+chaining,10000,1.3e-08
+STL unordered map,10000,9.6405e-05
+lineal probing,10000,0.000462879
+double hashing,10000,0.000414639
+quadratic probing,10000,0.000531614
+chaining,10000,1.8e-08
+STL unordered map,10000,0.000155232
+lineal probing,10000,0.00137366
+double hashing,10000,0.000493845
+quadratic probing,10000,0.000537502
+chaining,10000,1.5e-08
+STL unordered map,10000,8.9826e-05
+lineal probing,10000,0.000467415
+double hashing,10000,0.000443227
+quadratic probing,10000,0.000425621
+chaining,10000,1.2e-08
+STL unordered map,10000,0.000102039
+lineal probing,10000,0.000539874
+double hashing,10000,0.00118088
+quadratic probing,10000,0.000654073
+chaining,10000,2e-08
+STL unordered map,10000,0.000190313
+lineal probing,10000,0.000490944
+double hashing,10000,0.000466158
+quadratic probing,10000,0.000494737
+chaining,10000,1.3e-08
+STL unordered map,10000,9.2147e-05
+lineal probing,10000,0.000437854
+double hashing,10000,0.000453666
+quadratic probing,10000,0.000420673
+chaining,10000,1.5e-08
+STL unordered map,10000,0.000284836
+lineal probing,10000,0.000587481
+double hashing,10000,0.00129172
+quadratic probing,10000,0.000490312
+chaining,10000,1.7e-08
+STL unordered map,10000,9.0831e-05
+lineal probing,10000,0.000455033
+double hashing,10000,0.000430004
+quadratic probing,10000,0.00044471
+chaining,10000,1.8e-08
+STL unordered map,10000,9.1638e-05
+lineal probing,10000,0.000422549
+double hashing,10000,0.000482285
+quadratic probing,10000,0.00074821
+chaining,10000,1.6e-08
+STL unordered map,10000,0.000143504
+lineal probing,10000,0.00098412
+double hashing,10000,0.000543341
+quadratic probing,10000,0.000479231
+chaining,10000,1.2e-08
+STL unordered map,10000,0.000107451
+lineal probing,10000,0.000475356
+double hashing,10000,0.000444587
+quadratic probing,10000,0.000415165
+chaining,10000,5.6e-08
+STL unordered map,10000,0.000113185
+lineal probing,10000,0.00132959
+double hashing,10000,0.000859955
+quadratic probing,10000,0.000993399
+chaining,10000,1.4e-08
+STL unordered map,10000,9.1833e-05
+lineal probing,10000,0.000511825
+double hashing,10000,0.000466675
+quadratic probing,10000,0.000433839
+chaining,10000,1.3e-08
+STL unordered map,10000,9.0306e-05
+lineal probing,10000,0.000438374
+double hashing,10000,0.000416934
+quadratic probing,10000,0.00135203
+chaining,10000,3.4e-08
+STL unordered map,10000,9.6518e-05
+lineal probing,10000,0.00115136
+double hashing,10000,0.000541346
+quadratic probing,10000,0.000514525
+chaining,10000,1.6e-08
+STL unordered map,10000,9.2647e-05
+lineal probing,10000,0.000474105
+double hashing,10000,0.000483601
+quadratic probing,10000,0.000516178
+chaining,10000,1.4e-08
+STL unordered map,10000,0.000173225
+lineal probing,10000,0.000697182
+double hashing,10000,0.00135513
+quadratic probing,10000,0.00053355
+chaining,10000,1.3e-08
+STL unordered map,10000,9.3516e-05
+lineal probing,10000,0.000499808
+double hashing,10000,0.000484398
+quadratic probing,10000,0.000434287
+chaining,10000,1.3e-08
+STL unordered map,10000,9.2109e-05
+lineal probing,10000,0.000467844
+double hashing,10000,0.000632367
+quadratic probing,10000,0.000699976
+chaining,10000,1.4e-08
+STL unordered map,10000,0.000159616
+lineal probing,10000,0.000525481
+double hashing,10000,0.000479262
+quadratic probing,10000,0.000479503
+chaining,10000,1.3e-08
+STL unordered map,10000,9.065e-05
+lineal probing,10000,0.000433282
+double hashing,10000,0.000440664
+quadratic probing,10000,0.000556845
+chaining,10000,3.3e-08
+STL unordered map,10000,0.000111097
+lineal probing,10000,0.00120587
+double hashing,10000,0.000737396
+quadratic probing,10000,0.00105143
+chaining,10000,1.3e-08
+STL unordered map,10000,9.1805e-05
+lineal probing,10000,0.000480718
+double hashing,10000,0.000471134
+quadratic probing,10000,0.000441313
+chaining,10000,1.3e-08
+STL unordered map,10000,9.4593e-05
+lineal probing,10000,0.000427305
+double hashing,10000,0.000446495
+quadratic probing,10000,0.00105011
+chaining,10000,5.2e-08
+STL unordered map,10000,0.000263841
+lineal probing,10000,0.000690956
+double hashing,10000,0.000641375
+quadratic probing,10000,0.000627392
+chaining,10000,3.6e-08
+STL unordered map,10000,9.3617e-05
+lineal probing,10000,0.000931851
+double hashing,10000,0.000598724
+quadratic probing,10000,0.000947754
+chaining,10000,2.1e-08
+STL unordered map,10000,9.6435e-05
+lineal probing,10000,0.000537965
+double hashing,10000,0.000459683
+quadratic probing,10000,0.000430698
+chaining,10000,1.3e-08
+STL unordered map,10000,9.2198e-05
+lineal probing,10000,0.0004405
+double hashing,10000,0.000410251
+quadratic probing,10000,0.000405404
+chaining,10000,3e-08
+STL unordered map,10000,0.000217683
+lineal probing,10000,0.000634697
+double hashing,10000,0.00113774
+quadratic probing,10000,0.000484894
+chaining,10000,1.8e-08
+STL unordered map,10000,9.2117e-05
+lineal probing,10000,0.000458868
+double hashing,10000,0.000428475
+quadratic probing,10000,0.000418603
+chaining,10000,1.3e-08
+STL unordered map,10000,9.0204e-05
+lineal probing,10000,0.000419617
+double hashing,10000,0.000555953
+quadratic probing,10000,0.000605182
+chaining,10000,1.3e-08
+STL unordered map,10000,0.000242317
+lineal probing,10000,0.00101175
+double hashing,10000,0.000486543
+quadratic probing,10000,0.000492305
+chaining,10000,1.2e-08
+STL unordered map,10000,9.0858e-05
+lineal probing,10000,0.000450454
+double hashing,10000,0.000431765
+quadratic probing,10000,0.000465862
+chaining,10000,1.8e-08
+STL unordered map,10000,9.2011e-05
+lineal probing,10000,0.000694811
+double hashing,10000,0.000578485
+quadratic probing,10000,0.00115008
+chaining,10000,1.07e-07
+STL unordered map,10000,0.00010701
+lineal probing,10000,0.000536131
+double hashing,10000,0.000538151
+quadratic probing,10000,0.000515872
+chaining,10000,1.4e-08
+STL unordered map,10000,0.000112768
+lineal probing,10000,0.000515565
+double hashing,10000,0.000446086
+quadratic probing,10000,0.00108367
+chaining,10000,4.6e-08
+STL unordered map,10000,0.000179812
+lineal probing,10000,0.000780959
+double hashing,10000,0.000474358
+quadratic probing,10000,0.000476014
+chaining,10000,1.2e-08
+STL unordered map,10000,9.1891e-05
+lineal probing,10000,0.000439139
+double hashing,10000,0.000421729
+quadratic probing,10000,0.000425812
+chaining,10000,1.3e-08
+STL unordered map,10000,9.0769e-05
+lineal probing,10000,0.000507478
+double hashing,10000,0.00103129
+quadratic probing,10000,0.000693102
+chaining,10000,2.5e-08
+STL unordered map,10000,9.2931e-05
+lineal probing,10000,0.000503436
+double hashing,10000,0.000480534
+quadratic probing,10000,0.000444328
+chaining,10000,1.8e-08
+STL unordered map,10000,9.0259e-05
+lineal probing,10000,0.000442582
+double hashing,10000,0.000412179
+quadratic probing,10000,0.000381915
+chaining,10000,1.4e-08
+STL unordered map,10000,0.000106092
+lineal probing,10000,0.000583609
+double hashing,10000,0.000859544
+quadratic probing,10000,0.000615933
+chaining,10000,1.3e-08
+STL unordered map,10000,9.242e-05
+lineal probing,10000,0.000473373
+double hashing,10000,0.000432437
+quadratic probing,10000,0.00043168
+chaining,10000,1.3e-08
+STL unordered map,10000,9.1793e-05
+lineal probing,10000,0.000423128
+double hashing,10000,0.000418959
+quadratic probing,10000,0.00109958
+chaining,10000,1.2e-08
+STL unordered map,10000,0.000148861
+lineal probing,10000,0.00108527
+double hashing,10000,0.000491344
+quadratic probing,10000,0.000466196
+chaining,10000,1.3e-08
+STL unordered map,10000,9.0601e-05
+lineal probing,10000,0.000447498
+double hashing,10000,0.000411793
+quadratic probing,10000,0.000412305
+chaining,10000,1.7e-08
+STL unordered map,10000,9.0372e-05
+lineal probing,10000,0.000457616
+double hashing,10000,0.00116372
+quadratic probing,10000,0.000707535
+chaining,10000,3.2e-08
+STL unordered map,10000,0.000228283
+lineal probing,10000,0.000520441
+double hashing,10000,0.000476854
+quadratic probing,10000,0.000457495
+chaining,10000,5.2e-08
+STL unordered map,10000,9.1361e-05
+lineal probing,10000,0.000441074
+double hashing,10000,0.000421667
+quadratic probing,10000,0.000386738
+chaining,10000,2e-08
+STL unordered map,10000,0.000195017
+lineal probing,10000,0.000664078
+double hashing,10000,0.00139514
+quadratic probing,10000,0.000488366
+chaining,10000,1.7e-08
+STL unordered map,10000,9.1862e-05
+lineal probing,10000,0.000468424
+double hashing,10000,0.000432911
+quadratic probing,10000,0.000425005
+chaining,10000,1.7e-08
+STL unordered map,10000,9.2486e-05
+lineal probing,10000,0.000420109
+double hashing,10000,0.000428999
+quadratic probing,10000,0.00091931
+chaining,10000,1.31e-07
+STL unordered map,10000,0.000136104
+lineal probing,12500,0.00110214
+double hashing,12500,0.00067924
+quadratic probing,12500,0.000645309
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000114635
+lineal probing,12500,0.000644647
+double hashing,12500,0.000615392
+quadratic probing,12500,0.000612834
+chaining,12500,1.4e-08
+STL unordered map,12500,0.000204068
+lineal probing,12500,0.000924809
+double hashing,12500,0.00154602
+quadratic probing,12500,0.000673623
+chaining,12500,1.5e-08
+STL unordered map,12500,0.000115164
+lineal probing,12500,0.000644245
+double hashing,12500,0.000573642
+quadratic probing,12500,0.000587003
+chaining,12500,1.4e-08
+STL unordered map,12500,0.00011601
+lineal probing,12500,0.000715884
+double hashing,12500,0.00152455
+quadratic probing,12500,0.00100805
+chaining,12500,1.2e-08
+STL unordered map,12500,0.000188365
+lineal probing,12500,0.000690527
+double hashing,12500,0.000648426
+quadratic probing,12500,0.000606639
+chaining,12500,4.8e-08
+STL unordered map,12500,0.000118202
+lineal probing,12500,0.000614126
+double hashing,12500,0.000545092
+quadratic probing,12500,0.000744993
+chaining,12500,4.2e-08
+STL unordered map,12500,0.000139094
+lineal probing,12500,0.0019267
+double hashing,12500,0.000659929
+quadratic probing,12500,0.000668613
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000121951
+lineal probing,12500,0.00065638
+double hashing,12500,0.000585587
+quadratic probing,12500,0.000568998
+chaining,12500,1.3e-08
+STL unordered map,12500,0.00014422
+lineal probing,12500,0.00164735
+double hashing,12500,0.00216185
+quadratic probing,12500,0.000659204
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000115371
+lineal probing,12500,0.000655662
+double hashing,12500,0.000597916
+quadratic probing,12500,0.000590366
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000115061
+lineal probing,12500,0.000576829
+double hashing,12500,0.000799479
+quadratic probing,12500,0.00070468
+chaining,12500,2.8e-08
+STL unordered map,12500,0.000217683
+lineal probing,12500,0.000701719
+double hashing,12500,0.000645581
+quadratic probing,12500,0.000627464
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000115353
+lineal probing,12500,0.000614372
+double hashing,12500,0.000578897
+quadratic probing,12500,0.000718821
+chaining,12500,2.2e-08
+STL unordered map,12500,0.000125154
+lineal probing,12500,0.00169312
+double hashing,12500,0.000658969
+quadratic probing,12500,0.000641462
+chaining,12500,1.08e-07
+STL unordered map,12500,0.00011343
+lineal probing,12500,0.0005968
+double hashing,12500,0.000586685
+quadratic probing,12500,0.000585548
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000114887
+lineal probing,12500,0.00151385
+double hashing,12500,0.000929431
+quadratic probing,12500,0.00128975
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000115274
+lineal probing,12500,0.000654947
+double hashing,12500,0.000606707
+quadratic probing,12500,0.000596422
+chaining,12500,1.17e-07
+STL unordered map,12500,0.000114427
+lineal probing,12500,0.000605133
+double hashing,12500,0.000638098
+quadratic probing,12500,0.00125071
+chaining,12500,2.7e-08
+STL unordered map,12500,0.00011362
+lineal probing,12500,0.00067991
+double hashing,12500,0.000669536
+quadratic probing,12500,0.000610913
+chaining,12500,1.4e-08
+STL unordered map,12500,0.000115009
+lineal probing,12500,0.000601259
+double hashing,12500,0.000584005
+quadratic probing,12500,0.000546223
+chaining,12500,6.8e-08
+STL unordered map,12500,0.000289843
+lineal probing,12500,0.000859398
+double hashing,12500,0.00122561
+quadratic probing,12500,0.000658672
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000114811
+lineal probing,12500,0.000631299
+double hashing,12500,0.000609733
+quadratic probing,12500,0.000575112
+chaining,12500,8.2e-08
+STL unordered map,12500,0.000115137
+lineal probing,12500,0.000627903
+double hashing,12500,0.0016811
+quadratic probing,12500,0.00102441
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000245984
+lineal probing,12500,0.000679986
+double hashing,12500,0.000616246
+quadratic probing,12500,0.000605969
+chaining,12500,6.8e-08
+STL unordered map,12500,0.000114904
+lineal probing,12500,0.000598886
+double hashing,12500,0.000565182
+quadratic probing,12500,0.00131629
+chaining,12500,1.4e-08
+STL unordered map,12500,0.000282277
+lineal probing,12500,0.00138699
+double hashing,12500,0.00066594
+quadratic probing,12500,0.000636945
+chaining,12500,7.1e-08
+STL unordered map,12500,0.000115264
+lineal probing,12500,0.000614372
+double hashing,12500,0.000585268
+quadratic probing,12500,0.00057587
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000116271
+lineal probing,12500,0.00123495
+double hashing,12500,0.00137039
+quadratic probing,12500,0.000738141
+chaining,12500,1.2e-08
+STL unordered map,12500,0.000114952
+lineal probing,12500,0.000635413
+double hashing,12500,0.000577353
+quadratic probing,12500,0.000582469
+chaining,12500,1.4e-08
+STL unordered map,12500,0.00011446
+lineal probing,12500,0.000600471
+double hashing,12500,0.000725937
+quadratic probing,12500,0.00154359
+chaining,12500,3.5e-08
+STL unordered map,12500,0.000348401
+lineal probing,12500,0.000682093
+double hashing,12500,0.000667711
+quadratic probing,12500,0.000632673
+chaining,12500,1.2e-08
+STL unordered map,12500,0.000117745
+lineal probing,12500,0.000587104
+double hashing,12500,0.000585815
+quadratic probing,12500,0.000546616
+chaining,12500,2.5e-08
+STL unordered map,12500,0.000339483
+lineal probing,12500,0.0010729
+double hashing,12500,0.00124962
+quadratic probing,12500,0.000653438
+chaining,12500,1.4e-08
+STL unordered map,12500,0.000113027
+lineal probing,12500,0.000618878
+double hashing,12500,0.000573663
+quadratic probing,12500,0.000574882
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000114672
+lineal probing,12500,0.000675141
+double hashing,12500,0.00133561
+quadratic probing,12500,0.0010103
+chaining,12500,5.29e-07
+STL unordered map,12500,0.000115071
+lineal probing,12500,0.000658373
+double hashing,12500,0.000635015
+quadratic probing,12500,0.000706464
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000113387
+lineal probing,12500,0.000657696
+double hashing,12500,0.000639767
+quadratic probing,12500,0.00140642
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000148612
+lineal probing,12500,0.00119735
+double hashing,12500,0.000666015
+quadratic probing,12500,0.000642176
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000127935
+lineal probing,12500,0.000600181
+double hashing,12500,0.000564087
+quadratic probing,12500,0.000584914
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000195228
+lineal probing,12500,0.000783223
+double hashing,12500,0.00113029
+quadratic probing,12500,0.000744922
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000115149
+lineal probing,12500,0.000641991
+double hashing,12500,0.000588669
+quadratic probing,12500,0.000596073
+chaining,12500,5e-08
+STL unordered map,12500,0.000120672
+lineal probing,12500,0.000611459
+double hashing,12500,0.001467
+quadratic probing,12500,0.000844678
+chaining,12500,2.1e-08
+STL unordered map,12500,0.000130535
+lineal probing,12500,0.00126131
+double hashing,12500,0.000746094
+quadratic probing,12500,0.000647663
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000115123
+lineal probing,12500,0.000594785
+double hashing,12500,0.000567345
+quadratic probing,12500,0.000882033
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000136224
+lineal probing,12500,0.00109377
+double hashing,12500,0.000648616
+quadratic probing,12500,0.000626111
+chaining,12500,1.1e-07
+STL unordered map,12500,0.000114325
+lineal probing,12500,0.000601523
+double hashing,12500,0.000575809
+quadratic probing,12500,0.000540199
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000112975
+lineal probing,12500,0.000536388
+double hashing,12500,0.000564855
+quadratic probing,12500,0.000543432
+chaining,12500,8.5e-08
+STL unordered map,12500,0.000113961
+lineal probing,12500,0.000598431
+double hashing,12500,0.000614264
+quadratic probing,12500,0.000563492
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000114968
+lineal probing,12500,0.000609886
+double hashing,12500,0.000557367
+quadratic probing,12500,0.000571574
+chaining,12500,1.2e-08
+STL unordered map,12500,0.000115179
+lineal probing,12500,0.000544582
+double hashing,12500,0.000534496
+quadratic probing,12500,0.00054316
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000114586
+lineal probing,12500,0.000561766
+double hashing,12500,0.000521709
+quadratic probing,12500,0.000536653
+chaining,12500,1.3e-08
+STL unordered map,12500,0.0001143
+lineal probing,12500,0.000548055
+double hashing,12500,0.00051771
+quadratic probing,12500,0.000531359
+chaining,12500,1.6e-08
+STL unordered map,12500,0.00011416
+lineal probing,12500,0.000546395
+double hashing,12500,0.000512325
+quadratic probing,12500,0.000529209
+chaining,12500,2.6e-08
+STL unordered map,12500,0.000114502
+lineal probing,12500,0.000538992
+double hashing,12500,0.000517298
+quadratic probing,12500,0.000534715
+chaining,12500,5.3e-08
+STL unordered map,12500,0.0001142
+lineal probing,12500,0.000547626
+double hashing,12500,0.000519409
+quadratic probing,12500,0.000515853
+chaining,12500,8.1e-08
+STL unordered map,12500,0.000113157
+lineal probing,12500,0.000538355
+double hashing,12500,0.000509836
+quadratic probing,12500,0.000521729
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000114743
+lineal probing,12500,0.000557048
+double hashing,12500,0.000522972
+quadratic probing,12500,0.000558349
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000114993
+lineal probing,12500,0.000554749
+double hashing,12500,0.000521153
+quadratic probing,12500,0.000533817
+chaining,12500,3e-08
+STL unordered map,12500,0.000114508
+lineal probing,12500,0.000546634
+double hashing,12500,0.000533621
+quadratic probing,12500,0.000523381
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000114227
+lineal probing,12500,0.000587411
+double hashing,12500,0.000566436
+quadratic probing,12500,0.000601778
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000115223
+lineal probing,12500,0.000598149
+double hashing,12500,0.00055748
+quadratic probing,12500,0.00056295
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000114769
+lineal probing,12500,0.000628305
+double hashing,12500,0.000520349
+quadratic probing,12500,0.000522587
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000114563
+lineal probing,12500,0.000560704
+double hashing,12500,0.000538935
+quadratic probing,12500,0.000550091
+chaining,12500,3.9e-08
+STL unordered map,12500,0.000114125
+lineal probing,12500,0.000554422
+double hashing,12500,0.000531023
+quadratic probing,12500,0.000536089
+chaining,12500,1.4e-08
+STL unordered map,12500,0.00011514
+lineal probing,12500,0.000550129
+double hashing,12500,0.000527909
+quadratic probing,12500,0.00054083
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000114688
+lineal probing,12500,0.000589402
+double hashing,12500,0.000571216
+quadratic probing,12500,0.000572981
+chaining,12500,8.2e-08
+STL unordered map,12500,0.000114624
+lineal probing,12500,0.000591552
+double hashing,12500,0.000556654
+quadratic probing,12500,0.000586314
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000115203
+lineal probing,12500,0.000684202
+double hashing,12500,0.000530154
+quadratic probing,12500,0.000534004
+chaining,12500,1.3e-08
+STL unordered map,12500,0.00011461
+lineal probing,12500,0.000576866
+double hashing,12500,0.000530337
+quadratic probing,12500,0.000540009
+chaining,12500,1.2e-08
+STL unordered map,12500,0.000113392
+lineal probing,12500,0.000583126
+double hashing,12500,0.000529727
+quadratic probing,12500,0.000542727
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000115303
+lineal probing,12500,0.000557976
+double hashing,12500,0.000522827
+quadratic probing,12500,0.000539701
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000113088
+lineal probing,12500,0.000584671
+double hashing,12500,0.000563123
+quadratic probing,12500,0.000563688
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000112486
+lineal probing,12500,0.000601781
+double hashing,12500,0.00055605
+quadratic probing,12500,0.000578804
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000115184
+lineal probing,12500,0.000626125
+double hashing,12500,0.000539525
+quadratic probing,12500,0.000525939
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000114604
+lineal probing,12500,0.000582914
+double hashing,12500,0.000579361
+quadratic probing,12500,0.000577071
+chaining,12500,1.4e-08
+STL unordered map,12500,0.000114597
+lineal probing,12500,0.000596326
+double hashing,12500,0.0005662
+quadratic probing,12500,0.000565153
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000115416
+lineal probing,12500,0.000590043
+double hashing,12500,0.000525668
+quadratic probing,12500,0.000530176
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000115073
+lineal probing,12500,0.000563892
+double hashing,12500,0.000559541
+quadratic probing,12500,0.000581661
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000115973
+lineal probing,12500,0.000595714
+double hashing,12500,0.000565132
+quadratic probing,12500,0.000587386
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000120147
+lineal probing,12500,0.000646207
+double hashing,12500,0.000717376
+quadratic probing,12500,0.00057323
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000114558
+lineal probing,12500,0.00058311
+double hashing,12500,0.000574663
+quadratic probing,12500,0.000693436
+chaining,12500,1.4e-08
+STL unordered map,12500,0.000349242
+lineal probing,12500,0.000869523
+double hashing,12500,0.000881047
+quadratic probing,12500,0.000774132
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000167943
+lineal probing,12500,0.000673764
+double hashing,12500,0.000655131
+quadratic probing,12500,0.000655589
+chaining,12500,2.1e-08
+STL unordered map,12500,0.000129898
+lineal probing,12500,0.000652642
+double hashing,12500,0.00067863
+quadratic probing,12500,0.000856477
+chaining,12500,1.4e-08
+STL unordered map,12500,0.000152487
+lineal probing,12500,0.000753749
+double hashing,12500,0.000713297
+quadratic probing,12500,0.000688116
+chaining,12500,2.1e-08
+STL unordered map,12500,0.000137881
+lineal probing,12500,0.000665253
+double hashing,12500,0.000576845
+quadratic probing,12500,0.000569084
+chaining,12500,2.1e-08
+STL unordered map,12500,0.000123768
+lineal probing,12500,0.000576496
+double hashing,12500,0.000577454
+quadratic probing,12500,0.00057073
+chaining,12500,2.4e-08
+STL unordered map,12500,0.000115301
+lineal probing,12500,0.000554341
+double hashing,12500,0.000526806
+quadratic probing,12500,0.000590898
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000115197
+lineal probing,12500,0.000599824
+double hashing,12500,0.000567697
+quadratic probing,12500,0.000565101
+chaining,12500,1.9e-08
+STL unordered map,12500,0.000115621
+lineal probing,12500,0.000576534
+double hashing,12500,0.000697294
+quadratic probing,12500,0.000549664
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000117837
+lineal probing,12500,0.000555253
+double hashing,12500,0.000565073
+quadratic probing,12500,0.000596528
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000117007
+lineal probing,12500,0.000602786
+double hashing,12500,0.00058684
+quadratic probing,12500,0.000599797
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000138407
+lineal probing,12500,0.000629129
+double hashing,12500,0.000543089
+quadratic probing,12500,0.000558778
+chaining,12500,2.9e-08
+STL unordered map,12500,0.000114944
+lineal probing,12500,0.000587165
+double hashing,12500,0.000579734
+quadratic probing,12500,0.00054202
+chaining,12500,1.2e-08
+STL unordered map,12500,0.000129085
+lineal probing,12500,0.000549514
+double hashing,12500,0.000566783
+quadratic probing,12500,0.00056539
+chaining,12500,1.8e-08
+STL unordered map,12500,0.000133167
+lineal probing,12500,0.000582195
+double hashing,12500,0.000528768
+quadratic probing,12500,0.000538186
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000117293
+lineal probing,12500,0.000548399
+double hashing,12500,0.000569951
+quadratic probing,12500,0.000575164
+chaining,12500,1.3e-08
+STL unordered map,12500,0.000117231
+lineal probing,12500,0.000598847
+double hashing,12500,0.000567108
+quadratic probing,12500,0.00056817
+chaining,12500,2.8e-08
+STL unordered map,12500,0.000116101
+lineal probing,12500,0.000620727
+double hashing,12500,0.000555203
+quadratic probing,12500,0.000532673
+chaining,12500,1.7e-08
+STL unordered map,12500,0.000112967
+lineal probing,15000,0.000757371
+double hashing,15000,0.000771541
+quadratic probing,15000,0.000773653
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000136883
+lineal probing,15000,0.000836953
+double hashing,15000,0.000768239
+quadratic probing,15000,0.00081015
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000147022
+lineal probing,15000,0.000827479
+double hashing,15000,0.000753378
+quadratic probing,15000,0.000777163
+chaining,15000,1.7e-08
+STL unordered map,15000,0.000137897
+lineal probing,15000,0.000760043
+double hashing,15000,0.000744877
+quadratic probing,15000,0.00076537
+chaining,15000,1.8e-08
+STL unordered map,15000,0.000135453
+lineal probing,15000,0.000786231
+double hashing,15000,0.000719084
+quadratic probing,15000,0.000726353
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000142552
+lineal probing,15000,0.000787467
+double hashing,15000,0.000709043
+quadratic probing,15000,0.000757451
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000140968
+lineal probing,15000,0.000809582
+double hashing,15000,0.000761606
+quadratic probing,15000,0.000764869
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000140741
+lineal probing,15000,0.000855099
+double hashing,15000,0.000746886
+quadratic probing,15000,0.000745731
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000141386
+lineal probing,15000,0.000812886
+double hashing,15000,0.000785306
+quadratic probing,15000,0.000795863
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000141215
+lineal probing,15000,0.000811032
+double hashing,15000,0.000797049
+quadratic probing,15000,0.000800881
+chaining,15000,2.5e-08
+STL unordered map,15000,0.000187896
+lineal probing,15000,0.000835683
+double hashing,15000,0.000798807
+quadratic probing,15000,0.000753945
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000139204
+lineal probing,15000,0.000825028
+double hashing,15000,0.000817839
+quadratic probing,15000,0.000812175
+chaining,15000,3.4e-08
+STL unordered map,15000,0.000165972
+lineal probing,15000,0.000824294
+double hashing,15000,0.000747856
+quadratic probing,15000,0.000734732
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000141053
+lineal probing,15000,0.000768081
+double hashing,15000,0.000769558
+quadratic probing,15000,0.000797671
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000140086
+lineal probing,15000,0.000837682
+double hashing,15000,0.000776837
+quadratic probing,15000,0.000789262
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000151535
+lineal probing,15000,0.000940636
+double hashing,15000,0.000743121
+quadratic probing,15000,0.000754166
+chaining,15000,1.3e-08
+STL unordered map,15000,0.00014064
+lineal probing,15000,0.000790823
+double hashing,15000,0.000711254
+quadratic probing,15000,0.000745115
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000157796
+lineal probing,15000,0.00078513
+double hashing,15000,0.000743291
+quadratic probing,15000,0.000725927
+chaining,15000,1.7e-08
+STL unordered map,15000,0.000139655
+lineal probing,15000,0.000751467
+double hashing,15000,0.000748366
+quadratic probing,15000,0.000788298
+chaining,15000,3.53e-07
+STL unordered map,15000,0.000140613
+lineal probing,15000,0.000811
+double hashing,15000,0.000750924
+quadratic probing,15000,0.000800648
+chaining,15000,3.3e-08
+STL unordered map,15000,0.000155671
+lineal probing,15000,0.000932462
+double hashing,15000,0.000807059
+quadratic probing,15000,0.000813474
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000140268
+lineal probing,15000,0.000829057
+double hashing,15000,0.000785511
+quadratic probing,15000,0.0007974
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000141152
+lineal probing,15000,0.000813891
+double hashing,15000,0.000797426
+quadratic probing,15000,0.000913769
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000141265
+lineal probing,15000,0.000949877
+double hashing,15000,0.000747451
+quadratic probing,15000,0.000771986
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000140502
+lineal probing,15000,0.00082311
+double hashing,15000,0.000821786
+quadratic probing,15000,0.000803702
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000141656
+lineal probing,15000,0.000872022
+double hashing,15000,0.00075231
+quadratic probing,15000,0.000733103
+chaining,15000,1.6e-08
+STL unordered map,15000,0.00013789
+lineal probing,15000,0.000838449
+double hashing,15000,0.000830569
+quadratic probing,15000,0.000795752
+chaining,15000,1.4e-08
+STL unordered map,15000,0.00016467
+lineal probing,15000,0.000850694
+double hashing,15000,0.000798077
+quadratic probing,15000,0.000767264
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000136741
+lineal probing,15000,0.000838886
+double hashing,15000,0.000715512
+quadratic probing,15000,0.000847609
+chaining,15000,2.5e-08
+STL unordered map,15000,0.000172985
+lineal probing,15000,0.000890881
+double hashing,15000,0.000857916
+quadratic probing,15000,0.000816516
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000136598
+lineal probing,15000,0.000821954
+double hashing,15000,0.000741758
+quadratic probing,15000,0.000756835
+chaining,15000,8.3e-08
+STL unordered map,15000,0.000136687
+lineal probing,15000,0.000866512
+double hashing,15000,0.00106418
+quadratic probing,15000,0.00080689
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137808
+lineal probing,15000,0.000839207
+double hashing,15000,0.000811567
+quadratic probing,15000,0.00077965
+chaining,15000,1.7e-08
+STL unordered map,15000,0.000144995
+lineal probing,15000,0.000933626
+double hashing,15000,0.000736394
+quadratic probing,15000,0.000781352
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000140786
+lineal probing,15000,0.000802817
+double hashing,15000,0.000778783
+quadratic probing,15000,0.000779375
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000141186
+lineal probing,15000,0.000832081
+double hashing,15000,0.00102866
+quadratic probing,15000,0.000777634
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000150851
+lineal probing,15000,0.000805294
+double hashing,15000,0.000789884
+quadratic probing,15000,0.000779118
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137056
+lineal probing,15000,0.000845953
+double hashing,15000,0.000785163
+quadratic probing,15000,0.000799471
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000137112
+lineal probing,15000,0.000915837
+double hashing,15000,0.00072754
+quadratic probing,15000,0.000754514
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000142148
+lineal probing,15000,0.00076572
+double hashing,15000,0.000740762
+quadratic probing,15000,0.000727711
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000135078
+lineal probing,15000,0.000733736
+double hashing,15000,0.000741772
+quadratic probing,15000,0.000746209
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000140063
+lineal probing,15000,0.000776005
+double hashing,15000,0.000732831
+quadratic probing,15000,0.00081348
+chaining,15000,4.5e-08
+STL unordered map,15000,0.0001403
+lineal probing,15000,0.000841405
+double hashing,15000,0.00077811
+quadratic probing,15000,0.000793594
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000147479
+lineal probing,15000,0.000826176
+double hashing,15000,0.000746245
+quadratic probing,15000,0.000725848
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000139771
+lineal probing,15000,0.00074055
+double hashing,15000,0.000767322
+quadratic probing,15000,0.000795506
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000142057
+lineal probing,15000,0.000821831
+double hashing,15000,0.000772723
+quadratic probing,15000,0.000802535
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000140846
+lineal probing,15000,0.000918586
+double hashing,15000,0.000731553
+quadratic probing,15000,0.000750039
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000153193
+lineal probing,15000,0.000779962
+double hashing,15000,0.000732369
+quadratic probing,15000,0.000755741
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000141332
+lineal probing,15000,0.000751996
+double hashing,15000,0.000734042
+quadratic probing,15000,0.000724929
+chaining,15000,3.3e-08
+STL unordered map,15000,0.000140448
+lineal probing,15000,0.000766929
+double hashing,15000,0.000774558
+quadratic probing,15000,0.000745242
+chaining,15000,1.5e-08
+STL unordered map,15000,0.000140356
+lineal probing,15000,0.000825445
+double hashing,15000,0.000783659
+quadratic probing,15000,0.000781445
+chaining,15000,1.7e-08
+STL unordered map,15000,0.000148474
+lineal probing,15000,0.000852923
+double hashing,15000,0.000747877
+quadratic probing,15000,0.000750265
+chaining,15000,1.3e-08
+STL unordered map,15000,0.00013699
+lineal probing,15000,0.00076163
+double hashing,15000,0.000757251
+quadratic probing,15000,0.000769477
+chaining,15000,1.7e-08
+STL unordered map,15000,0.000136566
+lineal probing,15000,0.000871764
+double hashing,15000,0.000782666
+quadratic probing,15000,0.000792557
+chaining,15000,1.4e-08
+STL unordered map,15000,0.0001372
+lineal probing,15000,0.000862389
+double hashing,15000,0.000706378
+quadratic probing,15000,0.000735689
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000151939
+lineal probing,15000,0.000772781
+double hashing,15000,0.000722417
+quadratic probing,15000,0.00076887
+chaining,15000,1.8e-08
+STL unordered map,15000,0.000142774
+lineal probing,15000,0.00077689
+double hashing,15000,0.00073868
+quadratic probing,15000,0.000756281
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000137885
+lineal probing,15000,0.000756369
+double hashing,15000,0.000737357
+quadratic probing,15000,0.000737203
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000139869
+lineal probing,15000,0.000881009
+double hashing,15000,0.00080029
+quadratic probing,15000,0.000794908
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000149659
+lineal probing,15000,0.000839005
+double hashing,15000,0.000784127
+quadratic probing,15000,0.000744817
+chaining,15000,1.9e-08
+STL unordered map,15000,0.000138946
+lineal probing,15000,0.000762151
+double hashing,15000,0.00085142
+quadratic probing,15000,0.000803023
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000141315
+lineal probing,15000,0.000881479
+double hashing,15000,0.000822264
+quadratic probing,15000,0.000776614
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000138007
+lineal probing,15000,0.000871268
+double hashing,15000,0.000715531
+quadratic probing,15000,0.000746125
+chaining,15000,1.3e-08
+STL unordered map,15000,0.00015422
+lineal probing,15000,0.000829359
+double hashing,15000,0.000785177
+quadratic probing,15000,0.000778856
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137317
+lineal probing,15000,0.000827909
+double hashing,15000,0.000741524
+quadratic probing,15000,0.000767679
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000153931
+lineal probing,15000,0.000821429
+double hashing,15000,0.000800829
+quadratic probing,15000,0.000775139
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137781
+lineal probing,15000,0.000839516
+double hashing,15000,0.00079625
+quadratic probing,15000,0.000799456
+chaining,15000,1.2e-08
+STL unordered map,15000,0.00013782
+lineal probing,15000,0.00086423
+double hashing,15000,0.000738458
+quadratic probing,15000,0.000758961
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137025
+lineal probing,15000,0.000744719
+double hashing,15000,0.000716047
+quadratic probing,15000,0.000714985
+chaining,15000,1.8e-08
+STL unordered map,15000,0.000137622
+lineal probing,15000,0.000751603
+double hashing,15000,0.000742628
+quadratic probing,15000,0.000734218
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000137528
+lineal probing,15000,0.000825593
+double hashing,15000,0.00071852
+quadratic probing,15000,0.000795756
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000161212
+lineal probing,15000,0.000835232
+double hashing,15000,0.000788543
+quadratic probing,15000,0.000784945
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137649
+lineal probing,15000,0.000831247
+double hashing,15000,0.000748851
+quadratic probing,15000,0.000757592
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000137355
+lineal probing,15000,0.000788333
+double hashing,15000,0.00080894
+quadratic probing,15000,0.000809649
+chaining,15000,1.8e-08
+STL unordered map,15000,0.000143393
+lineal probing,15000,0.000807194
+double hashing,15000,0.000771818
+quadratic probing,15000,0.000771579
+chaining,15000,5e-08
+STL unordered map,15000,0.000137622
+lineal probing,15000,0.000861128
+double hashing,15000,0.000715624
+quadratic probing,15000,0.00075475
+chaining,15000,2.1e-08
+STL unordered map,15000,0.000157233
+lineal probing,15000,0.000795251
+double hashing,15000,0.000745065
+quadratic probing,15000,0.000742022
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137114
+lineal probing,15000,0.000754628
+double hashing,15000,0.000746691
+quadratic probing,15000,0.000774666
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137324
+lineal probing,15000,0.000762699
+double hashing,15000,0.000716176
+quadratic probing,15000,0.000762164
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000139902
+lineal probing,15000,0.000810056
+double hashing,15000,0.000766373
+quadratic probing,15000,0.00077561
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000138326
+lineal probing,15000,0.000881907
+double hashing,15000,0.000742481
+quadratic probing,15000,0.00073849
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137474
+lineal probing,15000,0.000839228
+double hashing,15000,0.000764292
+quadratic probing,15000,0.000798151
+chaining,15000,1.4e-08
+STL unordered map,15000,0.00016704
+lineal probing,15000,0.000824327
+double hashing,15000,0.000786349
+quadratic probing,15000,0.000779792
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137306
+lineal probing,15000,0.000913684
+double hashing,15000,0.000700586
+quadratic probing,15000,0.000731924
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000141465
+lineal probing,15000,0.00083673
+double hashing,15000,0.000772147
+quadratic probing,15000,0.000777605
+chaining,15000,1.5e-08
+STL unordered map,15000,0.000165223
+lineal probing,15000,0.000873025
+double hashing,15000,0.00090344
+quadratic probing,15000,0.000812898
+chaining,15000,2.7e-08
+STL unordered map,15000,0.000155735
+lineal probing,15000,0.000823418
+double hashing,15000,0.000819896
+quadratic probing,15000,0.00080264
+chaining,15000,1.5e-08
+STL unordered map,15000,0.000162868
+lineal probing,15000,0.00086386
+double hashing,15000,0.000796021
+quadratic probing,15000,0.000818155
+chaining,15000,1.5e-08
+STL unordered map,15000,0.000156105
+lineal probing,15000,0.000827988
+double hashing,15000,0.000740735
+quadratic probing,15000,0.000769589
+chaining,15000,3.8e-08
+STL unordered map,15000,0.00015109
+lineal probing,15000,0.000858041
+double hashing,15000,0.00079278
+quadratic probing,15000,0.000849239
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137863
+lineal probing,15000,0.000866002
+double hashing,15000,0.000757288
+quadratic probing,15000,0.000766858
+chaining,15000,2.2e-08
+STL unordered map,15000,0.000140498
+lineal probing,15000,0.00083732
+double hashing,15000,0.000759149
+quadratic probing,15000,0.000804477
+chaining,15000,2.5e-08
+STL unordered map,15000,0.00015062
+lineal probing,15000,0.000829685
+double hashing,15000,0.000792973
+quadratic probing,15000,0.000764374
+chaining,15000,1.7e-08
+STL unordered map,15000,0.000136759
+lineal probing,15000,0.000858321
+double hashing,15000,0.00071055
+quadratic probing,15000,0.000748085
+chaining,15000,1.3e-08
+STL unordered map,15000,0.00014343
+lineal probing,15000,0.000826112
+double hashing,15000,0.000795307
+quadratic probing,15000,0.000799653
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137774
+lineal probing,15000,0.000841119
+double hashing,15000,0.0007289
+quadratic probing,15000,0.000760081
+chaining,15000,1.4e-08
+STL unordered map,15000,0.000163346
+lineal probing,15000,0.000817406
+double hashing,15000,0.000781609
+quadratic probing,15000,0.000782678
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000137534
+lineal probing,15000,0.000835327
+double hashing,15000,0.000788725
+quadratic probing,15000,0.000796464
+chaining,15000,1.5e-08
+STL unordered map,15000,0.000175353
+lineal probing,15000,0.000872838
+double hashing,15000,0.000831824
+quadratic probing,15000,0.000812351
+chaining,15000,1.2e-08
+STL unordered map,15000,0.000137493
+lineal probing,15000,0.000825567
+double hashing,15000,0.000745337
+quadratic probing,15000,0.000741588
+chaining,15000,1.3e-08
+STL unordered map,15000,0.000142466
+lineal probing,17500,0.000989376
+double hashing,17500,0.000928299
+quadratic probing,17500,0.000944216
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000162189
+lineal probing,17500,0.000998435
+double hashing,17500,0.000979881
+quadratic probing,17500,0.00102705
+chaining,17500,1.3e-08
+STL unordered map,17500,0.0001642
+lineal probing,17500,0.00113378
+double hashing,17500,0.000990413
+quadratic probing,17500,0.00101321
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000159141
+lineal probing,17500,0.00105765
+double hashing,17500,0.00096099
+quadratic probing,17500,0.000993153
+chaining,17500,1.6e-08
+STL unordered map,17500,0.000159775
+lineal probing,17500,0.0010688
+double hashing,17500,0.000993117
+quadratic probing,17500,0.00101652
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000159738
+lineal probing,17500,0.00113912
+double hashing,17500,0.000997591
+quadratic probing,17500,0.0010104
+chaining,17500,1.2e-08
+STL unordered map,17500,0.000159789
+lineal probing,17500,0.00103823
+double hashing,17500,0.000951897
+quadratic probing,17500,0.000974228
+chaining,17500,2.2e-08
+STL unordered map,17500,0.000159798
+lineal probing,17500,0.00103934
+double hashing,17500,0.000976532
+quadratic probing,17500,0.000968311
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000166034
+lineal probing,17500,0.00104322
+double hashing,17500,0.00103222
+quadratic probing,17500,0.00104275
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000160442
+lineal probing,17500,0.00106472
+double hashing,17500,0.000986416
+quadratic probing,17500,0.0009957
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000160747
+lineal probing,17500,0.00110121
+double hashing,17500,0.000927718
+quadratic probing,17500,0.00096724
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000159337
+lineal probing,17500,0.00109082
+double hashing,17500,0.00100991
+quadratic probing,17500,0.00102642
+chaining,17500,1.2e-08
+STL unordered map,17500,0.000163837
+lineal probing,17500,0.00103905
+double hashing,17500,0.000916914
+quadratic probing,17500,0.000926757
+chaining,17500,1.2e-08
+STL unordered map,17500,0.000159
+lineal probing,17500,0.00100293
+double hashing,17500,0.000935676
+quadratic probing,17500,0.000936555
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000159296
+lineal probing,17500,0.00102562
+double hashing,17500,0.000962052
+quadratic probing,17500,0.000938874
+chaining,17500,1.3e-08
+STL unordered map,17500,0.00016249
+lineal probing,17500,0.000984806
+double hashing,17500,0.000997213
+quadratic probing,17500,0.00100121
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000163204
+lineal probing,17500,0.00113062
+double hashing,17500,0.00100845
+quadratic probing,17500,0.00105878
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000169229
+lineal probing,17500,0.00124128
+double hashing,17500,0.000955123
+quadratic probing,17500,0.00101398
+chaining,17500,5.6e-08
+STL unordered map,17500,0.000160384
+lineal probing,17500,0.00108383
+double hashing,17500,0.00102044
+quadratic probing,17500,0.00108198
+chaining,17500,1.4e-08
+STL unordered map,17500,0.00017497
+lineal probing,17500,0.00182625
+double hashing,17500,0.00182503
+quadratic probing,17500,0.00194823
+chaining,17500,7.8e-08
+STL unordered map,17500,0.000435555
+lineal probing,17500,0.00239794
+double hashing,17500,0.00224373
+quadratic probing,17500,0.00219281
+chaining,17500,4.3e-08
+STL unordered map,17500,0.000372137
+lineal probing,17500,0.00217385
+double hashing,17500,0.00216923
+quadratic probing,17500,0.00212364
+chaining,17500,3.3e-08
+STL unordered map,17500,0.000387939
+lineal probing,17500,0.0021758
+double hashing,17500,0.00155106
+quadratic probing,17500,0.00120552
+chaining,17500,2e-08
+STL unordered map,17500,0.000176046
+lineal probing,17500,0.00118645
+double hashing,17500,0.00105899
+quadratic probing,17500,0.00103325
+chaining,17500,5.5e-08
+STL unordered map,17500,0.000159982
+lineal probing,17500,0.00107394
+double hashing,17500,0.000972776
+quadratic probing,17500,0.000961173
+chaining,17500,1e-07
+STL unordered map,17500,0.000158951
+lineal probing,17500,0.00107088
+double hashing,17500,0.000995376
+quadratic probing,17500,0.000989985
+chaining,17500,1.19e-07
+STL unordered map,17500,0.000159208
+lineal probing,17500,0.00105158
+double hashing,17500,0.000911992
+quadratic probing,17500,0.000993479
+chaining,17500,1.8e-08
+STL unordered map,17500,0.000159297
+lineal probing,17500,0.00101828
+double hashing,17500,0.000983853
+quadratic probing,17500,0.0010096
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000160927
+lineal probing,17500,0.00106609
+double hashing,17500,0.000988002
+quadratic probing,17500,0.000988926
+chaining,17500,6.8e-08
+STL unordered map,17500,0.000161315
+lineal probing,17500,0.00101766
+double hashing,17500,0.000945597
+quadratic probing,17500,0.00102684
+chaining,17500,2.3e-08
+STL unordered map,17500,0.000160125
+lineal probing,17500,0.00106312
+double hashing,17500,0.0009786
+quadratic probing,17500,0.000984762
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000159252
+lineal probing,17500,0.00110942
+double hashing,17500,0.000913971
+quadratic probing,17500,0.000920164
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000159414
+lineal probing,17500,0.00101705
+double hashing,17500,0.00211245
+quadratic probing,17500,0.00142874
+chaining,17500,1.5e-08
+STL unordered map,17500,0.000323576
+lineal probing,17500,0.0018632
+double hashing,17500,0.0016668
+quadratic probing,17500,0.00146747
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000183543
+lineal probing,17500,0.00146459
+double hashing,17500,0.00116861
+quadratic probing,17500,0.00117048
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000174956
+lineal probing,17500,0.00115775
+double hashing,17500,0.00105879
+quadratic probing,17500,0.00105998
+chaining,17500,1.4e-07
+STL unordered map,17500,0.000158846
+lineal probing,17500,0.0010813
+double hashing,17500,0.000990935
+quadratic probing,17500,0.00100572
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000159939
+lineal probing,17500,0.00109128
+double hashing,17500,0.000921695
+quadratic probing,17500,0.000952474
+chaining,17500,6.6e-08
+STL unordered map,17500,0.000158746
+lineal probing,17500,0.00105622
+double hashing,17500,0.000985768
+quadratic probing,17500,0.000998858
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000161641
+lineal probing,17500,0.00106469
+double hashing,17500,0.000921157
+quadratic probing,17500,0.000947271
+chaining,17500,4e-08
+STL unordered map,17500,0.000158801
+lineal probing,17500,0.00106606
+double hashing,17500,0.000977563
+quadratic probing,17500,0.000995046
+chaining,17500,8.7e-08
+STL unordered map,17500,0.000159227
+lineal probing,17500,0.00109699
+double hashing,17500,0.000993575
+quadratic probing,17500,0.000981792
+chaining,17500,6.5e-08
+STL unordered map,17500,0.000158832
+lineal probing,17500,0.000982465
+double hashing,17500,0.000957843
+quadratic probing,17500,0.00101871
+chaining,17500,5.6e-08
+STL unordered map,17500,0.000160543
+lineal probing,17500,0.00105347
+double hashing,17500,0.000967558
+quadratic probing,17500,0.00100854
+chaining,17500,7.8e-08
+STL unordered map,17500,0.000158947
+lineal probing,17500,0.00106776
+double hashing,17500,0.000913045
+quadratic probing,17500,0.000927855
+chaining,17500,1.21e-07
+STL unordered map,17500,0.000159224
+lineal probing,17500,0.000981412
+double hashing,17500,0.000916662
+quadratic probing,17500,0.000933082
+chaining,17500,2.5e-08
+STL unordered map,17500,0.000160416
+lineal probing,17500,0.000982596
+double hashing,17500,0.000909975
+quadratic probing,17500,0.000940445
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000179025
+lineal probing,17500,0.00102104
+double hashing,17500,0.000950886
+quadratic probing,17500,0.00100293
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000158839
+lineal probing,17500,0.00109535
+double hashing,17500,0.00102286
+quadratic probing,17500,0.00101979
+chaining,17500,9.9e-08
+STL unordered map,17500,0.000164684
+lineal probing,17500,0.00105119
+double hashing,17500,0.000942943
+quadratic probing,17500,0.000973497
+chaining,17500,1.08e-07
+STL unordered map,17500,0.000164447
+lineal probing,17500,0.00105222
+double hashing,17500,0.000976239
+quadratic probing,17500,0.00100731
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000164537
+lineal probing,17500,0.00103072
+double hashing,17500,0.000923341
+quadratic probing,17500,0.000923356
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000158232
+lineal probing,17500,0.00104095
+double hashing,17500,0.000994637
+quadratic probing,17500,0.00102063
+chaining,17500,1.8e-08
+STL unordered map,17500,0.000159022
+lineal probing,17500,0.00106698
+double hashing,17500,0.000994885
+quadratic probing,17500,0.000964686
+chaining,17500,5.2e-08
+STL unordered map,17500,0.000158887
+lineal probing,17500,0.000996418
+double hashing,17500,0.000953273
+quadratic probing,17500,0.000969185
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000159518
+lineal probing,17500,0.00102653
+double hashing,17500,0.000930427
+quadratic probing,17500,0.000940105
+chaining,17500,1.2e-08
+STL unordered map,17500,0.000159818
+lineal probing,17500,0.000995153
+double hashing,17500,0.000927531
+quadratic probing,17500,0.000936591
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000159463
+lineal probing,17500,0.000998666
+double hashing,17500,0.000931223
+quadratic probing,17500,0.000949825
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000158704
+lineal probing,17500,0.00100383
+double hashing,17500,0.000931534
+quadratic probing,17500,0.00100149
+chaining,17500,1.8e-08
+STL unordered map,17500,0.000159244
+lineal probing,17500,0.00101143
+double hashing,17500,0.000985489
+quadratic probing,17500,0.0010015
+chaining,17500,1.8e-08
+STL unordered map,17500,0.000159933
+lineal probing,17500,0.00107422
+double hashing,17500,0.000986128
+quadratic probing,17500,0.00102866
+chaining,17500,1.8e-08
+STL unordered map,17500,0.000158496
+lineal probing,17500,0.00109872
+double hashing,17500,0.000937561
+quadratic probing,17500,0.00107582
+chaining,17500,2.5e-08
+STL unordered map,17500,0.000176344
+lineal probing,17500,0.00114802
+double hashing,17500,0.00105291
+quadratic probing,17500,0.00111226
+chaining,17500,9.1e-08
+STL unordered map,17500,0.000181812
+lineal probing,17500,0.00145868
+double hashing,17500,0.00117855
+quadratic probing,17500,0.00116821
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000163917
+lineal probing,17500,0.00113018
+double hashing,17500,0.00103132
+quadratic probing,17500,0.00107905
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000163966
+lineal probing,17500,0.00119951
+double hashing,17500,0.000945805
+quadratic probing,17500,0.000948544
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000160805
+lineal probing,17500,0.00099816
+double hashing,17500,0.000941908
+quadratic probing,17500,0.000943998
+chaining,17500,8.4e-08
+STL unordered map,17500,0.00017242
+lineal probing,17500,0.00100997
+double hashing,17500,0.000927195
+quadratic probing,17500,0.000955162
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000160733
+lineal probing,17500,0.00101077
+double hashing,17500,0.000988281
+quadratic probing,17500,0.00101656
+chaining,17500,1.4e-08
+STL unordered map,17500,0.00016527
+lineal probing,17500,0.00109387
+double hashing,17500,0.0010521
+quadratic probing,17500,0.000996767
+chaining,17500,7.9e-08
+STL unordered map,17500,0.00015931
+lineal probing,17500,0.000992223
+double hashing,17500,0.000917468
+quadratic probing,17500,0.000986354
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000165516
+lineal probing,17500,0.00105655
+double hashing,17500,0.000988503
+quadratic probing,17500,0.00100505
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000159339
+lineal probing,17500,0.00103246
+double hashing,17500,0.000914292
+quadratic probing,17500,0.000915142
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000158419
+lineal probing,17500,0.00100362
+double hashing,17500,0.000980656
+quadratic probing,17500,0.00101738
+chaining,17500,1.2e-08
+STL unordered map,17500,0.000160055
+lineal probing,17500,0.00105343
+double hashing,17500,0.000986064
+quadratic probing,17500,0.000977187
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000159333
+lineal probing,17500,0.000970931
+double hashing,17500,0.000956801
+quadratic probing,17500,0.00101302
+chaining,17500,9.1e-08
+STL unordered map,17500,0.000160378
+lineal probing,17500,0.0010548
+double hashing,17500,0.000985556
+quadratic probing,17500,0.0009742
+chaining,17500,1.8e-08
+STL unordered map,17500,0.000160035
+lineal probing,17500,0.00105949
+double hashing,17500,0.000926203
+quadratic probing,17500,0.00092579
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000162459
+lineal probing,17500,0.000993909
+double hashing,17500,0.000914829
+quadratic probing,17500,0.000936543
+chaining,17500,3.4e-08
+STL unordered map,17500,0.000159006
+lineal probing,17500,0.000989777
+double hashing,17500,0.000919082
+quadratic probing,17500,0.000961418
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000158997
+lineal probing,17500,0.000987309
+double hashing,17500,0.000934246
+quadratic probing,17500,0.000995086
+chaining,17500,8.9e-08
+STL unordered map,17500,0.00015908
+lineal probing,17500,0.00107269
+double hashing,17500,0.000992572
+quadratic probing,17500,0.00100381
+chaining,17500,1.41e-07
+STL unordered map,17500,0.000160693
+lineal probing,17500,0.00112432
+double hashing,17500,0.000926786
+quadratic probing,17500,0.000960912
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000159316
+lineal probing,17500,0.00105872
+double hashing,17500,0.000993574
+quadratic probing,17500,0.00101005
+chaining,17500,1.6e-08
+STL unordered map,17500,0.000159186
+lineal probing,17500,0.00105635
+double hashing,17500,0.000922408
+quadratic probing,17500,0.000951963
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000159722
+lineal probing,17500,0.00103543
+double hashing,17500,0.000985877
+quadratic probing,17500,0.00101781
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000159229
+lineal probing,17500,0.00106651
+double hashing,17500,0.000978063
+quadratic probing,17500,0.00110902
+chaining,17500,1.3e-08
+STL unordered map,17500,0.00016004
+lineal probing,17500,0.00104858
+double hashing,17500,0.00102549
+quadratic probing,17500,0.00104762
+chaining,17500,2.1e-08
+STL unordered map,17500,0.000212117
+lineal probing,17500,0.00107467
+double hashing,17500,0.00101772
+quadratic probing,17500,0.00101775
+chaining,17500,1.2e-08
+STL unordered map,17500,0.000159801
+lineal probing,17500,0.00116803
+double hashing,17500,0.000934668
+quadratic probing,17500,0.000984839
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000158781
+lineal probing,17500,0.00107842
+double hashing,17500,0.00100067
+quadratic probing,17500,0.00101773
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000160061
+lineal probing,17500,0.00109404
+double hashing,17500,0.000936931
+quadratic probing,17500,0.000935535
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000158626
+lineal probing,17500,0.00104212
+double hashing,17500,0.00100256
+quadratic probing,17500,0.00100285
+chaining,17500,1.2e-08
+STL unordered map,17500,0.000168434
+lineal probing,17500,0.00105566
+double hashing,17500,0.000996884
+quadratic probing,17500,0.000951625
+chaining,17500,1.7e-08
+STL unordered map,17500,0.000159354
+lineal probing,17500,0.000995753
+double hashing,17500,0.000971152
+quadratic probing,17500,0.00100723
+chaining,17500,1.2e-08
+STL unordered map,17500,0.000159632
+lineal probing,17500,0.00107779
+double hashing,17500,0.00100799
+quadratic probing,17500,0.00104856
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000160628
+lineal probing,17500,0.00124425
+double hashing,17500,0.000963551
+quadratic probing,17500,0.00100357
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000159245
+lineal probing,17500,0.00107044
+double hashing,17500,0.000999869
+quadratic probing,17500,0.00104075
+chaining,17500,1.2e-08
+STL unordered map,17500,0.000163321
+lineal probing,17500,0.00108383
+double hashing,17500,0.00106965
+quadratic probing,17500,0.000972102
+chaining,17500,1.3e-08
+STL unordered map,17500,0.000160476
+lineal probing,17500,0.00105715
+double hashing,17500,0.000935142
+quadratic probing,17500,0.000946926
+chaining,17500,1.4e-08
+STL unordered map,17500,0.000160304
+lineal probing,19908,0.00130404
+double hashing,19908,0.00116732
+quadratic probing,19908,0.0011939
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000204063
+lineal probing,19908,0.00127881
+double hashing,19908,0.00124073
+quadratic probing,19908,0.00124816
+chaining,19908,8.3e-08
+STL unordered map,19908,0.000181252
+lineal probing,19908,0.00145524
+double hashing,19908,0.00124751
+quadratic probing,19908,0.00120818
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000189729
+lineal probing,19908,0.00128423
+double hashing,19908,0.00124265
+quadratic probing,19908,0.00126624
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000186656
+lineal probing,19908,0.00138772
+double hashing,19908,0.00124169
+quadratic probing,19908,0.00122904
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181747
+lineal probing,19908,0.00127841
+double hashing,19908,0.00119096
+quadratic probing,19908,0.00124998
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000180518
+lineal probing,19908,0.00136301
+double hashing,19908,0.00123101
+quadratic probing,19908,0.00124962
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000185651
+lineal probing,19908,0.00137015
+double hashing,19908,0.00116012
+quadratic probing,19908,0.00121449
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000185596
+lineal probing,19908,0.00135085
+double hashing,19908,0.0012451
+quadratic probing,19908,0.00123573
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000182943
+lineal probing,19908,0.00140861
+double hashing,19908,0.00116664
+quadratic probing,19908,0.00123365
+chaining,19908,1.7e-08
+STL unordered map,19908,0.000182212
+lineal probing,19908,0.00136067
+double hashing,19908,0.00124068
+quadratic probing,19908,0.0012937
+chaining,19908,6.3e-08
+STL unordered map,19908,0.000180823
+lineal probing,19908,0.00139702
+double hashing,19908,0.00116877
+quadratic probing,19908,0.00118592
+chaining,19908,3.8e-08
+STL unordered map,19908,0.000180612
+lineal probing,19908,0.00134803
+double hashing,19908,0.00124281
+quadratic probing,19908,0.00128191
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000181684
+lineal probing,19908,0.00130897
+double hashing,19908,0.00116305
+quadratic probing,19908,0.00116328
+chaining,19908,2.2e-08
+STL unordered map,19908,0.000185535
+lineal probing,19908,0.00128463
+double hashing,19908,0.00117759
+quadratic probing,19908,0.00121599
+chaining,19908,1.3e-08
+STL unordered map,19908,0.00018164
+lineal probing,19908,0.00128784
+double hashing,19908,0.00117455
+quadratic probing,19908,0.00116909
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000208363
+lineal probing,19908,0.00127662
+double hashing,19908,0.0011734
+quadratic probing,19908,0.00118319
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000186243
+lineal probing,19908,0.00127589
+double hashing,19908,0.00116309
+quadratic probing,19908,0.00117791
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000190718
+lineal probing,19908,0.00131873
+double hashing,19908,0.00125312
+quadratic probing,19908,0.00128802
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181126
+lineal probing,19908,0.00135044
+double hashing,19908,0.00127932
+quadratic probing,19908,0.00115649
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000183891
+lineal probing,19908,0.00130942
+double hashing,19908,0.0012364
+quadratic probing,19908,0.0012429
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000185441
+lineal probing,19908,0.00141019
+double hashing,19908,0.00126326
+quadratic probing,19908,0.00117102
+chaining,19908,1.7e-08
+STL unordered map,19908,0.00018312
+lineal probing,19908,0.00131053
+double hashing,19908,0.00126684
+quadratic probing,19908,0.00125438
+chaining,19908,2.1e-08
+STL unordered map,19908,0.000181992
+lineal probing,19908,0.00136382
+double hashing,19908,0.00123292
+quadratic probing,19908,0.00119291
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000180558
+lineal probing,19908,0.00126501
+double hashing,19908,0.00120989
+quadratic probing,19908,0.00124851
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181131
+lineal probing,19908,0.00134781
+double hashing,19908,0.00126626
+quadratic probing,19908,0.00125248
+chaining,19908,3.5e-08
+STL unordered map,19908,0.000181339
+lineal probing,19908,0.00127543
+double hashing,19908,0.00121725
+quadratic probing,19908,0.00125354
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000186993
+lineal probing,19908,0.00134202
+double hashing,19908,0.00124774
+quadratic probing,19908,0.00127324
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000184696
+lineal probing,19908,0.00127574
+double hashing,19908,0.00116778
+quadratic probing,19908,0.00116457
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000180967
+lineal probing,19908,0.00126039
+double hashing,19908,0.00115986
+quadratic probing,19908,0.001175
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000181268
+lineal probing,19908,0.00165979
+double hashing,19908,0.00121925
+quadratic probing,19908,0.00129897
+chaining,19908,9.9e-08
+STL unordered map,19908,0.000187558
+lineal probing,19908,0.00136404
+double hashing,19908,0.00123884
+quadratic probing,19908,0.00123797
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000185668
+lineal probing,19908,0.00132475
+double hashing,19908,0.00115771
+quadratic probing,19908,0.00118758
+chaining,19908,1.4e-08
+STL unordered map,19908,0.000181886
+lineal probing,19908,0.00135152
+double hashing,19908,0.00124348
+quadratic probing,19908,0.00125183
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181044
+lineal probing,19908,0.00135288
+double hashing,19908,0.00116493
+quadratic probing,19908,0.00117921
+chaining,19908,6.1e-08
+STL unordered map,19908,0.000183217
+lineal probing,19908,0.00126956
+double hashing,19908,0.00117539
+quadratic probing,19908,0.00116986
+chaining,19908,2e-08
+STL unordered map,19908,0.00018456
+lineal probing,19908,0.00128961
+double hashing,19908,0.00117567
+quadratic probing,19908,0.00119601
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000185338
+lineal probing,19908,0.00128916
+double hashing,19908,0.00117543
+quadratic probing,19908,0.00117131
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181066
+lineal probing,19908,0.00127181
+double hashing,19908,0.0011665
+quadratic probing,19908,0.00121427
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000180695
+lineal probing,19908,0.0013499
+double hashing,19908,0.00124446
+quadratic probing,19908,0.00129404
+chaining,19908,4.8e-08
+STL unordered map,19908,0.000182212
+lineal probing,19908,0.00135995
+double hashing,19908,0.00122826
+quadratic probing,19908,0.00117896
+chaining,19908,5.8e-08
+STL unordered map,19908,0.000181844
+lineal probing,19908,0.00127987
+double hashing,19908,0.00124199
+quadratic probing,19908,0.00124223
+chaining,19908,4.6e-08
+STL unordered map,19908,0.000181679
+lineal probing,19908,0.00134523
+double hashing,19908,0.00123461
+quadratic probing,19908,0.00120544
+chaining,19908,2.71e-07
+STL unordered map,19908,0.000197528
+lineal probing,19908,0.00124552
+double hashing,19908,0.00118815
+quadratic probing,19908,0.00125955
+chaining,19908,1.4e-08
+STL unordered map,19908,0.000185095
+lineal probing,19908,0.00136128
+double hashing,19908,0.00124051
+quadratic probing,19908,0.001247
+chaining,19908,1.4e-08
+STL unordered map,19908,0.000185091
+lineal probing,19908,0.0012736
+double hashing,19908,0.0011758
+quadratic probing,19908,0.00124408
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181693
+lineal probing,19908,0.00136086
+double hashing,19908,0.00126517
+quadratic probing,19908,0.00127271
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181258
+lineal probing,19908,0.00128684
+double hashing,19908,0.00116936
+quadratic probing,19908,0.00124661
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000180763
+lineal probing,19908,0.00136464
+double hashing,19908,0.00123547
+quadratic probing,19908,0.00130634
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000182704
+lineal probing,19908,0.00138826
+double hashing,19908,0.00117917
+quadratic probing,19908,0.00121529
+chaining,19908,5e-08
+STL unordered map,19908,0.000181482
+lineal probing,19908,0.00133953
+double hashing,19908,0.00123923
+quadratic probing,19908,0.00123447
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000181107
+lineal probing,19908,0.00140465
+double hashing,19908,0.00116703
+quadratic probing,19908,0.00115687
+chaining,19908,4.06e-07
+STL unordered map,19908,0.000182354
+lineal probing,19908,0.00138298
+double hashing,19908,0.00126905
+quadratic probing,19908,0.00126474
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000181856
+lineal probing,19908,0.00138758
+double hashing,19908,0.00116254
+quadratic probing,19908,0.00117763
+chaining,19908,1.2e-08
+STL unordered map,19908,0.00018075
+lineal probing,19908,0.00128243
+double hashing,19908,0.00115512
+quadratic probing,19908,0.0011776
+chaining,19908,3.1e-08
+STL unordered map,19908,0.000180752
+lineal probing,19908,0.0012768
+double hashing,19908,0.00115158
+quadratic probing,19908,0.0011673
+chaining,19908,6.2e-08
+STL unordered map,19908,0.00018186
+lineal probing,19908,0.00125923
+double hashing,19908,0.00117379
+quadratic probing,19908,0.00118387
+chaining,19908,1.8e-08
+STL unordered map,19908,0.00020193
+lineal probing,19908,0.00128923
+double hashing,19908,0.00116483
+quadratic probing,19908,0.00117914
+chaining,19908,6.4e-08
+STL unordered map,19908,0.000184627
+lineal probing,19908,0.00131254
+double hashing,19908,0.00125879
+quadratic probing,19908,0.00125041
+chaining,19908,1.7e-08
+STL unordered map,19908,0.000184928
+lineal probing,19908,0.00136864
+double hashing,19908,0.00124463
+quadratic probing,19908,0.00116444
+chaining,19908,1.6e-08
+STL unordered map,19908,0.000180635
+lineal probing,19908,0.00130304
+double hashing,19908,0.00123324
+quadratic probing,19908,0.00125755
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000183892
+lineal probing,19908,0.00135179
+double hashing,19908,0.0012653
+quadratic probing,19908,0.0012417
+chaining,19908,1.7e-08
+STL unordered map,19908,0.000186142
+lineal probing,19908,0.00134652
+double hashing,19908,0.00124728
+quadratic probing,19908,0.00126547
+chaining,19908,1.01e-07
+STL unordered map,19908,0.00018089
+lineal probing,19908,0.00137192
+double hashing,19908,0.00125245
+quadratic probing,19908,0.00129128
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000181399
+lineal probing,19908,0.00128791
+double hashing,19908,0.00130677
+quadratic probing,19908,0.00128794
+chaining,19908,7.2e-08
+STL unordered map,19908,0.000182084
+lineal probing,19908,0.00142463
+double hashing,19908,0.00130605
+quadratic probing,19908,0.00127209
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181229
+lineal probing,19908,0.00149159
+double hashing,19908,0.00218565
+quadratic probing,19908,0.00194395
+chaining,19908,2e-08
+STL unordered map,19908,0.000233659
+lineal probing,19908,0.00181787
+double hashing,19908,0.00186735
+quadratic probing,19908,0.0012788
+chaining,19908,2e-08
+STL unordered map,19908,0.000204246
+lineal probing,19908,0.00170148
+double hashing,19908,0.00137288
+quadratic probing,19908,0.00129605
+chaining,19908,2.1e-08
+STL unordered map,19908,0.00022325
+lineal probing,19908,0.00232152
+double hashing,19908,0.00183513
+quadratic probing,19908,0.00131324
+chaining,19908,2.6e-08
+STL unordered map,19908,0.000181961
+lineal probing,19908,0.00141414
+double hashing,19908,0.00133177
+quadratic probing,19908,0.00126027
+chaining,19908,1.7e-08
+STL unordered map,19908,0.000180636
+lineal probing,19908,0.00136364
+double hashing,19908,0.00116663
+quadratic probing,19908,0.00119099
+chaining,19908,1.4e-08
+STL unordered map,19908,0.000181372
+lineal probing,19908,0.001368
+double hashing,19908,0.00123617
+quadratic probing,19908,0.00124054
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000180645
+lineal probing,19908,0.00134331
+double hashing,19908,0.00118156
+quadratic probing,19908,0.00116823
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000185097
+lineal probing,19908,0.00137447
+double hashing,19908,0.00124404
+quadratic probing,19908,0.00123979
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000186106
+lineal probing,19908,0.00129543
+double hashing,19908,0.00115785
+quadratic probing,19908,0.0011745
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000180185
+lineal probing,19908,0.00126402
+double hashing,19908,0.00115202
+quadratic probing,19908,0.00116807
+chaining,19908,1.1e-08
+STL unordered map,19908,0.000180677
+lineal probing,19908,0.00130488
+double hashing,19908,0.00115366
+quadratic probing,19908,0.0011596
+chaining,19908,1.4e-08
+STL unordered map,19908,0.000180268
+lineal probing,19908,0.00131542
+double hashing,19908,0.00124724
+quadratic probing,19908,0.00125221
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181454
+lineal probing,19908,0.00138432
+double hashing,19908,0.00124583
+quadratic probing,19908,0.00118625
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000181283
+lineal probing,19908,0.00126204
+double hashing,19908,0.00123227
+quadratic probing,19908,0.00126167
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000181554
+lineal probing,19908,0.00135063
+double hashing,19908,0.00122746
+quadratic probing,19908,0.00118328
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000184223
+lineal probing,19908,0.00125675
+double hashing,19908,0.00119121
+quadratic probing,19908,0.00125222
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000180603
+lineal probing,19908,0.00135995
+double hashing,19908,0.00124382
+quadratic probing,19908,0.00125127
+chaining,19908,1.1e-08
+STL unordered map,19908,0.000181195
+lineal probing,19908,0.00125464
+double hashing,19908,0.00115104
+quadratic probing,19908,0.00122033
+chaining,19908,1.7e-08
+STL unordered map,19908,0.000181156
+lineal probing,19908,0.00134666
+double hashing,19908,0.00122708
+quadratic probing,19908,0.00124223
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000180763
+lineal probing,19908,0.00137127
+double hashing,19908,0.00115094
+quadratic probing,19908,0.00118292
+chaining,19908,1.4e-08
+STL unordered map,19908,0.000187933
+lineal probing,19908,0.0013655
+double hashing,19908,0.00123526
+quadratic probing,19908,0.0012362
+chaining,19908,1.2e-08
+STL unordered map,19908,0.000182819
+lineal probing,19908,0.00131028
+double hashing,19908,0.0011557
+quadratic probing,19908,0.00115734
+chaining,19908,1.4e-08
+STL unordered map,19908,0.000180796
+lineal probing,19908,0.00125022
+double hashing,19908,0.00115512
+quadratic probing,19908,0.00115991
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000183235
+lineal probing,19908,0.00124877
+double hashing,19908,0.00117713
+quadratic probing,19908,0.00116096
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000183071
+lineal probing,19908,0.00129857
+double hashing,19908,0.00122326
+quadratic probing,19908,0.00117783
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000180199
+lineal probing,19908,0.0012711
+double hashing,19908,0.00116549
+quadratic probing,19908,0.00140344
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000185547
+lineal probing,19908,0.00142704
+double hashing,19908,0.00133896
+quadratic probing,19908,0.00129629
+chaining,19908,1.7e-08
+STL unordered map,19908,0.000180306
+lineal probing,19908,0.00134427
+double hashing,19908,0.00123803
+quadratic probing,19908,0.00117213
+chaining,19908,1.8e-08
+STL unordered map,19908,0.000181667
+lineal probing,19908,0.00126483
+double hashing,19908,0.00124231
+quadratic probing,19908,0.00124975
+chaining,19908,1.4e-08
+STL unordered map,19908,0.000183225
+lineal probing,19908,0.00140764
+double hashing,19908,0.00126772
+quadratic probing,19908,0.00122579
+chaining,19908,1.7e-08
+STL unordered map,19908,0.000181798
+lineal probing,19908,0.0012638
+double hashing,19908,0.0011911
+quadratic probing,19908,0.00127035
+chaining,19908,1.7e-08
+STL unordered map,19908,0.000182592
+lineal probing,19908,0.00135081
+double hashing,19908,0.00123684
+quadratic probing,19908,0.0012836
+chaining,19908,1.3e-08
+STL unordered map,19908,0.000192806
+lineal probing,19908,0.00144473
+double hashing,19908,0.00116769
+quadratic probing,19908,0.00126008
+chaining,19908,3.7e-08
+STL unordered map,19908,0.000181506
