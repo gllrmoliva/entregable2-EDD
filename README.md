@@ -1,7 +1,9 @@
-# Sobre el proyecto
-Este es un repositorio utilizado con fines academicos, en este se busca comparar distintas estructuras de datos, mas especificamente tablas hash (abiertas, cerradas y la implementación de la STL). Para ello se implementaron las estructuras y se hicieron test de tiempo sobre la inserción y busqueda de elementos. En este caso se los elementos dentro de la tabla son Usuarios con distintas variables tales como username, userid, number of followers, etc. En los test  nos importan principalmente las dos primeras **username** y **userid**, ya que estas seran utilizadas como claves para efectuar el hasheo.
-# Integrantes
+# Proyecto Comparación de Tablas Hash
+## Descripción del Proyecto
+Este repositorio ha sido creado con fines académicos, con el objetivo de comparar distintas estructuras de datos, más específicamente diferentes tipos de tablas hash: tablas hash abiertas, cerradas y la implementación de la STL (Standard Template Library) en C++.
+
+Para llevar a cabo esta comparación, hemos implementado cada una de estas estructuras y realizado pruebas de rendimiento enfocadas en dos operaciones clave: la inserción y la búsqueda de elementos. Los elementos almacenados en las tablas hash son objetos de tipo **Usuario**, que contienen diversas propiedades como username, userid, number of followers, entre otras. Sin embargo, para las pruebas de rendimiento nos enfocamos principalmente en las propiedades username y userid, ya que estas son utilizadas como claves para el proceso de hash.
+
+##Integrantes
 - Guillermo Oliva Orellana
-- Joaquín Hernandéz Espinoza
-# To-do
-- Investigar si existe alguna forma de calcular colisiones y cantidad de memoria usada en unordered_map
+- Joaquín Hernández Espinoza
