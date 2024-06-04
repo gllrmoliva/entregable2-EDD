@@ -26,8 +26,10 @@ int main()
   */
   vector<User> real_users = readCSV("universities_followers_without_duplicates.csv");
   vector<User> fake_users = readCSV("fake_data.csv");
-  // Tamaño de la tabla, fue elegido ya que es un número primo el cual es cercano al factor de carga 0.7
-  const int table_size = 30103;
+
+  // Tamaño de la tabla, fue elegido ya que es un número primo el cual es cercano al factor de carga muy alto, esto para comparar colisiones
+  const int table_size = 21089;
+
   // Cantidad de test que se haran
   int n_tests = 100;
 
@@ -44,7 +46,8 @@ int main()
   test_searchs_by_userid(n_tests, real_users, fake_users, table_size, "tests/search_by_userid_fakeusers");
 
   // Calculo de colisiones y memoria utilizada.
-  for (int i = 0; i <= 20000; i = i + 2500)
+  int tests[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 19908};
+  for (int i : tests)
   {
     memory_test(table_size, i, real_users, "tests/test_de_memory");
     colisions_test(table_size, i, real_users, "tests/test_colisiones");

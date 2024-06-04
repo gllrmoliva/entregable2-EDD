@@ -145,22 +145,23 @@ double test_insert(HashTableType type, int max_size, vector<User> &users, int n_
 void test_inserts_by_username(int n_tests, vector<User> users, int table_size, string file_name)
 {
     int n_inserts[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 19908};
+    int CONSTANT = 1000; //< esto transforma a ms
     ofstream file_out(file_name + ".csv", false ? ios::trunc : ios::app);
-    file_out << "Tipo de hasheo, Número de inserciones, Tiempo(s)" << endl;
+    file_out << "Tipo de hasheo, Número de inserciones, Tiempo(ms)" << endl;
     for (int inserts : n_inserts)
     {
         for (int i = 0; i < n_tests; i++)
         {
             file_out << "lineal probing," << inserts << ",";
-            file_out << test_insert(user_name_close, table_size, users, inserts, nullptr, linear_probing) << endl;
+            file_out << test_insert(user_name_close, table_size, users, inserts, nullptr, linear_probing) * CONSTANT << endl;
             file_out << "double hashing," << inserts << ",";
-            file_out << test_insert(user_name_close, table_size, users, inserts, nullptr, double_hashing) << endl;
+            file_out << test_insert(user_name_close, table_size, users, inserts, nullptr, double_hashing) * CONSTANT << endl;
             file_out << "quadratic probing," << inserts << ",";
-            file_out << test_insert(user_name_close, table_size, users, inserts, nullptr, quadratic_probing) << endl;
+            file_out << test_insert(user_name_close, table_size, users, inserts, nullptr, quadratic_probing) * CONSTANT << endl;
             file_out << "chaining," << inserts << ",";
-            file_out << test_insert(user_name_open, table_size, users, inserts) << endl;
+            file_out << test_insert(user_name_open, table_size, users, inserts) * CONSTANT << endl;
             file_out << "STL unordered map," << inserts << ",";
-            file_out << test_insert(unordered_map_by_name, table_size, users, inserts) << endl;
+            file_out << test_insert(unordered_map_by_name, table_size, users, inserts) * CONSTANT << endl;
         }
     }
     file_out.close();
@@ -179,23 +180,24 @@ void test_inserts_by_username(int n_tests, vector<User> users, int table_size, s
  */
 void test_inserts_by_userid(int n_tests, vector<User> users, int table_size, string file_name)
 {
+    int CONSTANT = 1000; //< esto transforma a ms
     int n_inserts[] = {1000, 2500, 5000, 10000, 12500, 15000, 17500, 19908};
     ofstream file_out(file_name + ".csv", ios::app);
-    file_out << "Tipo de hasheo, Número de inserciones, Tiempo(s)" << endl;
+    file_out << "Tipo de hasheo, Número de inserciones, Tiempo(ms)" << endl;
     for (int inserts : n_inserts)
     {
         for (int i = 0; i < n_tests; i++)
         {
             file_out << "lineal probing," << inserts << ",";
-            file_out << test_insert(user_id_close, table_size, users, inserts, linear_probing, nullptr) << endl;
+            file_out << test_insert(user_id_close, table_size, users, inserts, linear_probing, nullptr) * CONSTANT << endl;
             file_out << "double hashing," << inserts << ",";
-            file_out << test_insert(user_id_close, table_size, users, inserts, double_hashing, nullptr) << endl;
+            file_out << test_insert(user_id_close, table_size, users, inserts, double_hashing, nullptr) * CONSTANT << endl;
             file_out << "quadratic probing," << inserts << ",";
-            file_out << test_insert(user_id_close, table_size, users, inserts, quadratic_probing, nullptr) << endl;
+            file_out << test_insert(user_id_close, table_size, users, inserts, quadratic_probing, nullptr) * CONSTANT << endl;
             file_out << "chaining," << inserts << ",";
-            file_out << test_insert(user_id_open, table_size, users, inserts) << endl;
+            file_out << test_insert(user_id_open, table_size, users, inserts) * CONSTANT << endl;
             file_out << "STL unordered map," << inserts << ",";
-            file_out << test_insert(unordered_map_by_id, table_size, users, inserts) << endl;
+            file_out << test_insert(unordered_map_by_id, table_size, users, inserts) * CONSTANT << endl;
         }
     }
     file_out.close();
@@ -356,6 +358,8 @@ void test_searchs_by_username(int n_tests, vector<User> users_in_tables, vector<
     OpenHashTableUserName chaining_table(table_size);
     unordered_map<string, User> STL_table(table_size);
 
+    int CONSTANT = 1000; //< esto transforma a ms
+
     // rellenemos las tablas con datos
     for (User user : users_in_tables)
     {
@@ -369,22 +373,22 @@ void test_searchs_by_username(int n_tests, vector<User> users_in_tables, vector<
 
     ofstream file_out(file_name + ".csv", ios::app);
 
-    file_out << "Tipo de hasheo, Número de busquedas, Tiempo(s)" << endl;
+    file_out << "Tipo de hasheo, Número de busquedas, Tiempo(ms)" << endl;
 
     for (int searchs : n_searchs)
     {
         for (int j = 0; j < n_tests; j++)
         {
             file_out << "lineal probing," << searchs << ",";
-            file_out << test_search(linear_table, users_to_search, searchs) << endl;
+            file_out << test_search(linear_table, users_to_search, searchs) * CONSTANT << endl;
             file_out << "double hashing," << searchs << ",";
-            file_out << test_search(double_table, users_to_search, searchs) << endl;
+            file_out << test_search(double_table, users_to_search, searchs) * CONSTANT << endl;
             file_out << "quadratic probing," << searchs << ",";
-            file_out << test_search(quadratic_table, users_to_search, searchs) << endl;
+            file_out << test_search(quadratic_table, users_to_search, searchs) * CONSTANT << endl;
             file_out << "chaining," << searchs << ",";
-            file_out << test_search(chaining_table, users_to_search, searchs) << endl;
+            file_out << test_search(chaining_table, users_to_search, searchs) * CONSTANT << endl;
             file_out << "STL unordered map," << searchs << ",";
-            file_out << test_search(STL_table, users_to_search, searchs) << endl;
+            file_out << test_search(STL_table, users_to_search, searchs) * CONSTANT << endl;
         }
     }
     file_out.close();
@@ -412,6 +416,8 @@ void test_searchs_by_userid(int n_tests, vector<User> users_in_tables, vector<Us
     OpenHashTableUserId chaining_table(table_size);
     unordered_map<unsigned long long, User> STL_table(table_size);
 
+    int CONSTANT = 1000; //< esto transforma a ms
+
     // rellenemos las tablas con datos
     for (User user : users_in_tables)
     {
@@ -425,22 +431,22 @@ void test_searchs_by_userid(int n_tests, vector<User> users_in_tables, vector<Us
 
     ofstream file_out(file_name + ".csv", ios::app);
 
-    file_out << "Tipo de hasheo, Número de busquedas, Tiempo(s)" << endl;
+    file_out << "Tipo de hasheo, Número de busquedas, Tiempo(ms)" << endl;
 
     for (int searchs : n_searchs)
     {
         for (int j = 0; j < n_tests; j++)
         {
             file_out << "lineal probing," << searchs << ",";
-            file_out << test_search(linear_table, users_to_search, searchs) << endl;
+            file_out << test_search(linear_table, users_to_search, searchs) * CONSTANT << endl;
             file_out << "double hashing," << searchs << ",";
-            file_out << test_search(double_table, users_to_search, searchs) << endl;
+            file_out << test_search(double_table, users_to_search, searchs) * CONSTANT << endl;
             file_out << "quadratic probing," << searchs << ",";
-            file_out << test_search(quadratic_table, users_to_search, searchs) << endl;
+            file_out << test_search(quadratic_table, users_to_search, searchs) * CONSTANT << endl;
             file_out << "chaining," << searchs << ",";
-            file_out << test_search(chaining_table, users_to_search, searchs) << endl;
+            file_out << test_search(chaining_table, users_to_search, searchs) * CONSTANT << endl;
             file_out << "STL unordered map," << searchs << ",";
-            file_out << test_search(STL_table, users_to_search, searchs) << endl;
+            file_out << test_search(STL_table, users_to_search, searchs) * CONSTANT << endl;
         }
     }
     file_out.close();
@@ -457,7 +463,7 @@ void test_searchs_by_userid(int n_tests, vector<User> users_in_tables, vector<Us
 void memory_test(int table_size, int n_elements, vector<User> users, string file_name)
 {
     // esto es más que nada para poder transformar a KB, MB, de forma sencilla
-    int CONSTANT = 8 * 1000; // Seteado en KB
+    int CONSTANT = 1000; // Seteado en KB
     // User ID
     CloseHashTableUserId id_linear(table_size, linear_probing);
     CloseHashTableUserId id_double(table_size, double_hashing);
