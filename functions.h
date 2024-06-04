@@ -40,10 +40,10 @@ struct User
     string userName;           //< son en promedio 11 characters (bytes)
     int numberTweets;          //< 4 bytes
     int friendsCount;          //< 4 bytes
-    int followersCount;        //< 4bytes
+    int followersCount;        //< 4 bytes
     string createdAt;          //< 30 char (bytes)
 
-    //< en promedio utiliza: 9 + 8 + 11 + 4 + 4 + 4 + 30 = 70 bytes
+    //< en promedio utiliza: 9 + 8 + 11 + 4 + 4 + 4 + 30 = 70 bytes por Usuario
 
     /*
     constructor por defecto de User, si se crea un User, utilizado cuando no se especifica el valor

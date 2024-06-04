@@ -1,73 +1,64 @@
-Tipo de hasheo, Cantidad de elementos,Tamaño de la tabla, Cantidad de colisiones
-Linear by userid, 0,30103,0
-Double by userid, 0,30103,0
-Quadratic by userid, 0,30103,0
-Chaining by userid, 0,30103,0
-Linear by username, 0,30103,0
-Double by username, 0,30103,0
-Quadratic by username, 0,30103,0
-Chaining by username,0,30103,0
-Linear by userid, 2500,30103,110
-Double by userid, 2500,30103,110
-Quadratic by userid, 2500,30103,109
-Chaining by userid, 2500,30103,106
-Linear by username, 2500,30103,110
-Double by username, 2500,30103,104
-Quadratic by username, 2500,30103,111
-Chaining by username,2500,30103,98
-Linear by userid, 5000,30103,505
-Double by userid, 5000,30103,470
-Quadratic by userid, 5000,30103,494
-Chaining by userid, 5000,30103,389
-Linear by username, 5000,30103,531
-Double by username, 5000,30103,483
-Quadratic by username, 5000,30103,504
-Chaining by username,5000,30103,403
-Linear by userid, 7500,30103,1247
-Double by userid, 7500,30103,1152
-Quadratic by userid, 7500,30103,1218
-Chaining by userid, 7500,30103,844
-Linear by username, 7500,30103,1287
-Double by username, 7500,30103,1183
-Quadratic by username, 7500,30103,1262
-Chaining by username,7500,30103,879
-Linear by userid, 10000,30103,2509
-Double by userid, 10000,30103,2249
-Quadratic by userid, 10000,30103,2346
-Chaining by userid, 10000,30103,1451
-Linear by username, 10000,30103,2533
-Double by username, 10000,30103,2213
-Quadratic by username, 10000,30103,2396
-Chaining by username,10000,30103,1498
-Linear by userid, 12500,30103,4891
-Double by userid, 12500,30103,4155
-Quadratic by userid, 12500,30103,4387
-Chaining by userid, 12500,30103,2395
-Linear by username, 12500,30103,4899
-Double by username, 12500,30103,4072
-Quadratic by username, 12500,30103,4446
-Chaining by username,12500,30103,2415
-Linear by userid, 15000,30103,8552
-Double by userid, 15000,30103,6774
-Quadratic by userid, 15000,30103,7270
-Chaining by userid, 15000,30103,3445
-Linear by username, 15000,30103,8550
-Double by username, 15000,30103,6732
-Quadratic by username, 15000,30103,7328
-Chaining by username,15000,30103,3465
-Linear by userid, 17500,30103,14364
-Double by userid, 17500,30103,10271
-Quadratic by userid, 17500,30103,11209
-Chaining by userid, 17500,30103,4566
-Linear by username, 17500,30103,14288
-Double by username, 17500,30103,10292
-Quadratic by username, 17500,30103,11233
-Chaining by username,17500,30103,4611
-Linear by userid, 20000,30103,24377
-Double by userid, 20000,30103,15728
-Quadratic by userid, 20000,30103,16973
-Chaining by userid, 20000,30103,5905
-Linear by username, 20000,30103,24526
-Double by username, 20000,30103,15747
-Quadratic by username, 20000,30103,16980
-Chaining by username,20000,30103,5915
+Linear by userid, 1000,21089,26
+Double by userid, 1000,21089,29
+Quadratic by userid, 1000,21089,26
+Chaining by userid, 1000,21089,30
+Linear by username, 1000,21089,41
+Double by username, 1000,21089,35
+Quadratic by username, 1000,21089,41
+Chaining by username,1000,21089,35
+Linear by userid, 2500,21089,157
+Double by userid, 2500,21089,152
+Quadratic by userid, 2500,21089,157
+Chaining by userid, 2500,21089,129
+Linear by username, 2500,21089,194
+Double by username, 2500,21089,181
+Quadratic by username, 2500,21089,196
+Chaining by username,2500,21089,163
+Linear by userid, 5000,21089,755
+Double by userid, 5000,21089,726
+Quadratic by userid, 5000,21089,748
+Chaining by userid, 5000,21089,495
+Linear by username, 5000,21089,868
+Double by username, 5000,21089,746
+Quadratic by username, 5000,21089,795
+Chaining by username,5000,21089,575
+Linear by userid, 10000,21089,4532
+Double by userid, 10000,21089,3693
+Quadratic by userid, 10000,21089,3985
+Chaining by userid, 10000,21089,1969
+Linear by username, 10000,21089,4667
+Double by username, 10000,21089,3707
+Quadratic by username, 10000,21089,4028
+Chaining by username,10000,21089,2120
+Linear by userid, 12500,21089,8983
+Double by userid, 12500,21089,6798
+Quadratic by userid, 12500,21089,7251
+Chaining by userid, 12500,21089,3013
+Linear by username, 12500,21089,9424
+Double by username, 12500,21089,6634
+Quadratic by username, 12500,21089,7214
+Chaining by username,12500,21089,3124
+Linear by userid, 15000,21089,18132
+Double by userid, 15000,21089,11926
+Quadratic by userid, 15000,21089,12560
+Chaining by userid, 15000,21089,4244
+Linear by username, 15000,21089,19406
+Double by username, 15000,21089,11928
+Quadratic by username, 15000,21089,12633
+Chaining by username,15000,21089,4372
+Linear by userid, 17500,21089,41372
+Double by userid, 17500,21089,20776
+Quadratic by userid, 17500,21089,22458
+Chaining by userid, 17500,21089,5580
+Linear by username, 17500,21089,43526
+Double by username, 17500,21089,21088
+Quadratic by username, 17500,21089,22380
+Chaining by username,17500,21089,5721
+Linear by userid, 19908,21089,185903
+Double by userid, 19908,21089,41639
+Quadratic by userid, 19908,21089,47291
+Chaining by userid, 19908,21089,7011
+Linear by username, 19908,21089,166253
+Double by username, 19908,21089,42982
+Quadratic by username, 19908,21089,44866
+Chaining by username,19908,21089,7109
