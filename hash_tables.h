@@ -123,16 +123,21 @@ public:
     }
 
     /**
-     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bits.
+     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bytes.
      */
     size_t get_memory_usage()
     {
         size_t count = 0;
-        // espacio usado por la tabla, esta tabla tiene un máximo de elementos
-        // por ende reservaria el bloque completo de memoria
+        // considerando el tamaño promedio de un usuario en memoria de 70 bytes
+        int user_size = 70;
+
         for (auto element : table)
         {
-            count += sizeof(*element);
+            count += 8; //< tamaño de los punteros
+            if (element)
+            {
+                count += user_size;
+            }
         }
         // espacio usado por el resto de variables
         count += sizeof(max_size);
@@ -230,19 +235,22 @@ public:
     }
 
     /**
-     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bits.
+     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bytes.
      */
     size_t get_memory_usage()
     {
         size_t count = 0;
-        // espacio usado por la tabla, esta tabla tiene un máximo de elementos
-        // por ende reservaria el bloque completo de memoria
+        // considerando el tamaño promedio de un usuario en memoria de 70 bytes
+        int user_size = 70;
+
         for (auto bucket : table)
         {
+            // tamaño usado por vector
             count += sizeof(bucket);
+
             for (auto element : bucket)
             {
-                count += sizeof(*element);
+                count += 8 + user_size; //< Se le esta sumando el tamaño del puntero (lo que se guarda) y del struct
             }
         }
         // espacio usado por el resto de variables
@@ -387,16 +395,21 @@ public:
     }
 
     /**
-     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bits.
+     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bytes.
      */
     size_t get_memory_usage()
     {
         size_t count = 0;
-        // espacio usado por la tabla, esta tabla tiene un máximo de elementos
-        // por ende reservaria el bloque completo de memoria
+        // considerando el tamaño promedio de un usuario en memoria de 70 bytes
+        int user_size = 70;
+
         for (auto element : table)
         {
-            count += sizeof(*element);
+            count += 8; //< tamaño de los punteros
+            if (element)
+            {
+                count += user_size;
+            }
         }
         // espacio usado por el resto de variables
         count += sizeof(max_size);
@@ -494,19 +507,22 @@ public:
     }
 
     /**
-     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bits.
+     * @brief Devuelve la cantidad de espacio usado por la estructura de datos en bytes.
      */
     size_t get_memory_usage()
     {
         size_t count = 0;
-        // espacio usado por la tabla, esta tabla tiene un máximo de elementos
-        // por ende reservaria el bloque completo de memoria
+        // considerando el tamaño promedio de un usuario en memoria de 70 bytes
+        int user_size = 70;
+
         for (auto bucket : table)
         {
+            // tamaño usado por vector
             count += sizeof(bucket);
+
             for (auto element : bucket)
             {
-                count += sizeof(*element);
+                count += 8 + user_size; //< Se le esta sumando el tamaño del puntero (lo que se guarda) y del struct
             }
         }
         // espacio usado por el resto de variables
