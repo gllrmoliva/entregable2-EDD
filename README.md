@@ -4,6 +4,10 @@ Este repositorio ha sido creado con fines académicos, con el objetivo de compar
 
 Para llevar a cabo esta comparación, hemos implementado cada una de estas estructuras y realizado pruebas de rendimiento enfocadas en dos operaciones clave: la inserción y la búsqueda de elementos. Los elementos almacenados en las tablas hash son objetos de tipo **Usuario**, que contienen diversas propiedades como username, userid, number of followers, entre otras. Sin embargo, para las pruebas de rendimiento nos enfocamos principalmente en las propiedades username y userid, ya que estas son utilizadas como claves para el proceso de hash.
 
+## Instrucciones de compilación
+´´´
+g++ main.cpp -O2
+´´´
 ## Integrantes
 - Guillermo Oliva Orellana
 - Joaquín Hernández Espinoza
